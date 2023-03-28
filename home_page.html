@@ -1,40 +1,59 @@
 <!DOCTYPE html>
 <html>
+   
     <head>
         <title>Listopia_Home_Page</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="homepage_stylesheet.css">
     </head>
 
 
     <body>
         <header>
-            <a href="home_page.html"><img src="icons/logo_dark.svg"></a>
-            <button class="button button_register"> Καταχώρηση Αγγελίας </button>
-            <button class="button button_login"> <img src="icons/user_icon.jpg"> </button>
+            <a href="home_page.html"><img src="icons/logo_light.svg"></a>
+            <div class="top_right">
+                <button class="button_register"> Καταχώρηση Αγγελίας </button>
+                <img src="icons/user_icon.svg" class="button_login">
+            </div>
         </header>
 
         <main>
-            <div class="container">
+            <div class="search_quote">
                 <h1>
-                    Για να βρεις τον χώρο σου:
+                    Βρες την κατάλληλη αγγελία για εσένα!
                 </h1>
             </div>
-            <input type="button" name="sale_rent_choice" class="button button_sales" value="Πωλήσεις">  </input>
-            <input type="button" name="sale_rent_choice" class="button button_rentings" value="Ενοικιάσεις">  </input>
-            <div>
-                <label for="location_search">Περιοχή</label>
-                <input type="search" name="location_search" placeholder="π.χ. Χαλάνδρι, Πειραιάς"><br>
-                <label for="category">Κατηγορία</label>
-                <select id="category_chosen" name="category_chosen">
-                    <option value="residential" selected> Κατοικία</option>
-                    <option value="professional" selected> Επαγγελματικό</option>
-                    <option value="land" selected> Γη</option>
-                </select><br>
-                <label for="price">Τιμή</label>
-                <label for="area">Εμβαδόν</label>
-                <input type="text" name="area_start_point" placeholder="τ.μ. Από"><input type="text" name="area_end_point" placeholder="τ.μ. Εώς"><br>
-                <input type="submit" value="Αναζήτηση">
+            <div class="container">
+               
+                <input type="button" name="sale_rent_choice" class="button button_sales" value="Πωλήσεις">  </input>
+                <input type="button" name="sale_rent_choice" class="button button_rentings" value="Ενοικιάσεις">  </input>
             </div>
+            <div>
+                <div>
+                    <label for="location_search">Περιοχή</label>
+                    <input type="search" name="location_search" placeholder="π.χ. Χαλάνδρι, Πειραιάς"><br>
+                </div>
+                <div>
+                    <label for="category">Κατηγορία</label>
+                    <select id="category_chosen" name="category_chosen">
+                        <option value="residential" selected> Κατοικία</option>
+                        <option value="professional" selected> Επαγγελματικό</option>
+                        <option value="land" selected> Γη</option>
+                    </select><br>
+                </div>
+                <div>
+                    <label for="price">Τιμή</label>
+                    <input type="text" name="price_start_point" placeholder="€ Από"><input type="text" name="price_end_point" placeholder="€ Εώς"><br>
+                </div>
+                <div>
+                    <label for="area">Εμβαδόν</label>
+                    <input type="text" name="area_start_point" placeholder="τ.μ. Από"><input type="text" name="area_end_point" placeholder="τ.μ. Εώς"><br>
+                </div>
+                <div>
+                    <input type="submit" value="Αναζήτηση">
+                </div>
+            </div>
+            <div class="bg-image"></div>
         </main>
 
 

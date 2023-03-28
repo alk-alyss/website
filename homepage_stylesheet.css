@@ -1,0 +1,55 @@
+body {
+    /*The html element sets the background image for the entire page*/
+    background-image: url("icons/pexels-pixabay-462331.svg");
+
+    /* Full height */
+    height: 100%;
+  
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.logo {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    margin: 10px 20px;
+}
+
+.bg-image {
+    filter: blur(8px);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+}
+
+.top_right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button_register {   
+    cursor: pointer; 
+    width: 250px;
+    height: 40px;
+    margin: 10px 20px;
+    top:auto;
+
+    background: rgba(234, 231, 231, 0.7);
+    border: 1px solid #D9D6D3;
+    border-radius: 5px;
+}
+
+.button_login {
+    cursor: pointer;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+
+}
