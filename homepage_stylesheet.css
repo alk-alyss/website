@@ -1,13 +1,15 @@
 body {
     /*The html element sets the background image for the entire page*/
-    background-image: url("icons/pexels-pixabay-462331.svg");
+    background-image:  linear-gradient(180deg, rgba(156, 156, 156, 0.5) 10%, rgba(217, 217, 217, 0.5) 45.73%, rgba(217, 217, 217, 0.4) 50%), url("icons/pexels-pixabay-462331.svg");
 
     /* Full height */
     height: 100%;
+    font-family: 'Roboto';
   
     /* background-position: center; */
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
+    background-attachment: fixed;
 
 }
 
@@ -41,7 +43,19 @@ header {
     width: 250px;
     height: 40px;
     margin: 10px 20px;
-    top:auto;
+    top: auto;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    text-align: center;
+    letter-spacing: 0.25px;
+
+    color: #6E6E6E;
 
     background: rgba(234, 231, 231, 0.7);
     border: 1px solid #D9D6D3;
