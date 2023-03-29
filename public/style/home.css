@@ -1,15 +1,30 @@
 body {
+    width: 70%;
+    margin: 0 auto;
+
     /*The html element sets the background image for the entire page*/
     background-image:  linear-gradient(180deg, rgba(156, 156, 156, 0.5) 10%, rgba(217, 217, 217, 0.5) 45.73%, rgba(217, 217, 217, 0.4) 50%), url("/icons/home_background.jpg");
 
     /* Full height */
-    height: 100%;
     font-family: 'Roboto';
   
     background-position: center;
     background-attachment: fixed;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
+
+main {
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 
 .logo {
     cursor: pointer;
@@ -18,16 +33,11 @@ body {
     margin: 10px 20px;
 }
 
-.bg-image {
-    filter: blur(8px);
-}
-
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
 }
 
 .top_right {
@@ -41,7 +51,6 @@ header {
     width: 250px;
     height: 40px;
     margin: 10px 20px;
-    top: auto;
 
     font-family: 'Roboto';
     font-style: normal;
@@ -63,5 +72,4 @@ header {
 .button_login {
     cursor: pointer;
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
-
 }

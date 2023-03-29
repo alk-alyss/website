@@ -1,46 +1,29 @@
 h1 {
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 57px;
     line-height: 64px; 
     padding-top: 60px;
     color: #FFFFFF;
-    text-align: center;
-}
-
-.search_quote {
-    font-family: 'Roboto';
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.search_bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
 }
 
 .button {
-    margin: 10px;
-    margin-bottom: auto;
-    margin-right: auto;
-    cursor: pointer;
-    border-style: ridge;
-    outline-color: white;
-    color: black;
     width: 148px;
     height: 36px;
-    background:  rgba(234, 231, 231, 0.7);
+
+    background:  rgba(234, 231, 231, 0.8);
+    color: black;
+
+    margin: 10px;
+
+    cursor: pointer;
+
+    border-style: none;
     border-radius: 10px;
 }
 
 .button:hover {
-    border: none;
-    outline: none;
     color: white;
     background: #599EA2;
 }
@@ -49,40 +32,35 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    align-items: center;
-    position: sticky;
 }
 
-.sub_search {
-    padding-right: 10px;
+.search_bar {
     background-color: #FFFFFF;
+
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: top;
-    flex-wrap: wrap;
+
     margin: 10px 10px;
     box-shadow: 2px 6px 4px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
 
- .sub_search div.search_input {
+ .search_input {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     border-right: #000000;
-    position: sticky;
 }
 
-.sub_search div.search_input:hover {
+.search_input:hover {
     box-shadow: 2px 4px 2px 2px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }
 
-.sub_search input[type=text] {
+.search_bar input[type=text] {
     border: none;
-    outline: none;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -95,9 +73,8 @@ h1 {
     color: #938E8E;
 }
 
-.sub_search input[type=search] {
+.search_bar input[type=search] {
     border: none;
-    outline: none;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
