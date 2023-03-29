@@ -4,19 +4,19 @@ services:
     container_name: server
     ports:
       - 80:3000
-    # depends_on:
-    #   - db
+    depends_on:
+      - db
     volumes:
       - ./public:/server/public
       - ./view:/server/view
     
-  # db:
-  #   image: mongodb/mongodb-community-server:5.0.15-ubi8
-  #   container_name: database
-  #   ports:
-  #     - 27017:27017
-  #   volumes:
-  #     - ./data:/data/db
-  #   environment:
-  #     - MONGODB_INITDB_ROOT_USERNAME=root
-  #     - MONGODB_INITDB_ROOT_PASSWORD=password
+  db:
+    image: mongo:6.0.5
+    container_name: database
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/data/db
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME=root
+      - MONGODB_INITDB_ROOT_PASSWORD=password
