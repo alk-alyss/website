@@ -1,14 +1,12 @@
 body {
     /*The html element sets the background image for the entire page*/
-    background-image:  linear-gradient(180deg, rgba(156, 156, 156, 0.5) 10%, rgba(217, 217, 217, 0.5) 45.73%, rgba(217, 217, 217, 0.4) 50%), url("icons/pexels-pixabay-462331.svg");
+    background-image:  linear-gradient(180deg, rgba(156, 156, 156, 0.5) 10%, rgba(217, 217, 217, 0.5) 45.73%, rgba(217, 217, 217, 0.4) 50%), url("/icons/home_background.jpg");
 
     /* Full height */
     height: 100%;
     font-family: 'Roboto';
   
-    /* background-position: center; */
-    background-repeat: repeat;
-    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
 
 }
