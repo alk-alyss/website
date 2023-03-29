@@ -46,6 +46,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .button_register {   
@@ -72,6 +73,9 @@ header {
 }
 
 .button_login {
+    width: 55px;
+    height: 55px;
+
     cursor: pointer;
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
 }
