@@ -1,0 +1,163 @@
+\documentclass{beamer}
+
+\usepackage[greek]{babel}
+
+\usepackage{fontspec}
+\setmainfont{DejaVuSansMono Nerd Font}
+\setsansfont{DejaVuSansMono Nerd Font}
+
+\usepackage{graphicx}
+
+\title{Ενδιάμεση Παρουσίαση Ιστοσελίδας}
+\author{Αλκίνοος Αλυσσανδράκης, Δήμητρα Σκαμαντζούρα}
+\date{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+	\begin{center}
+		{\fontsize{20}{50}\selectfont Σενάρια Χρήσης}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Άτομα που αναζητούν ακίνητα}
+	\begin{itemize}
+		\item Η αναζήτηση ξεκινάει από την επιλογή γενικών χαρακτηριστικών
+		\item Μετά μπορούν να εφαρμοστούν επιπλέον κριτήρια αναζήτησης με βάση τα χαρακτηριστικά του ακινήτου
+		\item Με βάση τα κριτήρια θα παρουσιάζονται στο χρήστη τα αντίστοιχα ακίνητα με τις βασικές τους πληροφορίες
+		\item Αφού γίνει η επιλογή ένος ακινήτου ο χρήστης μπορεί να μελετήσει σε βάθος όλα τα χαρακτηριστικά του ακινήτου
+		\item Σε περίπτωση που προτιμάει το συγκεκριμένο ακίνητο μπορεί να το προσθέσει σε μια λίστα με αγαπημένα ή/και να έρθει σε επικοινωνία με τον αγγελιοδότη
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Άτομα που καταχωρούν ακίνητα}
+	\begin{itemize}
+		\item Οποιοσδήποτε ενδιαφερόμενος, αφού κάνει εγγραφή στη σελίδα, μπορεί να καταχωρήσει μια αγγελία
+		\item Στην αγγελία αυτή πρέπει να συμπληρώσει τα βασικά χαρακτηριστικά του ακινήτου
+		\item Στη συνέχεια προαιρετικά μπορεί να συμπεριλάβει επιπλέον χαρακτηριστικά του ακινήτου
+		\item Τα άτομα που ενδιαφέρονται για το ακίνητο θα έρθουν σε επικοινωνία μέσω των στοιχείων που αναγράφονται στην αγγελία
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		{\fontsize{20}{50}\selectfont Design Ιστοσελίδας}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\includegraphics[width=\textwidth]{"Home Page.png"}
+\end{frame}
+
+\begin{frame}
+	\includegraphics[width=\textwidth]{"Listings.png"}
+\end{frame}
+
+\begin{frame}
+	\includegraphics[width=\textwidth]{"Listing.png"}
+\end{frame}
+
+\begin{frame}
+	\includegraphics[width=\textwidth]{"Sign in.png"}
+\end{frame}
+
+\begin{frame}
+	\includegraphics[width=\textwidth]{"Sign up.png"}
+\end{frame}
+
+\begin{frame}
+	\includegraphics[width=\textwidth]{"User Profile.png"}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		{\fontsize{20}{50}\selectfont Βάση Δεδομένων}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Κατηγορίες Δεδομένων}
+
+	\begin{itemize}
+		\item Δεδομένα χρηστών
+		\item Δεδομένα αγγελιών
+		\item Οι αγγελίες θα είναι αποθηκευμένες σε δύο σύνολα, ένα για πώληση και ένα για ενοικίαση
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Δεδομένα χρήστη}
+
+	\begin{itemize}
+		\item όνομα χρήστη
+		\item κωδικός πρόσβασης (αποθηκευμένο ως hash του κωδικού)
+		\item στοιχεία επικοινωνίας (email, τηλέφωνο)
+		\item αγαπημένες αγγελίες
+		\item καταχωρημένες αγγελίες
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Δεδομένα αγγελίας}
+
+	Αναγκαία χαρακτηριστικά
+
+	\begin{itemize}
+		\item κατηγορία
+		\item τοποθεσία
+		\item τετραγωνικά μέτρα
+		\item τιμή
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Δεδομένα αγγελίας}
+
+	Δευτερεύοντα χαρακτηριστικά για κατοικίες
+
+	\begin{itemize}
+		\item τύπος κατοικίας
+		\item υπνοδωμάτια, μπάνια
+		\item όροφος, επίπεδα
+		\item έτος κατασκευής
+		\item θέρμανση
+		\item διαθεσιμότητα
+		\item και άλλα
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Δεδομένα αγγελίας}
+
+	Δευτερεύοντα χαρακτηριστικά για επαγγελματικούς χώρους
+
+	\begin{itemize}
+		\item πολεοδομική ζώνη
+		\item επίπεδα, χώροι
+		\item θέρμανση, είδος ρεύματος
+		\item έτος κατασκευής
+		\item κατάσταση χώρου
+		\item διαθεσιμότητα
+		\item και άλλα
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Δεδομένα αγγελίας}
+
+	Δευτερεύοντα χαρακτηριστικά για οικόπεδα
+
+	\begin{itemize}
+		\item πολεοδομική ζώνη
+		\item μήκος πρόσοψης
+		\item συντελεστής δόμησης
+		\item διαθεσιμότητα
+		\item και άλλα
+	\end{itemize}
+\end{frame}
+
+\end{document}
