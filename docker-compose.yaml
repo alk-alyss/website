@@ -8,13 +8,13 @@ services:
       - db
     volumes:
       - ./public:/server/public
+      - ./icons:/server/icons
+      - ./styles:/server/styles
       - ./view:/server/view
-    
+
   db:
     image: mongo:6.0.5
-    container_name: database
-    ports:
-      - 27017:27017
+    container_name: db
     volumes:
       - ./data:/data/db
     environment:
