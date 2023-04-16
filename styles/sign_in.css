@@ -26,6 +26,7 @@ body {
 
 .container {
     width: calc(100% - 40px);
+    max-width: 1000px;
 }
 
 .logo {
@@ -80,10 +81,16 @@ header {
     height: 55px;
 
     cursor: pointer;
+}
+
+.button_login:hover {    
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
 }
 
 .button {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
     padding: 6px 20px;
 
     background:  #599EA2;
@@ -94,12 +101,12 @@ header {
     cursor: pointer;
 
     border-style: none;
-    border-radius: 6px;
+    border-radius: 10px;
 }
 
 .button:hover {
     color: white;
-    background: #599EA2;
+    background: #f1653e;
 }
 
 h1 {
@@ -121,7 +128,7 @@ form {
 
 form input{
     margin: 30px auto;
-    margin-bottom: 170px;
+    margin-bottom: 10px;
     padding: 20px 120px;
 
     color: white;
@@ -134,6 +141,13 @@ form input{
     font-weight: 400;
     font-size: 36px;
     line-height: 44px;
+}
+
+#submit:hover {
+    cursor: pointer;
+
+    box-shadow:rgba(0, 0, 0, 0.5);
+    background-color: #da5834;
 }
 
 .sign_in {
@@ -168,4 +182,26 @@ form input{
     background: #FFFFFF;
     border: 1px solid #000000;
     border-radius: 10px;
+}
+
+.sign_in_extra {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: right;
+}
+
+.sign_in_extra a {
+    text-decoration: none;
+    text-align: right;
+
+    margin-bottom: 115px;   
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+
+    letter-spacing: 0.4px;
+
+    color: rgba(0, 0, 0, 0.8);
 }
