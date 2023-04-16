@@ -7,18 +7,20 @@ body {
 
     /* Full height */
     font-family: 'Roboto';
-  
+
     background-position: center;
     background-attachment: fixed;
 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    /* align-items: flex-start; */
+
+    overflow-x: auto;
 }
 
 main {
-    width: 80%;
-    margin: 5em auto;
+    margin: 0 auto;
 
     display: flex;
     flex-direction: column;
@@ -77,5 +79,8 @@ header {
     height: 55px;
 
     cursor: pointer;
+}
+
+.button_login:hover {
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
 }
