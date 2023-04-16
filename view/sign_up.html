@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Listopia Sign Up</title>
+        <meta charset="utf-8">
+
+        <link rel="icon" href="/icons/logo_light.svg" media="(prefers-color-scheme:no-preference)">
+        <link rel="icon" href="/icons/logo_dark.svg"  media="(prefers-color-scheme:dark)">
+        <link rel="icon" href="/icons/logo_light.svg" media="(prefers-color-scheme:light)">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link rel="stylesheet" href="/styles/sign_in.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <a href="/"><img src="logo_light.svg"></a>
+                <div class="top_right">
+                    <button class="button_register"> Καταχώρηση Αγγελίας </button>
+                    <img src="user_icon.svg" class="button_login">
+                </div>
+            </header>
+
+            <nav class="sign_in_navbar">
+                    <input type="button" name="sale_rent_choice" class="button" id="button_sales" value="Πωλήσεις">  </input>
+                    <input type="button" name="sale_rent_choice" class="button" id="button_rentings" value="Ενοικιάσεις">  </input>
+            </nav>
+
+            <h1>Εγγραφή Χρήστη</h1>
+
+            <!-- <form action="/sign_in" method="post"> -->
+            <form>
+                <div class="sign_in">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="sign_in">
+                    <label for="name">Όνομα:</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="sign_in">
+                    <label for="password">Κωδικός:</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <input id="submit" type="submit" value="Είσοδος">
+            </form>
+            <br>
+            </div>
+    </body>
+
+</html>
