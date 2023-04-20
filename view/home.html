@@ -11,7 +11,6 @@
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         <link rel="stylesheet" href="/styles/home.css">
-        <link rel="stylesheet" href="/styles/search_bar.css">
     </head>
 
 
@@ -28,40 +27,43 @@
             <h1>
                 Βρες την κατάλληλη αγγελία για εσένα!
             </h1>
-            <div class="search">
-                <div class="container">
-                    <input type="button" name="sale_rent_choice" class="button button_sales" value="Πωλήσεις">  </input>
-                    <input type="button" name="sale_rent_choice" class="button button_rentings" value="Ενοικιάσεις">  </input>
+            <form class="search" method="get" action="/search">
+                <div class="listing_type">
+                    <input type="radio" name="type" value="sale" id="sale"/>
+                    <label for="sale">Πωλήσεις</label>
+
+                    <input type="radio" name="type" value="rent" id="rent"/>
+                    <label for="rent">Ενοικιάσεις</label>
                 </div>
 
                 <div class="search_bar">
                     <div class="search_input">
-                        <label for="location_search">Περιοχή</label>
-                        <input type="search" name="location_search" placeholder="π.χ. Χαλάνδρι, Πειραιάς"><br>
+                        <label for="location">Περιοχή</label>
+                        <input type="search" name="location" placeholder="π.χ. Χαλάνδρι, Πειραιάς"><br>
                     </div>
                     <div class="search_input">
                         <label for="category">Κατηγορία</label>
-                        <select id="category_chosen" name="category_chosen">
+                        <select id="category" name="category">
                             <option value="residential" selected> Κατοικία</option>
                             <option value="professional" selected> Επαγγελματικό</option>
                             <option value="land" selected> Γη</option>
-                        </select><br>
+                        </select>
                     </div>
 
                     <div class="search_input">
                         <label for="price">Τιμή</label>
-                        <input type="text" name="price_start_point" placeholder="€ Από"><input type="text" name="price_end_point" placeholder="€ Εώς"><br>
+                        <input type="text" name="price_start" placeholder="€ Από"><input type="text" name="price_end" placeholder="€ Εώς">
                     </div>
 
                     <div class="search_input">
                         <label for="area">Εμβαδόν</label>
-                        <input type="text" name="area_start_point" placeholder="τ.μ. Από"><input type="text" name="area_end_point" placeholder="τ.μ. Εώς"><br>
+                        <input type="text" name="area_start" placeholder="τ.μ. Από"><input type="text" name="area_end" placeholder="τ.μ. Εώς">
                     </div>
                     <div class="submit_button">
                         <input type="submit" value="Αναζήτηση" class="search_button">
                     </div>
                 </div>
-            </div>
+            </form>
         </main>
 
 
