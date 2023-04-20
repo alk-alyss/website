@@ -10,6 +10,14 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + "/view/home.html")
 })
 
+app.get('/sign_in', (req, res) => {
+    res.sendFile(__dirname + "/view/sign_in.html")
+})
+
+app.get('/sign_up', (req, res) => {
+    res.sendFile(__dirname + "/view/sign_up.html")
+})
+
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`)
 })
