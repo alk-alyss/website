@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    width: 100%;
+
+    /*The html element sets the background image for the entire page*/
+    background-image:  linear-gradient(180deg, rgba(156, 156, 156, 0.5) 10%, rgba(217, 217, 217, 0.5) 45.73%, rgba(217, 217, 217, 0.4) 50%), url("/icons/home_background.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    /* Full height */
+    font-family: 'Roboto';
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+}
+
+main {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

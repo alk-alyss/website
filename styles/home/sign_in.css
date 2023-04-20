@@ -1,0 +1,112 @@
+@import "/styles/home/common.css";
+@import "/styles/home/header.css";
+
+body {
+    backdrop-filter: blur(86.5px);
+}
+
+h1 {
+    margin-top: 60px;
+
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 64px;
+
+    text-align: center;
+
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+} 
+
+form input{
+    margin: 30px auto;
+    margin-bottom: 10px;
+    padding: 20px 120px;
+
+    color: white;
+
+    border-style: none;
+
+    background: #F86740;
+    border-radius: 10px;
+
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
+}
+
+#submit:hover {
+    cursor: pointer;
+
+    box-shadow:rgba(0, 0, 0, 0.5);
+    background-color: #da5834;
+}
+
+.sign_in {
+    margin: auto;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.sign_in label {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+
+    margin-bottom: 10px;
+
+    text-align: left;
+    
+    color: #000000;
+}
+
+.sign_in input{
+    padding: 8px;
+    padding-right: 140px;
+    margin: auto;
+
+    min-width: 200px;
+    max-width: 360px;
+    
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.sign_in_extra {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: right;
+}
+
+.sign_in_extra a {
+    text-decoration: none;
+    text-align: right;
+
+    margin-right: auto;
+
+    margin-bottom: 130px;   
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+
+    letter-spacing: 0.4px;
+
+    color: rgba(0, 0, 0, 0.8);
+}

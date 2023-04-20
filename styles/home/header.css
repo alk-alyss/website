@@ -1,0 +1,57 @@
+header {
+    width: 70%;
+    margin: 15px 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    margin: 10px 20px;
+}
+
+.top_right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button_register {   
+    cursor: pointer; 
+    width: 250px;
+    height: 40px;
+    margin: 10px 20px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    text-align: center;
+    letter-spacing: 0.25px;
+
+    color: #6E6E6E;
+
+    background: rgba(234, 231, 231, 0.7);
+    border: 1px solid #D9D6D3;
+    border-radius: 5px;
+}
+
+.button_login {
+    width: 55px;
+    height: 55px;
+
+    cursor: pointer;
+}
+
+.button_login:hover {
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+}

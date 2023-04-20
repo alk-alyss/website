@@ -10,39 +10,36 @@
         <link rel="icon" href="/icons/logo_light.svg" media="(prefers-color-scheme:light)">
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-        <link rel="stylesheet" href="/styles/sign_in.css">
+        <link rel="stylesheet" href="/styles/home/sign_in.css">
     </head>
 
     <body>
-        <div class="container">
-            <header>
-                <a href="/"><img src="/icons/logo_light.svg"></a>
-                <div class="top_right">
-                    <button class="button_register"> Καταχώρηση Αγγελίας </button>
-                    <img src="/icons/user_icon.svg" class="button_login">
+        <header>
+            <a href="/"><img src="/icons/logo_light.svg"></a>
+            <div class="top_right">
+                <button class="button_register"> Καταχώρηση Αγγελίας </button>
+                <a href="/sign_in"><img src="/icons/user_icon.svg" class="button_login"></a>
+            </div>
+        </header>
+
+        <main>
+            <h1>Είσοδος Χρήστη</h1>
+
+            <form method="post">
+                <div class="sign_in">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
                 </div>
-            </header>
-
-            <main>
-                <h1>Είσοδος Χρήστη</h1>
-
-                <!-- <form action="/sign_in" method="post"> -->
-                <form>
-                    <div class="sign_in">
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email">
-                    </div>
-                    <div class="sign_in">
-                        <label for="password">Κωδικός:</label>
-                        <input type="password" name="password" id="password">
-                    </div>
-                    <input id="submit" type="submit" value="Είσοδος">
-                    <div class="sign_in_extra">
-                        <a href="/sign_up">Δεν έχεις εγγραφεί ακόμη;</a>
-                    </div>
-                </form>
-            </main>
-        </div>
+                <div class="sign_in">
+                    <label for="password">Κωδικός:</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <input id="submit" type="submit" value="Είσοδος">
+                <div class="sign_in_extra">
+                    <a href="/sign_up">Δεν έχεις εγγραφεί ακόμη;</a>
+                </div>
+            </form>
+        </main>
     </body>
 
 </html>

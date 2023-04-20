@@ -10,23 +10,22 @@
         <link rel="icon" href="/icons/logo_light.svg" media="(prefers-color-scheme:light)">
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-        <link rel="stylesheet" href="/styles/sign_in.css">
+        <link rel="stylesheet" href="/styles/home/sign_in.css">
     </head>
 
     <body>
-        <div class="container">
-            <header>
-                <a href="/"><img src="/icons/logo_light.svg"></a>
-                <div class="top_right">
-                    <button class="button_register"> Καταχώρηση Αγγελίας </button>
-                    <a href="/sign_in"><img src="/icons/user_icon.svg" class="button_login"></a>
-                </div>
-            </header>
+        <header>
+            <a href="/"><img src="/icons/logo_light.svg"></a>
+            <div class="top_right">
+                <button class="button_register"> Καταχώρηση Αγγελίας </button>
+                <a href="/sign_in"><img src="/icons/user_icon.svg" class="button_login"></a>
+            </div>
+        </header>
 
+        <main>
             <h1>Εγγραφή Χρήστη</h1>
 
-            <!-- <form action="/sign_in" method="post"> -->
-            <form>
+            <form method="post">
                 <div class="sign_in">
                     <label for="email">Email:</label>
                     <input type="email" name="email" id="email">
@@ -41,7 +40,6 @@
                 </div>
                 <input id="submit" type="submit" value="Εγγραφή">
             </form>
-        </div>
+        </main>
     </body>
-
 </html>
