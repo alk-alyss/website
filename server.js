@@ -1,7 +1,19 @@
 const express = require('express')
-const app = express()
+const hbs = require('express-handlebars')
 const port = 3000
 
+// Setup express and handlebars
+const app = express()
+app.engine(
+    'hbs',
+    hbs({
+        defaultLayout: 'main',
+        extname: '.hbs'
+    })
+)
+app.set('view engine', 'hbs')
+
+// Add static folders
 app.use(express.static(__dirname + '/public'))
 app.use("/icons", express.static(__dirname + '/icons'))
 app.use("/styles", express.static(__dirname + '/styles'))
