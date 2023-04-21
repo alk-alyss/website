@@ -1,17 +1,6 @@
 @import "/styles/home/common.css";
 
-h1 {
-    font-weight: bold;
-    font-size: 57px;
-    line-height: 64px; 
-    color: #FFFFFF;
-
-    text-align: center;
-
-    margin: 0;
-}
-
-form {
+.search {
     margin-top: 30px;
 }
 
@@ -128,7 +117,7 @@ form {
     background-color: #da5834;
 }
 
-label {
+.search label {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -139,7 +128,7 @@ label {
     letter-spacing: 0.5px;
 }
 
-select {    
+.search select {    
     display: flex;
     flex-direction: column;
     align-items: flex-start;
