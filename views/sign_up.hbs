@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Listopia Sign In</title>
+        <title>Listopia Sign Up</title>
         <meta charset="utf-8">
 
         <link rel="icon" href="/icons/logo_light.svg" media="(prefers-color-scheme:no-preference)">
@@ -11,19 +11,14 @@
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         <link rel="stylesheet" href="/styles/home/sign_in.css">
+        <link rel="stylesheet" href="/styles/header.css">
     </head>
 
     <body>
-        <header>
-            <a href="/"><img src="/icons/logo_light.svg"></a>
-            <div class="top_right">
-                <button class="button_register"> Καταχώρηση Αγγελίας </button>
-                <a href="/sign_in"><img src="/icons/user_icon.svg" class="button_login"></a>
-            </div>
-        </header>
+        {{> header}}
 
         <main>
-            <h1>Είσοδος Χρήστη</h1>
+            <h1>Εγγραφή Χρήστη</h1>
 
             <form method="post">
                 <div class="sign_in">
@@ -31,15 +26,15 @@
                     <input type="email" name="email" id="email" required>
                 </div>
                 <div class="sign_in">
+                    <label for="name">Όνομα:</label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <div class="sign_in">
                     <label for="password">Κωδικός:</label>
                     <input type="password" name="password" id="password" required>
                 </div>
-                <input id="submit" type="submit" value="Είσοδος">
-                <div class="sign_in_extra">
-                    <a href="/sign_up">Δεν έχεις εγγραφεί ακόμη;</a>
-                </div>
+                <input id="submit" type="submit" value="Εγγραφή">
             </form>
         </main>
     </body>
-
 </html>
