@@ -10,7 +10,7 @@ services:
       - ./public:/server/public
       - ./icons:/server/icons
       - ./styles:/server/styles
-      - ./view:/server/view
+      - ./views:/server/views
 
   db:
     image: mongo:6.0.5
