@@ -1,6 +1,6 @@
 const express = require('express')
 const {create} = require('express-handlebars')
-const port = 3000
+const port = 80
 
 // Setup express and handlebars
 const app = express()
