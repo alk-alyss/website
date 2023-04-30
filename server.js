@@ -2,6 +2,9 @@ import express from "express"
 import {create} from "express-handlebars"
 const port = 80
 
+import { URL } from "url"
+const __dirname = new URL('.', import.meta.url).pathname;
+
 // Setup express and handlebars
 const app = express()
 const hbs = create({
