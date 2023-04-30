@@ -8,9 +8,9 @@ services:
       - db
     volumes:
       - ./public:/server/public
-      - ./icons:/server/icons
-      - ./styles:/server/styles
       - ./views:/server/views
+      - ./models:/server/models
+      - ./routes:/server/routes
 
   db:
     image: mongo:6.0.5
