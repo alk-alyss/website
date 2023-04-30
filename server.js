@@ -14,8 +14,6 @@ app.set('view engine', 'hbs')
 
 // Configure static folders
 app.use(express.static(__dirname + '/public'))
-app.use("/icons", express.static(__dirname + '/icons'))
-app.use("/styles", express.static(__dirname + '/styles'))
 
 // Define routes
 app.get('/', (req, res) => {
