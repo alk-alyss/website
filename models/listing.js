@@ -21,7 +21,7 @@ export const Listing = mongoose.model("Listing", listingSchema, "Listings");
 export async function getListings(type, location, category, priceStart=-1, priceEnd=-1, areaStart=-1, areaEnd=-1) {
 	let querry = {
 		type: type,
-		location: location,
+		location: new RegExp(location, "i"),
 		category: category,
 	}
 
