@@ -25,38 +25,22 @@ export async function getListings(type, location, category, priceStart=-1, price
 		category: category,
 	}
 
-	if (priceStart != -1 && priceEnd != -1) {
+	if (priceEnd != -1) {
 		querry.price = {
-			$and: {
-				$gt: priceStart,
-				$lt: priceEnd,
-			}
-		}
-	} else if (priceEnd != -1) {
-		querry.price = {
-			$lt: priceEnd,
-		}
-	} else if (priceStart != -1) {
-		querry.price = {
-			$gt: priceStart,
+			$lte: priceEnd
 		}
 	}
+	if (priceStart != -1) {
+		querry.price.$gte = priceStart
+	}
 
-	if (areaStart != -1 && areaEnd != -1) {
+	if (areaEnd != -1) {
 		querry.area = {
-			$and: {
-				$gt: areaStart,
-				$lt: areaEnd,
-			}
+			$lte: areaEnd
 		}
-	} else if (areaEnd != -1) {
-		querry.area = {
-			$lt: areaEnd,
-		}
-	} else if (areaStart != -1) {
-		querry.area = {
-			$gt: areaStart,
-		}
+	}
+	if (areaStart != -1) {
+		querry.area.$gte = areaStart
 	}
 
 	console.log(querry)
