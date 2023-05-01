@@ -44,5 +44,5 @@ export async function getListings(type, location, category, priceStart=-1, price
 	}
 
 	console.log(querry)
-	return await Listing.find(querry).exec()
+	return await Listing.find(querry, "-_id -__v").exec()
 }
