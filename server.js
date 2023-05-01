@@ -1,6 +1,6 @@
 import express from "express"
 import {create} from "express-handlebars"
-const port = 8000
+const port = 3000
 
 import { URL } from "url"
 const __dirname = new URL('.', import.meta.url).pathname;
