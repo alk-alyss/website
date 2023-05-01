@@ -1,5 +1,5 @@
-import express from "express"
-import {create} from "express-handlebars"
+const express = require('express')
+const {create} = require('express-handlebars')
 const port = 80
 
 import { URL } from "url"
@@ -20,15 +20,27 @@ app.use(express.static(__dirname + '/public'))
 
 // Define routes
 app.get('/', (req, res) => {
-    res.render("home")
+    res.render("home", {
+        "topSearchOn" : false
+    })
 })
 
 app.get('/sign_in', (req, res) => {
-    res.render("sign_in")
+    res.render("sign_in", {
+        "topSearchOn" : false
+    })
 })
 
 app.get('/sign_up', (req, res) => {
-    res.render("sign_up")
+    res.render("sign_up", {
+        "topSearchOn" : false
+    })
+})
+
+app.get('/listing', (req, res) => {
+    res.render("listing", {
+        "topSearchOn" : true
+    })
 })
 
 // Run server
