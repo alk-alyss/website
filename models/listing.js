@@ -32,32 +32,33 @@ export async function getListings(type, location, category, priceStart=-1, price
 				$lt: priceEnd,
 			}
 		}
-	} else if (priceEnd == -1) {
-		querry.price = {
-			$gt: priceStart,
-		}
-	} else if (priceStart == -1) {
+	} else if (priceEnd != -1) {
 		querry.price = {
 			$lt: priceEnd,
+		}
+	} else if (priceStart != -1) {
+		querry.price = {
+			$gt: priceStart,
 		}
 	}
 
 	if (areaStart != -1 && areaEnd != -1) {
-		querry.price = {
+		querry.area = {
 			$and: {
 				$gt: areaStart,
 				$lt: areaEnd,
 			}
 		}
-	} else if (areaEnd == -1) {
-		querry.price = {
-			$gt: areaStart,
-		}
-	} else if (areaStart == -1) {
-		querry.price = {
+	} else if (areaEnd != -1) {
+		querry.area = {
 			$lt: areaEnd,
+		}
+	} else if (areaStart != -1) {
+		querry.area = {
+			$gt: areaStart,
 		}
 	}
 
+	console.log(querry)
 	return await Listing.find(querry).exec()
 }
