@@ -1,4 +1,8 @@
-@import "/styles/home/common.css";
+@import "/styles/common.css";
+
+body {
+    background-image:  linear-gradient(180deg, rgba(156, 156, 156, 0.5) 10%, rgba(217, 217, 217, 0.5) 45.73%, rgba(217, 217, 217, 0.4) 50%), url("/icons/home_background.jpg");
+}
 
 .search {
     margin-top: 30px;
@@ -85,9 +89,9 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    
+
     letter-spacing: 0.25px;
-    
+
     color: #938E8E;
 }
 
@@ -128,20 +132,20 @@
     letter-spacing: 0.5px;
 }
 
-.search select {    
+.search select {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 25px 2rem;
 
     border: none;
-    
+
     background: #FFFFFF;
-    
+
     /* border: 1px solid #CED4DA; */
     border-radius: 8px;
 }
-/* 
+/*
 .dropdown {
     background-color: #FFFFFF !important;
     color: #000 !important;
@@ -159,4 +163,3 @@
     background-color: #97d0d4 !important;
     color: #fff !important;
 } */
-

@@ -7,12 +7,9 @@ body {
     width: 100%;
     height: 100%;
 
-    /*The html element sets the background image for the entire page*/
-    background-image:  linear-gradient(180deg, rgba(156, 156, 156, 0.5) 10%, rgba(217, 217, 217, 0.5) 45.73%, rgba(217, 217, 217, 0.4) 50%), url("/icons/home_background.jpg");
     background-position: center;
     background-repeat: no-repeat;
 
-    /* Full height */
     font-family: 'Roboto';
 
     display: flex;
@@ -32,7 +29,7 @@ main {
 h1 {
     font-weight: bold;
     font-size: 57px;
-    line-height: 64px; 
+    line-height: 64px;
     color: #FFFFFF;
 
     text-align: center;
@@ -44,7 +41,7 @@ h1 {
 h2 {
     font-weight: bold;
     font-size: 50px;
-    line-height: 64px; 
+    line-height: 64px;
     color: #FFFFFF;
 
     text-align: center;

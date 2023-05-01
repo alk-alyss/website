@@ -1,6 +1,7 @@
-@import "/styles/home/common.css";
+@import "/styles/common.css";
 
 body {
+    background-image:  linear-gradient(180deg, rgba(156, 156, 156, 0.5) 10%, rgba(217, 217, 217, 0.5) 45.73%, rgba(217, 217, 217, 0.4) 50%), url("/icons/home_background.jpg");
     backdrop-filter: blur(86.5px);
 }
 
@@ -14,7 +15,7 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-} 
+}
 
 form input{
     margin: 30px auto;
@@ -61,7 +62,7 @@ form input{
     margin-bottom: 10px;
 
     text-align: left;
-    
+
     color: #000000;
 }
 
@@ -72,11 +73,11 @@ form input{
 
     min-width: 200px;
     max-width: 360px;
-    
+
     background: #FFFFFF;
     border: 1px solid #000000;
     border-radius: 10px;
-    
+
     font-weight: normal;
     font-size: 18px;
     line-height: 24px;
@@ -102,7 +103,7 @@ form input{
 
     margin-right: auto;
 
-    margin-bottom: 130px;   
+    margin-bottom: 130px;
 
     font-weight: 500;
     font-size: 12px;

@@ -1,31 +1,10 @@
-html {
-    height: 100%;
-}
-
+@import "/styles/common.css";
 
 body {
     background-color: white;
-    margin: 0;
-    width: 100%;
-    height: 100%;
 
-    /* Full height */
-    font-family: 'Roboto';
-
-    display: flex;
-    flex-direction: column;
     justify-content: space-around;
-    align-items: center;
-    flex-wrap: nowrap;
 }
-
-main {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 
 .container {
     display: flex;
