@@ -20,6 +20,7 @@ export async function search(req, res, next) {
     console.log(listings)
 
     res.render("search", {
+        topSearchOn: true,
         style: "search",
         listings: listings
     })
