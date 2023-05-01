@@ -4,6 +4,11 @@ body {
     backdrop-filter: blur(86.5px);
 }
 
+h2 {
+    padding: 20px;
+    color: #000000;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -24,6 +29,11 @@ form input{
     font-weight: 400;
     font-size: 36px;
     line-height: 44px;
+}
+
+#submit{
+
+    color: #FFFFFF;
 }
 
 #submit:hover {
@@ -70,6 +80,13 @@ form input{
     font-weight: normal;
     font-size: 18px;
     line-height: 24px;
+
+    color: #000;
+}
+
+.sign_in input:focus{
+    outline: 2px solid #F86740;
+    /* border: 1px solid #599EA2; */
 }
 
 .sign_in_extra {
