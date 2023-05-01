@@ -19,7 +19,10 @@ export async function search(req, res, next) {
 
     console.log(listings)
 
-    res.render("search")
+    res.render("search", {
+        style: "search",
+        listings: listings
+    })
 }
 
 export async function addListing(req, res, next) {
