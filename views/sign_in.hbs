@@ -1,40 +1,20 @@
-<!DOCTYPE html>
-<html>
+{{> header}}
 
-    <head>
-        <title>Listopia Sign In</title>
-        <meta charset="utf-8">
+<main>
+    <h2>Είσοδος Χρήστη</h2>
 
-        <link rel="icon" href="/icons/logo_light.svg" media="(prefers-color-scheme:no-preference)">
-        <link rel="icon" href="/icons/logo_dark.svg"  media="(prefers-color-scheme:dark)">
-        <link rel="icon" href="/icons/logo_light.svg" media="(prefers-color-scheme:light)">
-
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-        <link rel="stylesheet" href="/styles/home/sign_in.css">
-        <link rel="stylesheet" href="/styles/header.css">
-    </head>
-
-    <body>
-        {{> header}}
-
-        <main>
-            <h2>Είσοδος Χρήστη</h2>
-
-            <form method="post">
-                <div class="sign_in">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" required>
-                </div>
-                <div class="sign_in">
-                    <label for="password">Κωδικός:</label>
-                    <input type="password" name="password" id="password" required>
-                </div>
-                <input id="submit" type="submit" value="Είσοδος">
-                <div class="sign_in_extra">
-                    <a href="/sign_up">Δεν έχεις εγγραφεί ακόμη;</a>
-                </div>
-            </form>
-        </main>
-    </body>
-
-</html>
+    <form method="post">
+        <div class="sign_in">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div class="sign_in">
+            <label for="password">Κωδικός:</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <input id="submit" type="submit" value="Είσοδος">
+        <div class="sign_in_extra">
+            <a href="/sign_up">Δεν έχεις εγγραφεί ακόμη;</a>
+        </div>
+    </form>
+</main>
