@@ -1,5 +1,4 @@
-const express = require('express')
-const {create} = require('express-handlebars')
+import {create} from "express-handlebars"
 const port = 80
 
 import { URL } from "url"
