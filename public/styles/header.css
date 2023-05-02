@@ -19,6 +19,8 @@ header {
 }
 
 .top_search {
+    margin: 0px 10px;
+    
     box-sizing: border-box;
 
     background: rgba(234, 231, 231, 0.7);
@@ -42,7 +44,7 @@ header {
 
     padding: 10px;
 
-    min-width: 678px;
+    width: calc(100vw - 60vw);
 }
 
 .top_search img{
@@ -62,7 +64,7 @@ header {
 
 .button_register {   
     cursor: pointer; 
-    width: 250px;
+    width: calc(100vw - 87vw);
     height: 40px;
     margin: 10px 20px;
 
@@ -71,7 +73,6 @@ header {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    /* identical to box height, or 143% */
 
     text-align: center;
     letter-spacing: 0.25px;
