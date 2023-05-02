@@ -24,11 +24,13 @@ import home from "./routes/home.js"
 import sign_in from "./routes/sign_in.js"
 import sign_up from "./routes/sign_up.js"
 import search from "./routes/search.js"
+import listing from "./routes/listing.js"
 
 app.use(home)
 app.use("/sign_in", sign_in)
 app.use("/sign_up", sign_up)
 app.use("/search", search)
+app.use("/listing", listing)
 
 // Run server
 app.listen(port, () => {
