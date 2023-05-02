@@ -18,6 +18,7 @@
 
     <div class="listing_container">
         <div class="listing_images">
+            {{!-- might be replaced with carousel --}}
             <div class="big_image">
                 <img id="1" src="/icons/sample_apartment.jpg">
             </div>
@@ -42,52 +43,64 @@
                 </div>
             </div>
 
-            <div class="listing_location">
-                <p>Ακριβής τοποθεσία</p>
-            </div>
+            <div class="attributes">
+                <div class="listing_details">
+                    <div class="listing_location">
+                        <p>Ακριβής τοποθεσία</p>
+                    </div>
 
-            <div class="listing_price">
-                <p>Τιμή: 100€</p>
-                <img src="/icons/heart.svg">
-            </div>
+                    <div class="listing_price">
+                        <p>€ 100000 </p>
+                        <img src="/icons/heart.svg">
+                    </div>
 
-            <div class="listing_description">
-                <p>όροφος</p>
-                <p>υ/δ</p>
-                <p>μπ</p>
-            </div>
+                    <div class="listing_description">
+                        <p>1 όροφος</p>
+                        <p>1 υ/δ</p>
+                        <p>1 μπ</p>
+                    </div>
 
-            <label class="characteristics" for="listing_characteristics">Χαρακτηριστικά</label>
-            <div class="listing_characteristics">
-                <table>
-                    <tr> <td>Characteristic</td> <td>Value</td> </tr>
-                    <tr> <td>Characteristic</td> <td>Value</td> </tr>
-                    <tr> <td>Characteristic</td> <td>Value</td> </tr>
-                    <tr> <td>Characteristic</td> <td>Value</td> </tr>
-                    <tr> <td>Characteristic</td> <td>Value</td> </tr>
-                    <tr> <td>Characteristic</td> <td>Value</td> </tr>
-                </table>
-            </div>
+                    <label class="extra_characteristics" for="listing_extra_characteristics">Ειδικά χαρακτηριστικά</label>
+                    <div class="listing_extra_characteristics">
+                        <p>special 1</p>
+                        <p>special 2</p>
+                        <p>special 3</p>
+                        <p>special 1</p>
+                        <p>special 2</p>
+                        <p>special 3</p>
+                        <p>special 1</p>
+                        <p>special 2</p>
+                        <p>special 3</p>
+                    </div>
+                </div>
 
-            <label class="extra_characteristics" for="listing_extra_characteristics">Ειδικά χαρακτηριστικά</label>
-            <div class="listing_extra_characteristics">
-                <p>special 1</p>
-                <p>special 2</p>
-                <p>special 3</p>
+                <div class="listing_characteristics">
+                <label class="characteristics" for="listing_characteristics">Χαρακτηριστικά</label>
+                    <table>
+                        <tr> <td style="background-color: #F0F0F0">Characteristic</td> <td>Value</td> </tr>
+                        <tr> <td style="background-color: #F0F0F0">Characteristic</td> <td>Value</td> </tr>
+                        <tr> <td style="background-color: #F0F0F0">Characteristic</td> <td>Value</td> </tr>
+                        <tr> <td style="background-color: #F0F0F0">Characteristic</td> <td>Value</td> </tr>
+                        <tr> <td style="background-color: #F0F0F0">Characteristic</td> <td>Value</td> </tr>
+                        <tr> <td style="background-color: #F0F0F0">Characteristic</td> <td>Value</td> </tr>
+                    </table>
+                </div>
             </div>
     </div>
 {{!-- </main> --}}
 
-<hr>
+<hr class="divider">
 
-<footer>
-    <label for="provider_logo">Πληροφορίες Αγγελιοδότη</label>
-        <div class="provider_logo">
+
+<footer class="listing_owner">
+    <div class="provider_logo">
+            <label class="provider" for="provider_logo">Πληροφορίες Αγγελιοδότη</label>
             <img src="/icons/provider.svg">
         </div>
         
-        <label for="provider_name">Όνομα</label>
-        <div class="footer_contact">
+        
+        <div class="provider_contact">
+            <label for="provider_name">Όνομα</label>
             <p> (phone number) </p>
         </div>
 </footer>
