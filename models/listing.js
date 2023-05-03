@@ -36,6 +36,10 @@ export async function getListings(type="", location="", category="", priceStart=
 	return await Listing.find(query, "-__v").exec()
 }
 
+export async function getListingById(id) {
+	return await Listing.findById(id, "-__v").exec()
+}
+
 export async function addListings(listings) {
 	await Listing.insertMany(listings)
 }

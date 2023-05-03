@@ -1,8 +1,8 @@
 import { Router } from "express"
 const router = Router()
 
-router.get('/', (req, res) => {
-	res.render("listing", {style: "listing", topSearchOn: true})
-})
+import { showListing } from "../controllers/listing.js"
+
+router.get('/:id', showListing)
 
 export default router
