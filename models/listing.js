@@ -20,20 +20,20 @@ const listingSchema = new mongoose.Schema({
 export const Listing = mongoose.model("Listing", listingSchema, "Listings");
 
 export async function getListings(type="", location="", category="", priceStart=-1, priceEnd=-1, areaStart=-1, areaEnd=-1) {
-	let querry = { }
+	let query = { }
 
 	if (type != "") query.type = type
-	if (type != "") query.location = new RegExp(location, "i")
-	if (type != "") query.category = category
+	if (location != "") query.location = new RegExp(location, "i")
+	if (category != "") query.category = category
 
-	if (priceEnd != -1) querry.price = { $lte: priceEnd }
-	if (priceStart != -1) querry.price.$gte = priceStart
+	if (priceEnd != -1) query.price = { $lte: priceEnd }
+	if (priceStart != -1) query.price.$gte = priceStart
 
-	if (areaEnd != -1) querry.area = { $lte: areaEnd }
-	if (areaStart != -1) querry.area.$gte = areaStart
+	if (areaEnd != -1) query.area = { $lte: areaEnd }
+	if (areaStart != -1) query.area.$gte = areaStart
 
-	console.log(querry)
-	return await Listing.find(querry, "-_id -__v").exec()
+	console.log(query)
+	return await Listing.find(query, "-__v").exec()
 }
 
 export async function addListings(listings) {
