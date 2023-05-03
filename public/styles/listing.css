@@ -6,14 +6,7 @@ body {
     justify-content: space-around;
 }
 
-* {
-    white-space: nowrap;
-}
-
 header {
-    position: fixed;
-    top: 0;
-
     margin: 0;
     padding: 15px;
 
@@ -22,19 +15,18 @@ header {
     z-index: 2;
 
     align-items: baseline;
-
-    white-space: wrap;
 }
 
 .box-shadow {
     width: 100%;
 
+    top: -20px;
+
+    height: 100px;
+
     z-index: 1;
 
     position: fixed;
-    top: 0px;
-
-    height: 8%;
 
     background: #FFFFFF;
 
@@ -53,6 +45,8 @@ header {
     flex-direction: row;
     justify-content: left;
     align-items: center;
+
+    white-space: nowrap;
 
 }
 
@@ -125,6 +119,8 @@ a:hover {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    white-space: nowrap;
 }
 
 .listing_title h2 {
@@ -158,8 +154,6 @@ a:hover {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
-    border-radius: 8px;
 }
 
 .listing_images img:hover {
@@ -178,10 +172,14 @@ a:hover {
 
     max-width: 260px;
     max-height: 180px;
+
+    border-radius: 5px;
 }
 
-.big_image {
+.big_image img{
     padding: 5px;
+
+    border-radius: 8px;
 }
 
 .listing {
@@ -219,7 +217,7 @@ a:hover {
 }
 
 
-button {
+.listing_info button {
     width: 428.65px;
     height: 72px;
 
@@ -239,7 +237,7 @@ button {
     border: none;
 }
 
-button:hover {
+.listing_info button:hover {
     cursor: pointer;
 
     background: #378286;
@@ -263,11 +261,9 @@ button:hover {
 }
 
 .listing_location {
-    margin-top: 15px;
-
     font-style: normal;
-    font-weight: 500;
-    font-size: 28px;
+    font-weight: 580;
+    font-size: 32px;
     line-height: 36px;
 }
 
@@ -348,6 +344,14 @@ button:hover {
     line-height: 36px;
 }
 
+.characteristics {
+    padding: auto;
+
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+}
+
 table {
     margin-bottom: 120px;
 
@@ -374,14 +378,11 @@ table td {
 }
 
 .divider {
-    width: inherit;
+    width: 100%;
 
     border: 1px solid black;
 }
 
-footer {
-    background-color: white;
-}
 
 .provider_logo {
     display: flex;
@@ -408,6 +409,7 @@ footer {
     flex-direction: row;
     justify-content: flex-start;
     align-items: left;
+    flex-wrap: wrap;
 }
 
 .provider_contact {
