@@ -44,7 +44,7 @@ header {
 
     padding: 10px;
 
-    width: calc(100vw - 60vw);
+    width: calc(100vw - 65vw);
 }
 
 .top_search img{
@@ -82,6 +82,8 @@ header {
     background: rgba(234, 231, 231, 0.7);
     border: 1px solid #D9D6D3;
     border-radius: 5px;
+
+    min-width: 100px;
 }
 
 .button_login {
