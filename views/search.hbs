@@ -1,1 +1,7 @@
 {{> header}}
+
+<main>
+	{{#each listings as |listing|}}
+		{{> searchCard listing=listing}}
+	{{/each}}
+</main>

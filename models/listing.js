@@ -8,14 +8,20 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 
-const listingSchema = new mongoose.Schema({
-	type: { type: String, required: true },
-	location: { type: String, required: true },
-	category: {type: String, required: true},
-	price: { type: Number, required: true },
-	area: { type: Number, required: true },
-	extra: { type: Object }
-});
+const listingSchema = new mongoose.Schema(
+	{
+		type: { type: String, required: true },
+		location: { type: String, required: true },
+		category: {type: String, required: true},
+		price: { type: Number, required: true },
+		area: { type: Number, required: true },
+		extra: { type: Object }
+	},
+	{
+		toObject: {virtuals: true},
+		toJSON: {virtuals: true}
+	}
+);
 
 export const Listing = mongoose.model("Listing", listingSchema, "Listings");
 
@@ -32,12 +38,16 @@ export async function getListings(type="", location="", category="", priceStart=
 	if (areaEnd != -1) query.area = { $lte: areaEnd }
 	if (areaStart != -1) query.area.$gte = areaStart
 
-	console.log(query)
-	return await Listing.find(query, "-__v").exec()
+	let listings = await Listing.find(query, "-__v").exec()
+
+	let listingsArray = []
+	listings.forEach(element => listingsArray.push(element.toObject()));
+
+	return listingsArray
 }
 
 export async function getListingById(id) {
-	return await Listing.findById(id, "-__v").exec()
+	return await Listing.findById(id, "-__v").exec().toObject()
 }
 
 export async function addListings(listings) {

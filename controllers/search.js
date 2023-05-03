@@ -17,8 +17,6 @@ export async function search(req, res, next) {
 
     let listings = await listing.getListings(type, location, category, priceStart, priceEnd, areaStart, areaEnd)
 
-    console.log(listings)
-
     res.render("search", {
         topSearchOn: true,
         style: "search",
