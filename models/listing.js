@@ -1,3 +1,4 @@
+import { query } from 'express';
 import mongoose from 'mongoose';
 const databaseUrl = "mongodb://db/database"
 
@@ -18,31 +19,23 @@ const listingSchema = new mongoose.Schema({
 
 export const Listing = mongoose.model("Listing", listingSchema, "Listings");
 
-export async function getListings(type, location, category, priceStart=-1, priceEnd=-1, areaStart=-1, areaEnd=-1) {
-	let querry = {
-		type: type,
-		location: new RegExp(location, "i"),
-		category: category,
-	}
+export async function getListings(type="", location="", category="", priceStart=-1, priceEnd=-1, areaStart=-1, areaEnd=-1) {
+	let querry = { }
 
-	if (priceEnd != -1) {
-		querry.price = {
-			$lte: priceEnd
-		}
-	}
-	if (priceStart != -1) {
-		querry.price.$gte = priceStart
-	}
+	if (type != "") query.type = type
+	if (type != "") query.location = new RegExp(location, "i")
+	if (type != "") query.category = category
 
-	if (areaEnd != -1) {
-		querry.area = {
-			$lte: areaEnd
-		}
-	}
-	if (areaStart != -1) {
-		querry.area.$gte = areaStart
-	}
+	if (priceEnd != -1) querry.price = { $lte: priceEnd }
+	if (priceStart != -1) querry.price.$gte = priceStart
+
+	if (areaEnd != -1) querry.area = { $lte: areaEnd }
+	if (areaStart != -1) querry.area.$gte = areaStart
 
 	console.log(querry)
 	return await Listing.find(querry, "-_id -__v").exec()
+}
+
+export async function addListings(listings) {
+	await Listing.insertMany(listings)
 }

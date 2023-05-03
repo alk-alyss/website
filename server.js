@@ -32,6 +32,10 @@ app.use("/sign_up", sign_up)
 app.use("/search", search)
 app.use("/listing", listing)
 
+// Setup database
+import * as startup from "./controllers/startup.js"
+await startup.loadData()
+
 // Run server
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`)
