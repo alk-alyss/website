@@ -1,10 +1,7 @@
-import { query } from 'express';
 import mongoose from 'mongoose';
 const databaseUrl = "mongodb://db/database"
 
-let uri = "mongodb://db/website"
-
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(databaseUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 
@@ -41,13 +38,20 @@ export async function getListings(type="", location="", category="", priceStart=
 	let listings = await Listing.find(query, "-__v").exec()
 
 	let listingsArray = []
-	listings.forEach(element => listingsArray.push(element.toObject()));
+	if (listings.length > 0) {
+		listings.forEach(element => listingsArray.push(element.toObject()));
+	}
 
 	return listingsArray
 }
 
 export async function getListingById(id) {
-	return await Listing.findById(id, "-__v").exec().toObject()
+	let objectId = mongoose.ObjectId(id)
+	let currentListing = await Listing.findOne({_id: objectId}, "-__v").exec()
+	if (currentListing) {
+		currentListing = currentListing.toObject()
+	}
+	return currentListing
 }
 
 export async function addListings(listings) {
