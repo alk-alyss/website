@@ -23,15 +23,3 @@ export async function search(req, res, next) {
         listings: listings
     })
 }
-
-export async function addListing(req, res, next) {
-    await listing.Listing.create({
-        type: "rent",
-        location: "Xalandri",
-        category: "land",
-        price: "500",
-        area: "200"
-    })
-
-    res.render("search")
-}
