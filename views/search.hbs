@@ -4,6 +4,12 @@
 
 <hr class="box-shadow">
 
+{{!-- path taken --}}
+<div class="path">
+	<p> <a>Αρχική <img src="/icons/chevron-right.svg"> </a> <a>Λίστα Αγγελιών <img src="/icons/path.svg"> </a></p>
+
+</div>
+
 <div class="choice_section">
 	<select id="rent_sale">
 		<option value="0">Πώληση</option>
@@ -23,6 +29,8 @@
 
 	<button id="filter"> <img src="/icons/sliders.svg"> Φίλτρα</button>
 </div>
+
+<h1>Πωλήσεις κατοικιών σε Περιοχή</h1>
 
 <main>
 	{{#each listings as |listing|}}

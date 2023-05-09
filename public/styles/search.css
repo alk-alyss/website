@@ -23,15 +23,6 @@ header {
     width: 70%;
     position: fixed;
     top: 0;
-}
-
-body {
-    background-color: white;
-
-    justify-content: space-around;
-}
-
-header {
     margin: 0;
     padding: 15px;
 
@@ -40,6 +31,13 @@ header {
     z-index: 2;
 
     align-items: baseline;
+}
+
+
+body {
+    background-color: white;
+
+    justify-content: space-around;
 }
 
 .line {
@@ -74,6 +72,48 @@ header {
 
     box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
 }
+
+.path {
+    width: 70%;
+    color: #8A8686;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+
+    z-index: 0;
+
+    position: absolute;
+    top: 170px;
+}
+
+.path p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.path a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.path img {
+    padding: 5px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
 
 .choice_section {
     width: 70%;
@@ -226,5 +266,24 @@ main {
     max-height: 300px;
 
     border-radius: 10px 10px 0px 0px;
+}
+
+h1 {
+    position: absolute;
+    top: 200px;
+
+    padding: 5px;
+
+    color: black;
+
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
+
+    filter: none;
+
+    width: 70%;
+
+    text-align: left;
 }
 
