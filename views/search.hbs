@@ -1,14 +1,32 @@
 {{> header}}
 
-<div class="filters">
+<hr class="line">
 
+<hr class="box-shadow">
+
+<div class="choice_section">
+	<select id="rent_sale">
+		<option value="0">Πώληση</option>
+		<option value="1">Ενοικίαση</option>
+	</select>
+
+	<select id="type">
+		<option value="0">Κατοικία</option>
+		<option value="1">Επαγγελματικός</option>
+		<option value="2">Γη</option>
+	</select>
+
+	<select id="subtype">
+		<option value="0">Στούντιο</option>
+		<option value="1">Μονοκατοικία</option>
+	</select>
+
+	<button id="filter"> <img src="/icons/sliders.svg"> Φίλτρα</button>
 </div>
 
 <main>
-	<div class="listingsHeader"></div>
-	<div class="listings">
-		{{#each listings as |listing|}}
-			{{> searchCard listing=listing}}
-		{{/each}}
-	</div>
+	{{#each listings as |listing|}}
+		{{> searchCard listing=listing}}
+	{{/each}}
 </main>
+
