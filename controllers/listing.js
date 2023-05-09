@@ -6,10 +6,10 @@ export async function showListing(req, res, next) {
 	let currentListing = await listing.getListingById(id)
 
 	if (!currentListing) {
-		res.status(404).redirect("/")
+		res.status(404)
+		res.redirect('/')
+		return
 	}
-
-	console.log(currentListing)
 
 	res.render("listing", {
 		style: "listing",
