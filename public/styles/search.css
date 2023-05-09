@@ -23,38 +23,12 @@ header {
     width: 70%;
     position: fixed;
     top: 0;
-}
-
-body {
-    background-color: white;
-
-    justify-content: space-around;
-}
-
-header {
     margin: 0;
     padding: 15px;
 
-    background: #FFFFFF;
-
-    z-index: 2;
+    z-index: 3;
 
     align-items: baseline;
-}
-
-.line {
-    position:fixed;
-    top: 75px;
-
-    z-index: 2;
-
-    width: 100%;
-
-    border: none;
-
-    height: 1px;
-
-    background-color: #0c0c0c;
 }
 
 .box-shadow {
@@ -74,6 +48,62 @@ header {
 
     box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
 }
+
+.line {
+    position:fixed;
+    top: -20px;
+
+    height: 90px;
+    width: 100%;
+
+    z-index: 2;
+
+    background-color: #FFFFFF;
+
+    border: 1px solid #0c0c0c;
+}
+
+.path {
+    width: 70%;
+    color: #8A8686;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+
+    z-index: 0;
+
+    position: absolute;
+    top: 170px;
+}
+
+.path p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.path a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.path img {
+    padding: 5px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
 
 .choice_section {
     width: 70%;
@@ -128,11 +158,12 @@ select:hover {
 }
 
 main {
-    width: 70%;
+    padding: 6px;
+    max-width: 70%;
 
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 
@@ -140,6 +171,8 @@ main {
     top: 250px;
 }
 
+
+/* search card css start */
 .searchCard {
     display: flex;
     flex-direction: column;
@@ -222,9 +255,45 @@ main {
 .searchCard img {
     position: relative;
 
-    max-width: 399px;
+    max-width: 310px;
     max-height: 300px;
 
     border-radius: 10px 10px 0px 0px;
 }
 
+/* search card css end */
+
+.nav_pages{
+    top: -45px;
+    position: absolute;
+
+    padding: 6px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 100%;
+}
+
+h1 {
+    color: black;
+
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
+
+    word-wrap:normal;
+    
+    filter: none;
+
+    width: 70%;
+
+    text-align: left;
+}
+
+nav {
+    margin-right: 20px;
+}
