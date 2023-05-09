@@ -262,7 +262,7 @@ main {
 .searchCard img {
     position: relative;
 
-    max-width: 399px;
+    max-width: 310px;
     max-height: 300px;
 
     border-radius: 10px 10px 0px 0px;
@@ -296,3 +296,6 @@ h1 {
     text-align: left;
 }
 
+nav {
+    margin-right: 20px;
+}
