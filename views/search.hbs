@@ -30,11 +30,36 @@
 	<button id="filter"> <img src="/icons/sliders.svg"> Φίλτρα</button>
 </div>
 
-<h1>Πωλήσεις κατοικιών σε Περιοχή</h1>
-
 <main>
-	{{#each listings as |listing|}}
-		{{> searchCard listing=listing}}
-	{{/each}}
+
+	<div class="nav_pages">
+		<h1>Πωλήσεις κατοικιών σε Περιοχή</h1>
+		
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<li class="page-item">
+					<a class="page-link" href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+						<span class="sr-only">Previous</span>
+					</a>
+				</li>
+				<li class="page-item"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item">
+				<a class="page-link" href="#" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+					<span class="sr-only">Next</span>
+				</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="cards_div d-flex justify-content-left flex-wrap">
+		{{#each listings as |listing|}}
+			{{> searchCard listing=listing}}
+		{{/each}}
+	</div>
 </main>
 

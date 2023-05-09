@@ -172,7 +172,7 @@ main {
 
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 
@@ -268,12 +268,21 @@ main {
     border-radius: 10px 10px 0px 0px;
 }
 
-h1 {
+.nav_pages{
+    top: -55px;
     position: absolute;
-    top: 200px;
 
-    padding: 5px;
+    padding: 6px;
 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+}
+
+h1 {
     color: black;
 
     font-weight: 400;
