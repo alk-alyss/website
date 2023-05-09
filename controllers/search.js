@@ -20,6 +20,6 @@ export async function search(req, res, next) {
     res.render("search", {
         topSearchOn: true,
         style: "search",
-        listings: listings
+        listings: listings.slice(0, 5)
     })
 }

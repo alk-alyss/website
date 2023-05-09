@@ -1,0 +1,22 @@
+@import "/styles/common.css";
+
+main {
+    width: 70%;
+}
+
+.listings {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 50px;
+}
+
+.searchCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.searchCard img {
+    width: 100%;
+    height: 100%;
+}

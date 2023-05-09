@@ -1,7 +1,14 @@
 {{> header}}
 
+<div class="filters">
+
+</div>
+
 <main>
-	{{#each listings as |listing|}}
-		{{> searchCard listing=listing}}
-	{{/each}}
+	<div class="listingsHeader"></div>
+	<div class="listings">
+		{{#each listings as |listing|}}
+			{{> searchCard listing=listing}}
+		{{/each}}
+	</div>
 </main>
