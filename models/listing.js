@@ -12,6 +12,7 @@ const listingSchema = new mongoose.Schema(
 		category: {type: String, required: true},
 		price: { type: Number, required: true },
 		area: { type: Number, required: true },
+		images: { type: Array},
 		extra: { type: Object }
 	},
 	{
