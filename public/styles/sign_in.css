@@ -1,12 +1,22 @@
 @import "/styles/common.css";
 
 body {
+    width: 100%;
+
     background-image:  linear-gradient(180deg, rgba(156, 156, 156, 0.5) 10%, rgba(217, 217, 217, 0.5) 45.73%, rgba(217, 217, 217, 0.4) 50%), url("/icons/home_background.jpg");
     backdrop-filter: blur(86.5px);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+header {
+    width: 70%;
 }
 
 h2 {
-    padding: 20px;
+    padding-bottom: 20px;
     color: #000000;
 }
 
@@ -15,6 +25,8 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+
+    max-width: 400px;
 }
 
 form input{
@@ -103,10 +115,8 @@ form input{
 
     margin-right: auto;
 
-    margin-bottom: 130px;
-
     font-weight: 500;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 16px;
 
     letter-spacing: 0.4px;
