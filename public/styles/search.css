@@ -1,5 +1,30 @@
 @import "/styles/common.css";
 
+html {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+}
+
+header {
+    width: 70%;
+    position: fixed;
+    top: 0;
+}
+
 body {
     background-color: white;
 
@@ -107,7 +132,7 @@ main {
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     flex-wrap: wrap;
 
