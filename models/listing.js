@@ -30,11 +30,17 @@ export async function getListings(type="", location="", category="", priceStart=
 	if (location != "") query.location = new RegExp(location, "i")
 	if (category != "") query.category = category
 
-	if (priceEnd != -1) query.price = { $lte: priceEnd }
-	if (priceStart != -1) query.price.$gte = priceStart
+	let price = {}
+	if (priceEnd != -1) price.$lte = priceEnd
+	if (priceStart != -1) price.$gte = priceStart
 
-	if (areaEnd != -1) query.area = { $lte: areaEnd }
-	if (areaStart != -1) query.area.$gte = areaStart
+	if (Object.keys(price).length != 0) query.price = price
+
+	let area = {}
+	if (areaEnd != -1) area.$lte = areaEnd
+	if (areaStart != -1) area.$gte = areaStart
+
+	if (Object.keys(area).length != 0) query.area = area
 
 	let listings = await Listing.find(query, "-__v").exec()
 
