@@ -7,15 +7,11 @@ header {
     align-items: center;
 }
 
-.logo {
-    cursor: pointer;
-    width: 100px;
-    height: 100px;
-    margin: 10px 20px;
-}
-
 .top_search {
     margin: 0px 10px;
+
+    width: 100%;
+    max-width: 800px;
     
     box-sizing: border-box;
 
@@ -32,15 +28,17 @@ header {
     border: none;
     background: none;
 
+    max-width: 100px;
+
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
 
+    word-wrap: break-word;
+
     color: #6E6E6E;
 
     padding: 10px;
-
-    width: calc(100vw - 65vw);
 }
 
 .top_search img{
@@ -64,7 +62,6 @@ header {
     height: 40px;
     margin: 10px 20px;
 
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
