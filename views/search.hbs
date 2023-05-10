@@ -27,10 +27,22 @@
 		<option value="1">Μονοκατοικία</option>
 	</select> --}}
 
-	<button id="filter"> <img src="/icons/sliders.svg"> Φίλτρα</button>
+	<button class="openbtn" onclick="openNav()" id="filter"> <img src="/icons/sliders.svg"> Φίλτρα</button>
 </div>
 
 <main>
+	<div id="mySidebar" class="sidebar">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		
+		<hr>
+		<div id="main">
+			<h2>Φίλτρα</h2>
+			{{!-- filters for listings --}}
+			<div class="filter">
+				<h3></h3>
+			</div>
+		</div>
+	</div>
 
 	<div class="nav_pages">
 		<h2>Πωλήσεις κατοικιών σε Περιοχή</h2>
@@ -62,4 +74,18 @@
 		{{/each}}
 	</div>
 </main>
+
+<script>
+	/* Set the width of the sidebar to 280px and the left margin of the page content to 10px */
+	function openNav() {
+	document.getElementById("mySidebar").style.width = "280px";
+	document.getElementById("main").style.marginLeft = "10px";
+	}
+
+	/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+	function closeNav() {
+	document.getElementById("mySidebar").style.width = "0";
+	document.getElementById("main").style.marginLeft = "0";
+	}
+</script>
 
