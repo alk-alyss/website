@@ -129,12 +129,14 @@ select {
     border-radius: 10px;
 
     max-width: 160px;
+    
+    background: #E7F7F8;
 }
 
 select:hover {
     cursor: pointer;
 
-    background-color:rgba(75, 74, 74, 0.25)
+    background-color: #66b7bd;
 }
 
 .choice_section button {
@@ -363,3 +365,19 @@ nav {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
 } 
+
+.filters_heading {
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+.filters {
+    margin: 0;
+    padding-bottom: 120px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+}
+
