@@ -25,12 +25,14 @@ import sign_in from "./routes/sign_in.js"
 import sign_up from "./routes/sign_up.js"
 import search from "./routes/search.js"
 import listing from "./routes/listing.js"
+import profile from "./routes/profile.js"
 
 app.use(home)
 app.use("/sign_in", sign_in)
 app.use("/sign_up", sign_up)
 app.use("/search", search)
 app.use("/listing", listing)
+app.use("/profile", profile)
 
 // Setup database
 import * as startup from "./controllers/startup.js"
