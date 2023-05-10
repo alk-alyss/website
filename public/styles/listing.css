@@ -286,13 +286,8 @@ a:hover {
     line-height: 64px;
 }
 
-.listing_price img {
+.listing_price .heart {
     grid-column: 2 / 3;
-
-    padding-bottom: 5px;
-
-    width: 44px;
-    height: 44px;
 
     cursor: pointer;
 }
