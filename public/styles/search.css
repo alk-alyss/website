@@ -86,6 +86,8 @@ header {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: nowrap;
+
+    min-width: 222px;
 }
 
 .path a{
@@ -142,7 +144,7 @@ select:hover {
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 
-    max-width: 160px;
+    min-width: 100px;
 }
 
 .choice_section button:hover {
