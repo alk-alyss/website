@@ -267,11 +267,7 @@ main {
 /* search card css end */
 
 .nav_pages{
-    top: 0px;
-    position: absolute;
-
     padding: 6px;
-    margin-bottom: 50px;
 
     display: flex;
     flex-direction: row;
@@ -280,6 +276,8 @@ main {
     flex-wrap: wrap;
 
     width: 100%;
+
+    z-index: 0;
 }
 
 h2 {
@@ -293,14 +291,14 @@ h2 {
     
     filter: none;
 
-    width: 70%;
-
     text-align: left;
 }
 
 nav {
+    margin: 10px;
     margin-right: 20px;
 }
 
 .cards_div {
+    z-index: 0;
 }
