@@ -1,4 +1,4 @@
-import * as listing from "../models/listing.js"
+import { getListings } from "../models/listing.js"
 
 export async function search(req, res, next) {
     let type = req.query.type
@@ -15,7 +15,7 @@ export async function search(req, res, next) {
     areaStart = areaStart > 0 ? areaStart : -1
     areaEnd = areaEnd > 0 ? areaEnd : -1
 
-    let listings = await listing.getListings(type, location, category, priceStart, priceEnd, areaStart, areaEnd)
+    let listings = await getListings(type, location, category, priceStart, priceEnd, areaStart, areaEnd)
 
     res.render("search", {
         topSearchOn: true,

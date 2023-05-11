@@ -1,9 +1,9 @@
-import * as listing from "../models/listing.js"
+import { getListingById } from "../models/listing.js"
 
 export async function showListing(req, res, next) {
 	let id = req.params.id.toString()
 
-	let currentListing = await listing.getListingById(id)
+	let currentListing = await getListingById(id)
 
 	if (!currentListing) {
 		res.status(404)
