@@ -1,5 +1,18 @@
 import bcrypt from "bcrypt"
-import { addUser } from "../models/user.js";
+import { addUser, getPassword } from "../models/user.js";
+
+export async function sign_in(req, res) {
+    let email = req.body.email;
+    let password = req.body.password;
+
+    let storedPassword = await getPassword(email)
+
+    if (!storedPassword) return
+
+    let match = await bcrypt.compare(password, storedPassword)
+
+    res.redirect("/")
+}
 
 export async function sign_up(req, res) {
     let username = req.body.username;

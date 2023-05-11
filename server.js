@@ -21,22 +21,20 @@ app.use(express.static(__dirname + '/public'))
 
 // Routes
 import home from "./routes/home.js"
-import sign_in from "./routes/sign_in.js"
-import sign_up from "./routes/sign_up.js"
+import authentication from "./routes/authentication.js"
 import search from "./routes/search.js"
 import listing from "./routes/listing.js"
 import profile from "./routes/profile.js"
 
 app.use(home)
-app.use("/sign_in", sign_in)
-app.use("/sign_up", sign_up)
+app.use(authentication)
 app.use("/search", search)
 app.use("/listing", listing)
 app.use("/profile", profile)
 
 // Setup database
-import * as startup from "./controllers/startup.js"
-await startup.loadData()
+import { loadData } from "./controllers/startup.js"
+await loadData()
 
 // Run server
 app.listen(port, () => {
