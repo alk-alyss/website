@@ -55,16 +55,15 @@ export async function getListings(type="", location="", category="", priceStart=
 export async function getListingById(id) {
 	try {
 		let objectId = new mongoose.Types.ObjectId(id)
+		let currentListing = await Listing.findById(objectId, "-__v")
+		if (currentListing) {
+			currentListing = currentListing.toObject()
+		}
+		return currentListing
 	}
 	catch {
 		return null
 	}
-
-	let currentListing = await Listing.findById(objectId, "-__v")
-	if (currentListing) {
-		currentListing = currentListing.toObject()
-	}
-	return currentListing
 }
 
 export async function addListings(listings) {
