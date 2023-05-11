@@ -3,7 +3,7 @@ import * as listing from "../models/listing.js"
 export async function search(req, res, next) {
     let type = req.query.type
     let category = req.query.category
-    let location = req.query.location
+    let location = req.query.location.toLowerCase()
 
     let priceStart = Number(req.query.price_start)
     let priceEnd = Number(req.query.price_end)
