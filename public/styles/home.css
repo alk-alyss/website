@@ -181,3 +181,18 @@ input:focus {
     background-color: #97d0d4 !important;
     color: #fff !important;
 } */
+
+@media only screen and max-width(620px){
+
+     /* Hide scrollbar for Chrome, Safari and Opera */
+     *::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    * {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    } 
+    
+}
