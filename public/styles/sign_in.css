@@ -121,3 +121,45 @@ form input{
 
     color: rgba(0, 0, 0, 0.8);
 }
+
+@media only screen and (max-width: 600px) {
+    input[type="text"], input[type="password"], input[type="email"] {
+        padding: auto;
+        width: 100%;
+    }
+    header {
+        width: 90%;
+    }
+    h2 {
+        font-size: 40px;
+        line-height: 32px;
+    }
+    .sign_in {
+        margin: auto;
+    }
+    .sign_in label {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    input[type=submit]{
+        padding: 1vh 80px;
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .sign_in_extra a {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+     /* Hide scrollbar for Chrome, Safari and Opera */
+     *::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    * {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    } 
+}
