@@ -1,21 +1,12 @@
 import { Router } from "express"
 const router = Router();
 
+import { sign_in } from "../controllers/sign_in.js";
+
 router.get('/', (req, res) => {
     res.render("sign_in", { style: "sign_in" })
 })
 
-router.post('/', (req, res) => {
-    res.render("sign_in", { style: "sign_in" })
-})
-
-router.post('/signing_in', (req, res) => {
-    let email = req.body.email;
-    let password = req.body.password;
-
-    if (username == "admin" && password == "admin") {
-        // scenario for admin user
-    }
-})
+router.post('/', sign_in)
 
 export default router
