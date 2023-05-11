@@ -1,11 +1,12 @@
 import { Router } from "express"
+import { checkAuthentication } from "../controllers/authentication.js";
 const router = Router();
 
-router.get('/', (req, res) => {
+router.get('/', checkAuthentication, (req, res) => {
     res.render("profile", { style: "profile" })
 })
 
-router.post('/', (req, res) => {
+router.post('/', checkAuthentication, (req, res) => {
     res.render("profile", { style: "profile" })
 })
 

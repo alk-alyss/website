@@ -32,3 +32,14 @@ export async function sign_up(req, res) {
 
     res.redirect("/")
 }
+
+export async function checkAuthentication(req, res, next) {
+    let authentication = true;
+
+    if (authentication) {
+        next()
+    }
+    else {
+        res.redirect('/sign_in')
+    }
+}
