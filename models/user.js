@@ -20,13 +20,9 @@ const userSchema = new mongoose.Schema(
 export const User = mongoose.model("User", userSchema, "Users");
 
 export async function addUser(username, email, password) {
-    if (await User.exists({email:email})) {
-        return "email"
-    }
+    if (await User.exists({email:email})) return "email"
 
-    if (await User.exists({username:username})) {
-        return "username"
-    }
+    if (await User.exists({username:username})) return "username"
 
     await User.create({
         username:username,
@@ -35,6 +31,14 @@ export async function addUser(username, email, password) {
     })
 
     return null
+}
+
+export async function getPassword(email) {
+    let user = User.findOne({email:email})
+
+    if (!user) return null
+
+    return user.password
 }
 
 export async function importUsers(users) {
