@@ -1,6 +1,7 @@
 import { Router } from "express"
-import { checkAuthentication } from "../controllers/authentication.js";
 const router = Router();
+
+import { checkAuthentication } from "../controllers/authentication.js";
 
 router.get('/', checkAuthentication, (req, res) => {
     res.render("profile", { style: "profile" })
