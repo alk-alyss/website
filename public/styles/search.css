@@ -412,4 +412,17 @@ select:hover {
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
     } 
+    h2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    body {
+        width: 100%;
+    }
+    header {
+        width: 100%;
+    }
+    .cards_div {
+        justify-content: center;
+    }
 }
