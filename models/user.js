@@ -19,6 +19,24 @@ const userSchema = new mongoose.Schema(
 
 export const User = mongoose.model("User", userSchema, "Users");
 
+export async function addUser(username, email, password) {
+    if (await User.exists({email:email})) {
+        return "email"
+    }
+
+    if (await User.exists({username:username})) {
+        return "username"
+    }
+
+    await User.create({
+        username:username,
+        email:email,
+        password:password
+    })
+
+    return null
+}
+
 export async function importUsers(users) {
 	await User.insertMany(users)
 }
