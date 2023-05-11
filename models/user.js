@@ -34,7 +34,7 @@ export async function addUser(username, email, password) {
 }
 
 export async function getPassword(email) {
-    let user = User.findOne({email:email})
+    let user = await User.findOne({email:email})
 
     if (!user) return null
 

@@ -7,9 +7,14 @@ export async function sign_in(req, res) {
 
     let storedPassword = await getPassword(email)
 
-    if (!storedPassword) return
+    if (!storedPassword) {
+        res.redirect("/")
+        return
+    }
 
     let match = await bcrypt.compare(password, storedPassword)
+
+    if (match) console.log("success")
 
     res.redirect("/")
 }
@@ -24,9 +29,11 @@ export async function sign_up(req, res) {
     let result = await addUser(username, email, hash)
 
     if (result == "email") {
+        res.redirect("/")
         return
     }
     if (result == "password") {
+        res.redirect("/")
         return
     }
 
@@ -34,7 +41,7 @@ export async function sign_up(req, res) {
 }
 
 export async function checkAuthentication(req, res, next) {
-    let authentication = true;
+    let authentication = false;
 
     if (authentication) {
         next()

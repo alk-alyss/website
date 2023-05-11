@@ -16,8 +16,8 @@ const hbs = create({
 app.engine( 'hbs', hbs.engine)
 app.set('view engine', 'hbs')
 
-// Configure static folders
 app.use(express.static(__dirname + '/public'))
+app.use(express.urlencoded({ extended: true }))
 
 // Routes
 import home from "./routes/home.js"
