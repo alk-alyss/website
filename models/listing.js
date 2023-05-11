@@ -66,6 +66,6 @@ export async function getListingById(id) {
 	}
 }
 
-export async function addListings(listings) {
+export async function importListings(listings) {
 	await Listing.insertMany(listings)
 }
