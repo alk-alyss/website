@@ -20,13 +20,12 @@
         <div class="listing_images">
             {{!-- might be replaced with carousel --}}
             <div class="big_image">
-                <img id="1" src="/icons/sample_apartment.jpg">
+                <img id="1" src="{{listing.images.[0]}}">
             </div>
             <div class="small_images">
-                <img id="2" src="/icons/sample_apartment.jpg">
-                <img id="3" src="/icons/sample_apartment.jpg">
-                <img id="4" src="/icons/sample_apartment.jpg">
-                <img id="5" src="/icons/sample_apartment.jpg">
+                {{#each listing.images}}
+                    <img id="{{@index}}" src="{{this}}">
+                {{/each}}
             </div>
 
         </div>
