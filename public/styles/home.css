@@ -159,6 +159,10 @@ input {
     /* border: 1px solid #CED4DA; */
     border-radius: 8px;
 }
+
+input:focus {
+    outline:  none;
+}
 /*
 .dropdown {
     background-color: #FFFFFF !important;
