@@ -102,10 +102,6 @@ header {
     padding: 5px;
 }
 
-a:hover {
-    cursor: pointer;
-}
-
 
 .choice_section {
     width: 70%;
