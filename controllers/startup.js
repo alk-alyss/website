@@ -2,7 +2,7 @@ import bcrypt from "bcrypt"
 import fs from "fs/promises"
 
 import { importListings } from "../models/listing.js"
-import { importUsers, getUsers } from "../models/user.js"
+import { importUsers } from "../models/user.js"
 
 export async function loadData() {
 	let listingsFile = await fs.readFile("./data/listings.json")
