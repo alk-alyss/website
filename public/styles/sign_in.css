@@ -176,8 +176,9 @@ form input{
 
 .alert {
     position: fixed;
-    top: 10%;
-    transform: translate(0, -50%);
+    top: 0;
+
+    margin: 20px;
 
     display: flex;
     flex-direction: column;
@@ -186,13 +187,13 @@ form input{
 
     width: fit-content;
 
-    background-color: white;
+    border: 1px solid red;
+
+    background-color: rgba(214, 214, 214, 0.25);
     border-radius: 10px;
 
     padding: 5px 10px;
     z-index: -1;
-    
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
 
     opacity:0;
 
