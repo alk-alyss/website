@@ -16,6 +16,18 @@ const hbs = create({
 app.engine( 'hbs', hbs.engine)
 app.set('view engine', 'hbs')
 
+// Setup session controll
+const sessionConf = {
+    secret: "peos",
+    cookie: { maxAge: 5 * 60 * 1000 },
+    resave: false,
+    saveUninitialized: false
+}
+
+import session from "express-session"
+
+app.use(session(sessionConf))
+
 app.use(express.static(__dirname + '/public'))
 app.use(express.urlencoded({ extended: true }))
 

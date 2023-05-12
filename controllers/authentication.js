@@ -1,22 +1,32 @@
 import bcrypt from "bcrypt"
-import { addUser, getPassword } from "../models/user.js";
+import { addUser, getUser } from "../models/user.js";
 
 export async function sign_in(req, res) {
     let email = req.body.email;
     let password = req.body.password;
 
-    let storedPassword = await getPassword(email)
+    let user = await getUser(email)
 
-    if (!storedPassword) {
+    if (!user) {
         res.redirect("/")
         return
     }
 
-    let match = await bcrypt.compare(password, storedPassword)
+    let match = await bcrypt.compare(password, user.password)
 
-    if (match) console.log("success")
+    if (!match) {
+        res.redirect("/")
+        return
+    }
 
-    res.redirect("/")
+    req.session.regenerate((err) => {
+        req.session.username = user.username
+
+        req.session.save((err) => {
+            res.redirect("/profile")
+        })
+    })
+
 }
 
 export async function sign_up(req, res) {
@@ -37,16 +47,26 @@ export async function sign_up(req, res) {
         return
     }
 
-    res.redirect("/")
+    req.session.username = username
+
+    res.redirect("/profile")
+}
+
+export async function sign_out(req, res) {
+    req.session.username = null
+
+    req.session.save((err) => {
+        req.session.regenerate((err) => res.redirect("/"))
+    })
 }
 
 export async function checkAuthentication(req, res, next) {
-    let authentication = false;
+    let authentication = req.session.username;
 
     if (authentication) {
         next()
     }
     else {
-        res.redirect('/sign_in')
+        res.redirect("/sign_in")
     }
 }
