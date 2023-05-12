@@ -201,5 +201,28 @@
         }
     })
 
+    //event listener on keydown next and prev
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") {
+            currentSlide++
+            if (currentSlide >= items.length) {
+                currentSlide = 0
+                console.log(currentSlide)
+            }
+            console.log(currentSlide)
+            nextSlide(currentSlide)
+        }
+    })
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+            currentSlide--
+            if (currentSlide <= 0) {
+                currentSlide = items.length - 1
+            }
+            prevSlide(currentSlide)
+        }
+    })
+
 
 </script>
