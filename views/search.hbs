@@ -151,9 +151,13 @@
 	</div>
 
 	<div class="cards_div d-flex justify-content-left flex-wrap">
-		{{#each listings as |listing|}}
-			{{> searchCard listing=listing}}
-		{{/each}}
+		{{#if listings}}
+			{{#each listings as |listing|}}
+				{{> searchCard listing=listing}}
+			{{/each}}
+		{{else}}
+			<p>Κανένα αποτέλεσμα</p>
+		{{/if}}
 	</div>
 </main>
 
