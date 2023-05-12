@@ -187,9 +187,7 @@ form input{
 
     width: fit-content;
 
-    border: 1px solid red;
-
-    background-color: rgba(214, 214, 214, 0.25);
+    background-color: white;
     border-radius: 10px;
 
     padding: 5px 10px;
