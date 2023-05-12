@@ -508,6 +508,7 @@ td:nth-child(odd) {
     pointer-events: none;
 
     opacity: 0;
+    z-index: -1;
 }
 
 .myCarousel a {
@@ -551,6 +552,9 @@ td:nth-child(odd) {
 .carousel_inner {
     display: grid;
     grid-area: 1 / 1;
+
+    justify-items: baseline;
+    align-items: center;
     
 }
 
@@ -560,8 +564,14 @@ td:nth-child(odd) {
 }
 
 .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     opacity: 0;
-    transition: opacity 0.8s ease-in-out;
+    transition: opacity 1s ease-in-out;
+
 }
 
 .active_image {
@@ -596,32 +606,14 @@ td:nth-child(odd) {
     
         border-radius: 8px;
     }
-
-    #carousel_slide {
-        justify-content: center;
-        align-items: center;
-    }
-
-    #carousel_slide a {
-        height: 55%;
-    }
     #carousel_slide img {
+        top: 50vh;
         width: 100%;
         height: 51vw;
     }
 }
 
 @media only screen and (max-width: 680px) {
-    
-
-    #carousel_slide {
-        justify-content: center;
-        align-items: center;
-    }
-
-    #carousel_slide a {
-        height: 30%;
-    }
     .big_image img {
         width: 100%;
         height: 100%;
