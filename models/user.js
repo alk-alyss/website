@@ -33,12 +33,10 @@ export async function addUser(username, email, password) {
     return null
 }
 
-export async function getPassword(email) {
+export async function getUser(email) {
     let user = await User.findOne({email:email})
 
-    if (!user) return null
-
-    return user.password
+    return user
 }
 
 export async function importUsers(users) {
