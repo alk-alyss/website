@@ -160,6 +160,10 @@ a:hover {
     height: 100%;
 }
 
+.listing_images img:hover {
+    cursor: pointer;
+}
+
 .listing_images {
     width: 100%;
     
@@ -501,7 +505,7 @@ td:nth-child(odd) {
     justify-content: right;
     align-items: flex-end;
 
-    pointer-events: all;
+    pointer-events: none;
 
     opacity: 0;
 }
@@ -570,6 +574,8 @@ td:nth-child(odd) {
 .myCarousel.active {
     opacity: 1;
     z-index: 3;
+
+    pointer-events: all;
 }
 
 

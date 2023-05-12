@@ -19,8 +19,8 @@
         </div>
     </div>
 
-    <div class="listing_container" onclick="openCarousel()">
-        <div class="listing_images">
+    <div class="listing_container">
+        <div class="listing_images"  onclick="openCarousel()">
             {{!-- might be replaced with carousel --}}
             <div class="big_image">
                 <img id="1" src="{{listing.images.[0]}}">
@@ -154,6 +154,7 @@
     function openCarousel() {
         //set carousel opacity to 1
         carousel.classList.add("active")
+        console.log("opened")
     }
     
     function closeCarousel() {
