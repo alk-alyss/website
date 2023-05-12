@@ -18,4 +18,59 @@
         </div>
         <input id="submit" type="submit" value="Εγγραφή">
     </form>
+
+    <div class="alert">
+        <div id="alert_head">
+            <div class="alert_icon">
+                <img src="/icons/warning.png" alt="alert">
+                <span> Ειδοποίηση </span>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+        <span class="message"></span>
+    </div>
 </main>
+
+<script>
+    let myAlert = document.querySelector('.alert')
+    let message = document.querySelector('.message')
+    let submit = document.querySelector('#submit')
+
+    function showAlert() {
+        myAlert.style.opacity = 1;
+        myAlert.style.zIndex = 1;
+    }
+
+    function hideAlert() {
+        myAlert.style.opacity = 0;
+        myAlert.style.zIndex = -1;
+    }
+    // event listener for closing the alert
+    document.querySelector('.close').addEventListener('click', function () {
+        hideAlert();
+    });
+
+    // event listener for submitting the form
+    submit.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        checkForm();
+    });
+
+    function checkForm() {
+        let email = document.querySelector('#email').value;
+        let password = document.querySelector('#password').value;
+
+
+        //if email doesn't exist in database
+        // or if password is wrong
+
+        message.innerHTML = 'Λάθος email ή κωδικός';
+        showAlert();
+
+        //if email exists in database and password is correct
+        //redirect to home page
+
+    }
+
+</script>
