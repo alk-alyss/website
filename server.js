@@ -11,6 +11,24 @@ const hbs = create({
     defaultLayout: "main",
     extname: '.hbs',
     layoutsDir: __dirname + '/views/layouts',
+    helpers: {
+        slice(context, options) {
+            let ret = ""
+            let start = parseInt(options.hash.start, 10) || 0
+            let end = parseInt(options.hash.end, 10) || 5
+            let i, j
+
+            i = (start < context.length) ? start : 0;
+
+            j = (end < context.length) ? end : context.length;
+
+            for (i, j; i < j; i++) {
+                ret += options.fn(context[i]);
+            }
+
+            return ret;
+        }
+    }
 })
 
 app.engine( 'hbs', hbs.engine)
@@ -18,7 +36,7 @@ app.set('view engine', 'hbs')
 
 // Setup session controll
 const sessionConf = {
-    secret: "peos",
+    secret: "x:f#+?T_826y$58D!NTdPlQ,<N",
     cookie: { maxAge: 5 * 60 * 1000 },
     resave: false,
     saveUninitialized: false

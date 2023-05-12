@@ -23,12 +23,12 @@
         <div class="listing_images"  onclick="openCarousel()">
             {{!-- might be replaced with carousel --}}
             <div class="big_image">
-                <img id="1" src="{{listing.images.[0]}}">
+                <img src="{{listing.images.[0]}}">
             </div>
             <div class="small_images">
-                {{#each listing.images}}
-                    <img id="{{@index}}" src="{{this}}">
-                {{/each}}
+                {{#slice listing.images start=1 end=4}}
+                    <img src="{{this}}">
+                {{/slice}}
             </div>
 
         </div>
