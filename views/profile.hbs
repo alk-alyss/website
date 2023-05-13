@@ -1,6 +1,7 @@
 {{> header}}
 
 <main>
+    <h3>Προφίλ Χρήστη</h3>
 
     <div class="my-info">
         <img src="/icons/provider.svg">
@@ -10,11 +11,11 @@
                 <div class="personal-info">
                     <div class="name">
                         <p>Όνομα:</p>
-                        <p> Listopia User Name</p>
+                        <span> Listopia User Name</span>
                     </div>
                     <div class="surname">
                         <p>Επώνυμο:</p>
-                        <p> Listopia User Surname</p>
+                        <span> Listopia User Surname</span>
                     </div>
                 </div>
             </div>
@@ -23,11 +24,11 @@
                 <div class="personal-info">
                     <div class="phone">
                         <p>Τηλέφωνο:</p>
-                        <p> Listopia User Phone</p>
+                        <span> Listopia User Phone</span>
                     </div>
                     <div class="email">
                         <p>Email:</p>
-                        <p> Listopia User Email</p>
+                        <span> Listopia User Email</span>
                     </div>
                 </div>
             </div>
@@ -36,6 +37,38 @@
     </div>
 
     <div class="my-favourites">
+        <div class="nav-fave">
+            <h4>Αγαπημένα</h4>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="cards_div d-flex justify-content-left flex-wrap">
+            {{#if listings}}
+                {{#each listings as |listing|}}
+                    {{> searchCard listing=listing}}
+                {{/each}}
+            {{else}}
+                <p>Δεν έχεις αγαπημένα</p>
+            {{/if}}
+        </div>
 
     </div>
 
