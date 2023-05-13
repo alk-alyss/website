@@ -1,0 +1,101 @@
+@import "/styles/common.css";
+
+html {
+    
+    width: 100%;
+
+    background-image:  linear-gradient(180deg, rgba(156, 156, 156, 0.5) 10%, rgba(217, 217, 217, 0.5) 45.73%, rgba(217, 217, 217, 0.4) 50%), url("/icons/home_background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body {
+    width: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(86.5px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    width: 70%;
+}
+
+.my-info {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 20px;
+
+    background-color: white;
+    border-radius: 10px;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.myinfo>img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.info-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.details-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.details-info>div {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}   
+
+.details-info>div>div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 10px;
+}
+
+.name, .surname, .phone, .email  {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
