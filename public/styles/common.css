@@ -55,3 +55,90 @@ a:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+.icon_pressed {
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+    width: fit-content;
+
+    transform: scale(1.1);
+
+    background-color: #FFFFFF;
+
+    position: fixed;
+    top: 8%;
+    right: 15%;
+
+    border-radius: 10px;
+
+    padding: 8px;
+
+    z-index: -1;
+    opacity: 0;
+}
+.icon_pressed a{
+    color: black;
+    text-decoration: none;
+
+    margin: 5px;
+}
+
+.icon_pressed .not_signed_in,
+.icon_pressed .signed_in {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+}
+
+.icon_pressed .not_signed_in,
+.icon_pressed .signed_in {
+    display: none;
+}
+
+.icon_pressed.active {
+    z-index: 10;
+    opacity: 1;
+}   
+
+.icon_pressed .active {
+    display: block;
+}
+
+.icon_pressed a:hover {
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+}
+
+.icon_pressed hr {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    margin: 0;
+    padding: 0;
+}
+
+.icon_pressed img{
+    width: 15px;
+    height: 15px;
+
+    margin-left: 5px;
+
+}
+
+
+@media only screen and (max-height: 700px) {
+    .icon_pressed {
+        top:12%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .icon_pressed {
+        right:8%;
+    }
+}
+
+
+
+
+
