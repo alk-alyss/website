@@ -112,14 +112,15 @@ a:hover {
     padding: 0;
 }
 
-.icon_pressed img{
+.icon_pressed img {
     width: 15px;
     height: 15px;
 
-    margin-left: 5px;
-
 }
 
+.icon_pressed a:hover img{
+    filter: none;
+}
 
 @media only screen and (max-height: 700px) {
     .icon_pressed {
