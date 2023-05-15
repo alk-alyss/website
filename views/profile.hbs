@@ -1,113 +1,72 @@
 {{> header}}
 
+<hr class="box-shadow">
+
 <main>
-    <h3>Προφίλ Χρήστη</h3>
 
-    <div class="my-info">
-        <img src="/icons/provider.svg">
-        <div class="info-container">
-            <div class="details-info">
-                <label for="personal-info"> Προσωπικά Στοιχεία</label>
-                <div class="personal-info">
-                    <div class="name">
-                        <p>Όνομα:</p>
-                        <span> Listopia User Name</span>
-                    </div>
-                    <div class="surname">
-                        <p>Επώνυμο:</p>
-                        <span> Listopia User Surname</span>
-                    </div>
-                </div>
+<h3>Το Προφίλ σου</h3>
+
+    <div class="profile">
+        <div>
+            <h4>Προσωπικά Στοιχεία</h4>
+            <div>
+                <label for="name">Όνομα:</label>
+                <input type="text" id="name" name="name" placeholder="Όνομα">
             </div>
-            <div class="details-info">
-                <label for="personal-info">Στοιχεία Επικοινωνίας</label>
-                <div class="personal-info">
-                    <div class="phone">
-                        <p>Τηλέφωνο:</p>
-                        <span> Listopia User Phone</span>
-                    </div>
-                    <div class="email">
-                        <p>Email:</p>
-                        <span> Listopia User Email</span>
-                    </div>
-                </div>
+            <div>
+                <label for="surname">Επώνυμο:</label>
+                <input type="text" id="surname" name="surname" placeholder="Επώνυμο">
             </div>
         </div>
-
+        <div>
+            <h4>Στοιχεία Επικοινωνίας</h4>
+            <div>
+                <label for="Email">Email:</label>
+                <input type="email" id="Email" name="Email" placeholder="email">
+            </div>
+            <div>
+                <label for="phone">Τηλέφωνο:</label>
+                <input type="text" id="phone" name="phone" placeholder="Τηλέφωνο">
+            </div>
+        </div>
     </div>
 
-    <div class="my-favourites">
+    <div class="favorites">
         <div class="nav-fave">
-            <h4>Αγαπημένα</h4>
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
+                <h4>Αγαπημένες Αγγελίες</h4>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
                         </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
 
-        <div class="cards_div d-flex justify-content-left flex-wrap">
-            {{#if listings}}
-                {{#each listings as |listing|}}
-                    {{> searchCard listing=listing}}
-                {{/each}}
-            {{else}}
-                <p>Δεν έχεις αγαπημένα</p>
-            {{/if}}
-        </div>
-
+            <div class="cards_div d-flex justify-content-left flex-wrap">
+                {{#if listings}}
+                    {{#each listings as |listing|}}
+                        {{> searchCard listing=listing}}
+                    {{/each}}
+                {{else}}
+                    <p>Δεν έχεις αγαπημένα</p>
+                {{/if}}
+            </div>
     </div>
-
 </main>
 
-{{!-- <div class="my-info-left-top">
-            <div class="my-info-left-top-left">
-                <div class="my-info-left-top-left-image">
-                    <img src="/icons/user.svg">
-                </div>
-                <div class="my-info-left-top-left-text">
-                    <p>Όνομα Χρήστη</p>
-                    <p>Επώνυμο Χρήστη</p>
-                </div>
-            </div>
-            <div class="my-info-left-top-right">
-                <div class="my-info-left-top-right-image">
-                    <img src="/icons/phone.svg">
-                </div>
-                <div class="my-info-left-top-right-text">
-                    <p>Τηλέφωνο Χρήστη</p>
-                </div>
-            </div>
-        </div>
-        <div class="my-info-left-bottom">
-            <div class="my-info-left-bottom-left">
-                <div class="my-info-left-bottom-left-image">
-                    <img src="/icons/mail.svg">
-                </div>
-                <div class="my-info-left-bottom-left-text">
-                    <p>Ηλεκτρονική Διεύθυνση</p>
-                </div>
-            </div>
-            <div class="my-info-left-bottom-right">
-                <div class="my-info-left-bottom-right-image">
-                    <img src="/icons/location.svg">
-                </div>
-                <div class="my-info-left-bottom-right-text">
-                    <p>Περιοχή</p>
-                </div>
-            </div>
-        </div> --}}
+<script>
+    document.querySelector("header img").setAttribute("src", "/icons/logo_dark.svg");
+</script>
