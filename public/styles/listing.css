@@ -632,6 +632,9 @@ td:nth-child(odd) {
     .path{
         display: none;
     }
+    .path_container {
+        width: 90%;
+    }
     .listing{
         width: 100%;
     }

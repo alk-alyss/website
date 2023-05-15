@@ -424,6 +424,10 @@ select:hover {
     .searchCard:hover {
         box-shadow: none;
     }
+
+    .choice_section{
+        width: 90%;
+    }
      /* Hide scrollbar for Chrome, Safari and Opera */
     *::-webkit-scrollbar {
         display: none;
@@ -439,7 +443,7 @@ select:hover {
         line-height: 30px;
     }
     body {
-        width: 100%;
+        width: 90%;
     }
     header {
         width: 100%;
