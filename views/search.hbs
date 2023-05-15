@@ -161,6 +161,8 @@
 	</div>
 </main>
 
+<img src="icons/up-arrow.png" alt="arrow" class="arrow">
+
 <script>
 	/* Set the width of the sidebar to 280px and the left margin of the page content to 10px */
 	function openNav() {
@@ -182,6 +184,15 @@
 			openNav();
 		}
 	}
+
+	let topButton = document.querySelector(".arrow");
+	topButton.addEventListener("click", function(){
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: "smooth"
+		});
+	});
 
 
 </script>
