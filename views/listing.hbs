@@ -186,7 +186,7 @@
 
     prev.addEventListener("click", () => {
         currentSlide--
-        if (currentSlide <= 0) {
+        if (currentSlide < 0) {
             currentSlide = items.length - 1
         }
         prevSlide(currentSlide)
