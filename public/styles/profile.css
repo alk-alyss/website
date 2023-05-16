@@ -166,6 +166,7 @@ header {
 
 main {
     width: 100%;
+    height: auto;
 
     position:relative;
     top: 100px;
