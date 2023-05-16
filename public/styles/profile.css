@@ -184,8 +184,8 @@ h3 {
 .profile {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: right;
+    align-items: flex-end;
     flex-wrap: wrap;
 
     padding: 10px 20px;
@@ -206,7 +206,7 @@ h4 {
     align-items: left;
     flex-wrap: wrap;
 
-    padding: 10px 20px;
+    padding: 5px 20px;
 }
 
 .profile>div>div {
@@ -216,7 +216,7 @@ h4 {
     align-items: center;
     flex-wrap: wrap;
 
-    padding: 10px 20px;
+    padding: 5px 20px;
 }
 
 .profile label {
@@ -229,7 +229,7 @@ h4 {
     padding: 5px;
 }
 
-.profile input {
+.profile input[type=text], input[type=email]{
     min-width: fit-content;
     height: 40px;
 
@@ -241,6 +241,24 @@ h4 {
 
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+}
+
+.save {
+    width: fit-content;
+
+    margin: 10px 15px;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+
+    background-color: #62b6bb;
+}
+
+.save:hover {
+    cursor: pointer;
+
+    background-color: #599EA2;
 }
 
 p {
