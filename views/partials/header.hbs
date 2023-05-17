@@ -1,17 +1,17 @@
 <header>
     {{#unless topSearchOn}}
-    <a href="/"><img src="/icons/logo_light.svg"></a>
+    <a href="/"><img src="/icons/logo_light.svg" draggable="false"></a>
     {{/unless}}
     {{#if topSearchOn}}
-    <a href="/"><img src="/icons/logo_dark.svg"></a>
+    <a href="/"><img src="/icons/logo_dark.svg" draggable="false"></a>
     <div class="top_search">
         <input type="text" placeholder="Περιοχή">
-        <img src="/icons/search_icon.svg">
+        <img src="/icons/search_icon.svg" draggable="false">
     </div>
     {{/if}}
     <div class="top_right">
         {{!-- <button class="button_register"> Καταχώρηση Αγγελίας </button> --}}
-        <a ><img src="/icons/user_icon.svg" class="button_login"></a>
+        <a ><img src="/icons/user_icon.svg" draggable="false" class="button_login"></a>
     </div>
 </header>
 

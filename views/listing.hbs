@@ -7,14 +7,14 @@
 
 {{!-- <main> --}}
     <div class="path_container">
-        <a href="/">
-        <img src="/icons/back_arrow.svg">
+        <a class="go_back">
+        <img src="/icons/back_arrow.svg" draggable="false">
         <p>Λίστα Αγγελιών</p>
         </a>
 
         {{!-- path taken --}}
         <div class="path">
-            <p> <a>Αρχική <img src="/icons/chevron-right.svg"> </a> <a>Λίστα Αγγελιών <img src="/icons/path.svg"> </a></p>
+            <p> <a>Αρχική <img src="/icons/chevron-right.svg" draggable="false"> </a> <a>Λίστα Αγγελιών <img src="/icons/path.svg" draggable="false"> </a></p>
 
         </div>
     </div>
@@ -22,12 +22,12 @@
     <div class="listing_container">
         <div class="listing_images"  onclick="openCarousel()">
             {{!-- might be replaced with carousel --}}
-            <div class="big_image">
+            <div class="big_image" draggable="false">
                 <img src="{{listing.images.[0]}}">
             </div>
             <div class="small_images">
                 {{#slice listing.images start=1 end=4}}
-                    <img src="{{this}}">
+                    <img src="{{this}}" draggable="false">
                 {{/slice}}
             </div>
 
@@ -98,7 +98,7 @@
     <div class="listing_owner">
         <div class="provider_logo">
                 <label class="provider" for="provider_logo">Πληροφορίες Αγγελιοδότη</label>
-                <img src="/icons/provider.svg">
+                <img src="/icons/provider.svg" draggable="false">
             </div>
             
             
@@ -115,7 +115,7 @@
             <div class="carousel_inner">
                 {{#each listing.images}}
                 <div class="item" active_image"">
-                    <img id="{{@index}}" src="{{this}}">
+                    <img id="{{@index}}" src="{{this}}" draggable="false">
                 </div>
                 {{/each}}
             </div>
@@ -219,11 +219,19 @@
     document.addEventListener("keydown", (e) => {
         if (e.key === "ArrowLeft") {
             currentSlide--
-            if (currentSlide <= 0) {
+            if (currentSlide < 0) {
                 currentSlide = items.length - 1
             }
             prevSlide(currentSlide)
         }
+    })
+
+    //event listener on go back arrow and go to previous page
+    let goBack = document.querySelector(".go_back")
+    goBack.addEventListener("click", () => {
+        //if there is no previous page go to home page
+        window.history.back()
+        
     })
 
 
