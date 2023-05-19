@@ -1,21 +1,21 @@
 import bcrypt from "bcrypt"
-import { addUser, getUser } from "../models/user.js";
+import { addUser, getUserByEmail } from "../models/user.js";
 
 export async function sign_in(req, res) {
     let email = req.body.email
     let password = req.body.password
 
-    let user = await getUser(email)
+    let user = await getUserByEmail(email)
 
     if (!user) {
-        res.redirect("/")
+        res.redirect("/sign_in#wrong")
         return
     }
 
     let match = await bcrypt.compare(password, user.password)
 
     if (!match) {
-        res.redirect("/")
+        res.redirect("/sign_in#wrong")
         return
     }
 
@@ -39,11 +39,11 @@ export async function sign_up(req, res) {
     let result = await addUser(username, email, hash)
 
     if (result == "email") {
-        res.redirect("/")
+        res.redirect("/sign_up#email")
         return
     }
-    if (result == "password") {
-        res.redirect("/")
+    if (result == "username") {
+        res.redirect("/sign_up#username")
         return
     }
 
