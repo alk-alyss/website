@@ -26,8 +26,11 @@
 
 <main>
 	<div id="mySidebar" class="sidebar">
-		<h3 class="filters_heading">Φίλτρα</h3>
-		
+		<div class="filters_heading">
+			<h3>Φίλτρα</h3>
+			<a style="text-decoration: none; color:rgb(122, 122, 122)" class="clear_filters">Καθαρισμός</a>
+		</div>
+
 		<hr>
 		<div class="filters" id="main">
 			{{!-- filters for listings --}}
@@ -194,6 +197,25 @@
 		});
 	});
 
+	function clearFilters(){
+		let checkboxes = document.querySelectorAll("#mySidebar input[type=checkbox]");
+		checkboxes.forEach(checkbox => {
+			checkbox.checked = false;
+		});
+		let heating = document.querySelector("#heating");
+		heating.value = "autonomous";
+
+		let minPrice = document.querySelector("#price_from");
+		minPrice.value = "";
+		let maxPrice = document.querySelector("#price_to");
+		maxPrice.value = "";
+
+	}
+
+	let clearfilter = document.querySelector(".clear_filters");
+	clearfilter.addEventListener("click", function(){
+		clearFilters();
+	});
 
 </script>
 

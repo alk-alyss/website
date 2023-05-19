@@ -371,7 +371,21 @@ nav {
 } 
 
 .filters_heading {
-    margin-left: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items:self-start;
+    margin-bottom: 0;
+
+    gap: 0;
+}
+
+#mySidebar a {
+    grid-column: 2/3;
+    padding-right: 10px;
+    justify-self: right;
+    align-self:self-end;
 }
 
 .filters input[type=text] {
