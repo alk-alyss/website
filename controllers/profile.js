@@ -1,14 +1,10 @@
-import { getListings } from "../models/listing.js"
 import { getUserByUsername, updateUser } from "../models/user.js"
 
 export async function renderProfile(req, res) {
-    let listings = await getListings()
-    listings = listings.slice(0, 10)
-
     let username = req.session.username
     let user = await getUserByUsername(username)
 
-    res.render("profile", { style: "profile", listings: listings, user:user})
+    res.render("profile", { style: "profile", user:user})
 }
 
 export async function updateProfile(req, res) {

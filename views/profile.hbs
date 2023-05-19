@@ -11,12 +11,12 @@
         <div>
             <h4>Προσωπικά Στοιχεία</h4>
             <div>
-                <label for="name">Όνομα:</label>
-                <input type="text" id="name" name="name" placeholder="{{#if user.name}}{{user.name}}{{else}}Όνομα{{/if}}">
+                <label for="first_name">Όνομα:</label>
+                <input type="text" id="first_name" name="first_name" placeholder="{{#if user.first_name}}{{user.first_name}}{{else}}Όνομα{{/if}}">
             </div>
             <div>
-                <label for="surname">Επώνυμο:</label>
-                <input type="text" id="surname" name="surname" placeholder="{{#if user.surname}}{{user.surname}}{{else}}Επώνυμο{{/if}}">
+                <label for="last_name">Επώνυμο:</label>
+                <input type="text" id="last_name" name="last_name" placeholder="{{#if user.last_name}}{{user.last_name}}{{else}}Επώνυμο{{/if}}">
             </div>
         </div>
         <div>
@@ -36,7 +36,7 @@
 
     <div class="favorites">
         <div class="nav-fave">
-                <h4>Αγαπημένες Αγγελίες</h4>
+        <h4>Αγαπημένες Αγγελίες</h4>
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
                         <li class="page-item">
@@ -58,15 +58,15 @@
                 </nav>
             </div>
 
-            <div class="cards_div d-flex justify-content-left flex-wrap">
-                {{#if listings}}
-                    {{#each listings as |listing|}}
-                        {{> searchCard listing=listing}}
-                    {{/each}}
-                {{else}}
-                    <p>Δεν έχεις αγαπημένα</p>
-                {{/if}}
-            </div>
+        <div class="cards_div d-flex justify-content-left flex-wrap">
+            {{#if user.favoriteListings}}
+                {{#each user.favoriteListings as |listing|}}
+                    {{> searchCard listing=listing}}
+                {{/each}}
+            {{else}}
+                <p>Δεν έχεις αγαπημένα</p>
+            {{/if}}
+        </div>
     </div>
     </main>
 

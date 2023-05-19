@@ -10,9 +10,10 @@ const userSchema = new mongoose.Schema(
 		username: { type: String, required: true },
 		email: { type: String, required: true },
 		password: {type: String, required: true},
-        name: {type: String},
-        surname: {type: String},
-        phone: {type: String}
+        first_name: {type: String},
+        last_name: {type: String},
+        phone: {type: Number},
+        favoriteListings: {type: Array}
 	},
 	{
 		toObject: {virtuals: true},
@@ -48,15 +49,27 @@ export async function getUserByUsername(username) {
     return user.toObject()
 }
 
-export async function updateUser(username, name="", surname="", email="", phone="") {
-    let update = {}
+export async function updateUser(username, first_name="", last_name="", email="", phone="") {
+    try {
+        let update = {}
 
-    if (name != "") update.name = name
-    if (surname != "") update.surname = surname
-    if (email != "") update.email = email
-    if (phone != "") update.phone = phone
+        if (first_name != "") update.first_name = first_name
+        if (last_name != "") update.first_name = last_name
+        if (email != "") update.email = email
+        if (phone != "") update.phone = Number.parseInt(phone)
 
-    let result = await User.updateOne({username:username}, update)
+        let result = await User.updateOne({username:username}, update)
+    } catch {
+
+    }
+}
+
+export async function addFavoriteListing(username, listing) {
+    User.updateOne({username:username}, {$push: {favoriteListings: listing}})
+}
+
+export async function removeFavoriteListing(username, listing) {
+    User.updateOne({username:username}, {$pull: {favoriteListings: listing}})
 }
 
 export async function importUsers(users) {
