@@ -309,7 +309,7 @@ a:hover {
 .listing_price p {
     grid-column: 1 / 2;
 
-    margin-right: 10px;
+    margin-right: 20px;
 
     font-style: normal;
     font-weight: 700;
@@ -597,6 +597,9 @@ td:nth-child(odd) {
         grid-template-rows: repeat(1, 1fr);
         
     }
+    .listing_phone{
+        display: none;
+    }
 
     .big_image img{
         padding: 5px;
@@ -636,10 +639,11 @@ td:nth-child(odd) {
         width: 90%;
     }
     .listing{
+        margin-top: 20px;
         width: 100%;
     }
     .listing_title h2 {
-        font-size: 6vw;
+        font-size: 7vw;
         line-height: 32px;
     }
     .listing_title p {
@@ -665,19 +669,20 @@ td:nth-child(odd) {
         display: none;
     }
     .listing_location p{
-        font-size: 24px;
+        font-size: 22px;
         line-height: 32px;
     }
     .listing_price p{
-        font-size: 36px;
+        font-size: 34px;
         line-height: 44px;
     }
     .listing_description p{
         font-size: 22px;
         line-height: 32px;
+        margin: auto 25px 20px 0;
     }
     .extra_characteristics{
-        font-size: 20px;
+        font-size: 22px;
         line-height: 32px;
     }
     .listing_extra_characteristics {
@@ -686,7 +691,7 @@ td:nth-child(odd) {
         grid-template-rows: auto;
     }
     .listing_extra_characteristics p{
-        font-size: 16px;
+        font-size: 18px;
         line-height: 20px;
     }
     .char_div{
@@ -694,11 +699,12 @@ td:nth-child(odd) {
         margin: 0;
     }
     .characteristics{
+        margin-top: 20px;
         font-size: 22px;
         line-height: 32px;
     }
     .listing_characteristics td{
-        font-size: 16px;
+        font-size: 18px;
         line-height: 32px;
     }
     .provider_logo{
