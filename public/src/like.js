@@ -1,17 +1,18 @@
+let hearts = document.querySelectorAll('.like');
 
+hearts.forEach(item => { 
+    let id = item.id
+    item.addEventListener('click', async (event) => {
+        event.preventDefault()
 
-let items = document.querySelectorAll('.like');
+        let result = await fetch(`/listing/${id}/heart`, {
+            method: "POST",
+            mode: "same-origin",
+            referrerPolicy: "same-origin"
+        })
 
-items.forEach(item => { 
-    item.addEventListener('click', function() {
-
-        // check if signed in
-        // if not signed in, redirect to sign in page
-        // else, add to users liked list
-        // if already liked, remove from liked list
-        
-        
-        // while window loading, if item is in users liked list, change checkbox to checked
-        // if item is not liked, change color to checkbox unchecked
+        if (!result.redirected) {
+            item.checked = !item.checked
+        }
     });
 });

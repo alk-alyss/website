@@ -30,6 +30,5 @@ export async function toggleListing(req, res) {
 		addFavoriteListing(username, id)
 	}
 
-	let referrer = req.get("Referer")
-	console.log(referrer)
+	res.send()
 }
