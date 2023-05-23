@@ -34,7 +34,7 @@ const hbs = create({
 app.engine( 'hbs', hbs.engine)
 app.set('view engine', 'hbs')
 
-// Setup session controll
+// Setup session control
 const sessionConf = {
     secret: "x:f#+?T_826y$58D!NTdPlQ,<N",
     cookie: { maxAge: 90 * 60 * 1000 },

@@ -40,7 +40,7 @@ export async function addUser(username, email, password) {
 export async function getUserByEmail(email) {
     let user = await User.findOne({email:email})
 
-    return user.toObject()
+    return user
 }
 
 export async function getUserByUsername(username) {
