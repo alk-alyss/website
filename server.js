@@ -37,7 +37,7 @@ app.set('view engine', 'hbs')
 // Setup session controll
 const sessionConf = {
     secret: "x:f#+?T_826y$58D!NTdPlQ,<N",
-    cookie: { maxAge: 5 * 60 * 1000 },
+    cookie: { maxAge: 90 * 60 * 1000 },
     resave: false,
     saveUninitialized: false
 }
