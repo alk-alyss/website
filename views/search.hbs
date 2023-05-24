@@ -33,19 +33,19 @@
 
 		<hr>
 
-		<div class="filters" id="main">
-		{{#if residential}}
-			{{> filter_housing}}
-		{{/if}}
-		{{#if comercial}}
-			{{> filter_prof}}
-		{{/if}}
-		{{#if land}}
-			{{> filter_land}}
-		{{/if}}
-		<input type="submit" value="Αναζήτηση" class="search_button">
-		<br><br><br>
-		</div>
+		<form class="filters" id="main" method="get">
+			{{#if residential}}
+				{{> filter_housing}}
+			{{/if}}
+			{{#if comercial}}
+				{{> filter_prof}}
+			{{/if}}
+			{{#if land}}
+				{{> filter_land}}
+			{{/if}}
+			<input type="submit" value="Αναζήτηση" class="search_button">
+			<br><br><br>
+		</form>
 	</div>
 
 	<div class="nav_pages">
