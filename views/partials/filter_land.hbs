@@ -1,66 +1,18 @@
-
 {{!-- filters for listings --}}
-<h5>Ακίνητο για:</h5>
-<input type="radio" name="rent_sale" value="0" checked> Πώληση<br>
-<input type="radio" name="rent_sale" value="1"> Ενοικίαση<br>
-			
-<hr>
 
-<h5>Τύπος ακινήτου</h5>
-<select id="type">
-	<option value="0">Κατοικία</option>
-	<option value="1">Επαγγελματικός</option>
-	<option value="2" selected>Γη</option>
-</select>
+{{> filter_type filters=filters}}
 
-<select id="subtype">
-	<option value="0">Έδαφος</option>
-	<option value="1">Οικόπεδο</option>
-	<option value="2">Νησί</option>
-	<option value="4">Άλλο</option>
+<select id="subcategory">
+	<option value="land">Έδαφος</option>
+	<option value="field">Οικόπεδο</option>
+	<option value="island">Νησί</option>
+	<option value="other">Άλλο</option>
 </select>
 
 <hr>
 
-<h5>Διάστημα τιμής</h5>
-{{#if filters.price_start}}
-<input type="text" id="price_from" placeholder="{{filters.price_start}}">
-{{else}}
-<input type="text" id="price_from" placeholder="Από">
-{{/if}}
-{{#if filters.price_end}}
-<input type="text" id="price_to" placeholder="{{filters.price_end}}">
-{{else}}
-<input type="text" id="price_to" placeholder="Εώς">
-{{/if}}
+{{> filter_price_area filters=filters}}
 
-<h5>Εμβαδόν</h5>
-{{#if filters.area_start}}
-<input type="text" id="area_from" placeholder="{{filters.area_start}}">
-{{else}}
-<input type="text" id="area_from" placeholder="Από">
-{{/if}}
-{{#if filters.area_end}}
-<input type="text" id="area_to" placeholder="{{filters.area_end}}">
-{{else}}
-<input type="text" id="area_to" placeholder="Εώς">
-{{/if}}
-
-<hr>
-
-<h5>Είδος Ζώνης</h5>
-<input type="checkbox" id="home" name="home" value="home">
-<label for="home">Οικιστική Ζώνη</label><br>
-<input type="checkbox" id="commercial" name="commercial" value="commercial">
-<label for="commercial">Εμπορική Ζώνη</label><br>
-<input type="checkbox" id="industrial" name="industrial" value="industrial">
-<label for="industrial">Βιομηχανική Ζώνη</label><br>
-<input type="checkbox" id="agricultural" name="agricultural" value="agricultural">
-<label for="agricultural">Γεωργική Ζώνη</label><br>
-<input type="checkbox" id="forest" name="forest" value="forest">
-<label for="forest">Δασική Ζώνη</label><br>
-<input type="checkbox" id="tourist" name="tourist" value="tourist">
-<label for="tourist">Τουριστική Ζώνη</label><br>
-
+{{> filter_zone filters=filters}}
 
 <hr>

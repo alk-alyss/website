@@ -27,26 +27,24 @@ export async function search(req, res, next) {
         }
 	}
 
-    let renderData = {
-        topSearchOn: true,
-        style: "search",
-        listings: listings,
-        residential: false,
-        commercial: false,
-        land: false
-    }
+    let filters = {}
 
     switch (category) {
         case "residential":
-            renderData.residential = true
+            filters.residential = true
             break
         case "commercial":
-            renderData.commercial = true
+            filters.commercial = true
             break
         case "land":
-            renderData.land = true
+            filters.land = true
             break
     }
 
-    res.render("search", renderData)
+    res.render("search", {
+        topSearchOn: true,
+        style: "search",
+        listings: listings,
+        filters: filters
+    })
 }

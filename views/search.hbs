@@ -34,15 +34,23 @@
 		<hr>
 
 		<form class="filters" id="main" method="get">
-			{{#if residential}}
-				{{> filter_housing}}
+			
+			<h5>Ακίνητο για:</h5>
+			<input type="radio" name="type" value="sell"{{#if filters.sell}}checked{{/if}}> Πώληση<br>
+			<input type="radio" name="type" value="rent"{{#if filters.rent}}checked{{/if}}> Ενοικίαση<br>
+			
+			<hr>
+
+			{{#if filters.residential}}
+				{{> filter_housing filters=filters}}
 			{{/if}}
-			{{#if commercial}}
-				{{> filter_prof}}
+			{{#if filters.commercial}}
+				{{> filter_prof filters=filters}}
 			{{/if}}
-			{{#if land}}
-				{{> filter_land}}
+			{{#if filters.land}}
+				{{> filter_land filters=filters}}
 			{{/if}}
+
 			<input type="submit" value="Αναζήτηση" class="search_button">
 			<br><br><br>
 		</form>

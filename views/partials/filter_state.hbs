@@ -1,0 +1,12 @@
+<h5>Κατάσταση ακινήτου</h5>
+<input type="checkbox" id="new" name="new" value="new">
+<label for="new">Νεόδμητο</label><br>
+<input type="checkbox" id="renovated" name="renovated" value="renovated">
+<label for="renovated">Ανακαινισμένο</label><br>
+{{#if filters.commercial}}
+<input type="checkbox" id="good" name="good" value="good">
+<label for="good">Καλή κατάσταση</label><br>
+<input type="checkbox" id="old" name="old" value="old">
+<label for="old">Χρήζει ανακαίνισης</label><br>
+{{/if}}
+<hr>
