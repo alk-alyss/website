@@ -1,140 +1,124 @@
 
-			{{!-- filters for listings --}}
-			<h5>Ακίνητο για:</h5>
-			<input type="radio" name="rent_sale" value="0" checked> Πώληση<br>
-			<input type="radio" name="rent_sale" value="1"> Ενοικίαση<br>
+{{!-- filters for listings --}}
+<h5>Ακίνητο για:</h5>
+<input type="radio" name="rent_sale" value="0" checked> Πώληση<br>
+<input type="radio" name="rent_sale" value="1"> Ενοικίαση<br>
 			
-			<hr>
+<hr>
 
-			<h5>Τύπος ακινήτου</h5>
-			<select id="type">
-				<option value="0">Κατοικία</option>
-				<option value="1">Επαγγελματικός</option>
-				<option value="2">Γη</option>
-			</select>
+<h5>Τύπος ακινήτου</h5>
+<select id="type">
+	<option value="0" selected>Κατοικία</option>
+	<option value="1">Επαγγελματικός</option>
+	<option value="2">Γη</option>
+</select>
 
-			<select id="subtype">
-				<option value="0">Στούντιο</option>
-				<option value="1">Μονοκατοικία</option>
-				<option value="2">Πολυκατοικία</option>
-				<option value="3">Μεζονέτα</option>
-				<option value="4">Διαμέρισμα</option>
-				<option value="5">Οροφοδιαμέρισμα</option>
-				<option value="6">Άλλο</option>
-			</select>
-			<hr>
+<select id="subtype">
+	<option value="0">Στούντιο</option>
+	<option value="1">Μονοκατοικία</option>
+	<option value="2">Πολυκατοικία</option>
+	<option value="3">Μεζονέτα</option>
+	<option value="4">Διαμέρισμα</option>
+	<option value="5">Οροφοδιαμέρισμα</option>
+	<option value="6">Άλλο</option>
+</select>
+<hr>
 
-			<h5>Διάστημα τιμής</h5>
-			{{#if filters.price_start}}
-			<input type="text" id="price_from" placeholder="{{filters.price_start}}">
-			{{else}}
-			<input type="text" id="price_from" placeholder="Από">
-			{{/if}}
-			{{#if filters.price_end}}
-			<input type="text" id="price_to" placeholder="{{filters.price_end}}">
-			{{else}}
-			<input type="text" id="price_to" placeholder="Εώς">
-			{{/if}}
+<h5>Διάστημα τιμής</h5>
+{{#if filters.price_start}}
+<input type="text" id="price_from" placeholder="{{filters.price_start}}">
+{{else}}
+<input type="text" id="price_from" placeholder="Από">
+{{/if}}
+{{#if filters.price_end}}
+<input type="text" id="price_to" placeholder="{{filters.price_end}}">
+{{else}}
+<input type="text" id="price_to" placeholder="Εώς">
+{{/if}}
 
-			<h5>Εμβαδόν</h5>
-			{{#if filters.area_start}}
-			<input type="text" id="area_from" placeholder="{{filters.area_start}}">
-			{{else}}
-			<input type="text" id="area_from" placeholder="Από">
-			{{/if}}
-			{{#if filters.area_end}}
-			<input type="text" id="area_to" placeholder="{{filters.area_end}}">
-			{{else}}
-			<input type="text" id="area_to" placeholder="Εώς">
-			{{/if}}
+<h5>Εμβαδόν</h5>
+{{#if filters.area_start}}
+<input type="text" id="area_from" placeholder="{{filters.area_start}}">
+{{else}}
+<input type="text" id="area_from" placeholder="Από">
+{{/if}}
+{{#if filters.area_end}}
+<input type="text" id="area_to" placeholder="{{filters.area_end}}">
+{{else}}
+<input type="text" id="area_to" placeholder="Εώς">
+{{/if}}
 
-			<hr>
+<hr>
 
-			<h5>Είδος ακινήτου</h5>
-			<input type="checkbox" id="new" name="new" value="new">
-			<label for="new">Νεόδμητο</label><br>
-			<input type="checkbox" id="renovated" name="renovated" value="renovated">
-			<label for="renovated">Ανακαινισμένο</label><br>
+<h5>Είδος ακινήτου</h5>
+<input type="checkbox" id="new" name="new" value="new">
+<label for="new">Νεόδμητο</label><br>
+<input type="checkbox" id="renovated" name="renovated" value="renovated">
+<label for="renovated">Ανακαινισμένο</label><br>
 
-			<hr>
+<hr>
 
-			<h5>Δωμάτια</h5>
-			<input type="text" inputmode="numeric" id="rooms_from" placeholder="Από">
-			<input type="text" inputmode="numeric" id="rooms_to" placeholder="Εώς">
-			<h5>Όροφος</h5>
-			<input type="text" inputmode="numeric" id="floor_from" placeholder="Από">
-			<input type="text" inputmode="numeric" id="floor_to" placeholder="Εώς">
-			<h5>Έτος κατασκευής</h5>
-			<input type="text" inputmode="numeric" id="year_from" placeholder="Από">
-			<input type="text" inputmode="numeric" id="year_to" placeholder="Εώς">
+<h5>Δωμάτια</h5>
+<input type="text" inputmode="numeric" id="rooms_from" placeholder="Από">
+<input type="text" inputmode="numeric" id="rooms_to" placeholder="Εώς">
+<h5>Όροφος</h5>
+<input type="text" inputmode="numeric" id="floor_from" placeholder="Από">
+<input type="text" inputmode="numeric" id="floor_to" placeholder="Εώς">
+<h5>Έτος κατασκευής</h5>
+<input type="text" inputmode="numeric" id="year_from" placeholder="Από">
+<input type="text" inputmode="numeric" id="year_to" placeholder="Εώς">
 			
-			<hr>
+<hr>
 
-			<h5>Επιπλέον Χαρακτηριστικά</h5>
-			<input type="checkbox" id="parking" name="parking" value="parking">
-			<label for="parking">Πάρκινγκ</label><br>
-			<input type="checkbox" id="garden" name="garden" value="garden">
-			<label for="garden">Κήπος</label><br>
-			<input type="checkbox" id="balcony" name="balcony" value="balcony">
-			<label for="balcony">Μπαλκόνι</label><br>
-			<input type="checkbox" id="storage" name="storage" value="storage">
-			<label for="storage">Αποθήκη</label><br>
-			<input type="checkbox" id="fireplace" name="fireplace" value="fireplace">
-			<label for="fireplace">Τζάκι</label><br>
-			<input type="checkbox" id="elevator" name="elevator" value="elevator">
-			<label for="elevator">Ανελκυστήρας</label><br>
-			<input type="checkbox" id="furnished" name="furnished" value="furnished">
-			<label for="furnished">Επιπλωμένο</label><br>
-			<input type="checkbox" id="air_condition" name="air_condition" value="air_condition">
-			<label for="air_condition">Κλιματισμός</label><br>
-			<input type="checkbox" id="solar_heating" name="solar_heating" value="solar_heating">
-			<label for="solar_heating">Ηλιακός Θερμοσίφωνας</label><br>
-			<input type="checkbox" id="boiler" name="boiler" value="boiler">
-			<label for="boiler">Θερμοσίφωνας</label><br>
-			<input type="checkbox" id="alarm" name="alarm" value="alarm">
-			<label for="alarm">Συναγερμός</label><br>
-			<input type="checkbox" id="security_door" name="security_door" value="security_door">
-			<label for="security_door">Πόρτα Ασφαλείας</label><br>
-			<input type="checkbox" id="satelite" name="satelite" value="satelite">
-			<label for="satelite">Συνδρομητική Τηλεόραση</label><br>
-			<input type="checkbox" id="internet" name="internet" value="internet">
-			<label for="internet">Internet</label><br>
-			<input type="checkbox" id="pets" name="pets" value="pets">
-			<label for="pets">Κατοικίδια</label><br>
-			<input type="checkbox" id="student" name="student" value="student">
-			<label for="student">Φοιτητές</label><br>
+<h5>Επιπλέον Χαρακτηριστικά</h5>
+<input type="checkbox" id="parking" name="parking" value="parking">
+<label for="parking">Πάρκινγκ</label><br>
+<input type="checkbox" id="garden" name="garden" value="garden">
+<label for="garden">Κήπος</label><br>
+<input type="checkbox" id="balcony" name="balcony" value="balcony">
+<label for="balcony">Μπαλκόνι</label><br>
+<input type="checkbox" id="storage" name="storage" value="storage">
+<label for="storage">Αποθήκη</label><br>
+<input type="checkbox" id="fireplace" name="fireplace" value="fireplace">
+<label for="fireplace">Τζάκι</label><br>
+<input type="checkbox" id="elevator" name="elevator" value="elevator">
+<label for="elevator">Ανελκυστήρας</label><br>
+<input type="checkbox" id="furnished" name="furnished" value="furnished">
+<label for="furnished">Επιπλωμένο</label><br>
+<input type="checkbox" id="air_condition" name="air_condition" value="air_condition">
+<label for="air_condition">Κλιματισμός</label><br>
+<input type="checkbox" id="solar_heating" name="solar_heating" value="solar_heating">
+<label for="solar_heating">Ηλιακός Θερμοσίφωνας</label><br>
+<input type="checkbox" id="boiler" name="boiler" value="boiler">
+<label for="boiler">Θερμοσίφωνας</label><br>
+<input type="checkbox" id="alarm" name="alarm" value="alarm">
+<label for="alarm">Συναγερμός</label><br>
+<input type="checkbox" id="security_door" name="security_door" value="security_door">
+<label for="security_door">Πόρτα Ασφαλείας</label><br>
+<input type="checkbox" id="satelite" name="satelite" value="satelite">
+<label for="satelite">Συνδρομητική Τηλεόραση</label><br>
+<input type="checkbox" id="internet" name="internet" value="internet">
+<label for="internet">Internet</label><br>
+<input type="checkbox" id="pets" name="pets" value="pets">
+<label for="pets">Κατοικίδια</label><br>
+<input type="checkbox" id="student" name="student" value="student">
+<label for="student">Φοιτητές</label><br>
 
-			<hr>
+<hr>
 
-			<h5>Είδος Ζώνης</h5>
-			<input type="checkbox" id="home" name="home" value="home">
-			<label for="home">Οικιστική Ζώνη</label><br>
-			<input type="checkbox" id="commercial" name="commercial" value="commercial">
-			<label for="commercial">Εμπορική Ζώνη</label><br>
-			<input type="checkbox" id="industrial" name="industrial" value="industrial">
-			<label for="industrial">Βιομηχανική Ζώνη</label><br>
-			<input type="checkbox" id="agricultural" name="agricultural" value="agricultural">
-			<label for="agricultural">Γεωργική Ζώνη</label><br>
-			<input type="checkbox" id="forest" name="forest" value="forest">
-			<label for="forest">Δασική Ζώνη</label><br>
-			<input type="checkbox" id="tourist" name="tourist" value="tourist">
-			<label for="tourist">Τουριστική Ζώνη</label><br>
-
-			<hr>
-
-			<h5>Είδος Θέρμανσης</h5>
-			<select name="heating" id="heating">
-				<option value="autonomous">Αυτόνομη</option>
-				<option value="central">Κεντρική</option>
-			</select>
-            <h5>Μέσο Θέρμανσης</h5>
-            <select>
-                <option value="oil">Πετρέλαιο</option>
-                <option value="gas">Φυσικό αέριο</option>
-                <option value="wood">Ξύλο</option>
-                <option value="electricity">Ηλεκτρικό</option>
-                <option value="geothermal">Γεωθερμικό</option>
-                <option value="solar">Ηλιακό</option>
-                <option value="aircondition">Κλιματισμός</option>
-            </select>
-			<hr>
+<h5>Είδος Θέρμανσης</h5>
+<select name="heating" id="heating">
+	<option value="autonomous">Αυτόνομη</option>
+	<option value="central">Κεντρική</option>
+</select>
+<h5>Μέσο Θέρμανσης</h5>
+<select>
+	<option value="oil">Πετρέλαιο</option>
+	<option value="gas">Φυσικό αέριο</option>
+	<option value="wood">Ξύλο</option>
+	<option value="electricity">Ηλεκτρικό</option>
+	<option value="geothermal">Γεωθερμικό</option>
+	<option value="solar">Ηλιακό</option>
+	<option value="aircondition">Κλιματισμός</option>
+</select>
+<hr>
