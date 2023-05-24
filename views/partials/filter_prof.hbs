@@ -2,7 +2,7 @@
 
 {{> filter_category filters=filters}}
 
-<select id="subcategory">
+<select name="subcategory">
 	<option value="any" {{#if filters.any}} selected {{/if}}>Οτιδήποτε</option>
 	<option value="office" {{#if filters.office}} selected {{/if}}>Γραφείο</option>
 	<option value="warehouse" {{#if filters.warehouse}} selected {{/if}}>Αποθήκη</option>
@@ -11,7 +11,7 @@
 	<option value="business" {{#if filters.business}} selected {{/if}}>Επιχειρηματικός Χώρος</option>
 	<option value="show_room" {{#if filters.show_room}} selected {{/if}}>Εκθεσιακός Χώρος</option>
 	<option value="shop" {{#if filters.shop}} selected {{/if}}>Κατάστημα</option>
-	<option value="other" {{#if filters.other}} selected {{/if}}>ΆΛλο</option>
+	<option value="other" {{#if filters.other}} selected {{/if}}>Άλλο</option>
 </select>
 
 <hr>
