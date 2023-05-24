@@ -27,9 +27,26 @@ export async function search(req, res, next) {
         }
 	}
 
-    res.render("search", {
+    let renderData = {
         topSearchOn: true,
         style: "search",
-        listings: listings
-    })
+        listings: listings,
+        residential: false,
+        comercial: false,
+        land: false
+    }
+
+    switch (category) {
+        case "residential":
+            renderData.residential = true
+            break
+        case "comercial":
+            renderData.comercial = true
+            break
+        case "land":
+            renderData.land = true
+            break
+    }
+
+    res.render("search", renderData)
 }

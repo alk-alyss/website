@@ -34,7 +34,15 @@
 		<hr>
 
 		<div class="filters" id="main">
-		{{> filter_housing}}
+		{{#if residential}}
+			{{> filter_housing}}
+		{{/if}}
+		{{#if comercial}}
+			{{> filter_prof}}
+		{{/if}}
+		{{#if land}}
+			{{> filter_land}}
+		{{/if}}
 		<input type="submit" value="Αναζήτηση" class="search_button">
 		<br><br><br>
 		</div>
