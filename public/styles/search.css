@@ -117,7 +117,7 @@ header {
     z-index: 2;
 }
 
-.choice_section button {
+.choice_section button, .search_button {
     padding: 8px;
     margin: 5px 8px;
 
@@ -130,7 +130,7 @@ header {
     min-width: 100px;
 }
 
-.choice_section button:hover {
+.choice_section button:hover, .search_button  {
     cursor: pointer;
     background-color:#599EA2;
 }
