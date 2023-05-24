@@ -32,7 +32,7 @@ export async function search(req, res, next) {
         style: "search",
         listings: listings,
         residential: false,
-        comercial: false,
+        commercial: false,
         land: false
     }
 
@@ -40,8 +40,8 @@ export async function search(req, res, next) {
         case "residential":
             renderData.residential = true
             break
-        case "comercial":
-            renderData.comercial = true
+        case "commercial":
+            renderData.commercial = true
             break
         case "land":
             renderData.land = true
