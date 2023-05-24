@@ -2,9 +2,6 @@
 let icon = document.querySelector(".button_login");
 let button = document.querySelectorAll(".icon_pressed")
 
-button[0].classList.remove("active");
-button[1].classList.remove("active");
-
 //function that turns the signed in div on and the not signed in div off
 function signed_in() {
     button[0].classList.remove("active");
