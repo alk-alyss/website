@@ -65,11 +65,11 @@ export async function updateUser(username, first_name="", last_name="", email=""
 }
 
 export async function addFavoriteListing(username, listing) {
-    User.updateOne({username:username}, {$push: {favoriteListings: listing}})
+    await User.updateOne({username:username}, {$push: {favoriteListings: listing}})
 }
 
 export async function removeFavoriteListing(username, listing) {
-    User.updateOne({username:username}, {$pull: {favoriteListings: listing}})
+    await User.updateOne({username:username}, {$pull: {favoriteListings: listing}})
 }
 
 export async function importUsers(users) {

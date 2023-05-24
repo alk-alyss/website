@@ -38,8 +38,9 @@
         <h4>Αγαπημένες Αγγελίες</h4>
 
         <div class="cards_div d-flex justify-content-left flex-wrap">
-            {{#if user.favoriteListings}}
-                {{#each user.favoriteListings as |listing|}}
+            {{#if favoriteListings}}
+                {{#each favoriteListings as |listing|}}
+                    {{log listing}}
                     {{> searchCard listing=listing}}
                 {{/each}}
             {{else}}

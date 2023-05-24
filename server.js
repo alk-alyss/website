@@ -47,6 +47,7 @@ import session from "express-session"
 app.use(session(sessionConf))
 
 app.use(express.static(__dirname + '/public'))
+app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Routes
