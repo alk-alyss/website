@@ -3,10 +3,11 @@
 {{> filter_type filters=filters}}
 
 <select id="subcategory">
-	<option value="land">Έδαφος</option>
-	<option value="field">Οικόπεδο</option>
-	<option value="island">Νησί</option>
-	<option value="other">Άλλο</option>
+	<option value="any" {{#if filters.any}} selected {{/if}}>Οτιδήποτε</option>
+	<option value="land" {{#if filters.land}} selected {{/if}}>Έδαφος</option>
+	<option value="field" {{#if filters.field}} selected {{/if}}>Οικόπεδο</option>
+	<option value="island" {{#if filters.island}} selected {{/if}}>Νησί</option>
+	<option value="other" {{#if filters.other}} selected {{/if}}>Άλλο</option>
 </select>
 
 <hr>

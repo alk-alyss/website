@@ -1,15 +1,17 @@
 <h5>Είδος Θέρμανσης</h5>
 <select name="heating" id="heating">
-	<option value="autonomous">Αυτόνομη</option>
-	<option value="central">Κεντρική</option>
+	<option value="any" {{#if filters.any}} selected {{/if}}>Οτιδήποτε</option>
+	<option value="autonomous" {{#if filters.autonomous}} selected {{/if}}>Αυτόνομη</option>
+	<option value="central" {{#if filters.central}} selected {{/if}}>Κεντρική</option>
 </select>
 <h5>Μέσο Θέρμανσης</h5>
 <select name="heating_type">
-	<option value="oil">Πετρέλαιο</option>
-	<option value="gas">Φυσικό αέριο</option>
-	<option value="wood">Ξύλο</option>
-	<option value="electricity">Ηλεκτρικό</option>
-	<option value="geothermal">Γεωθερμικό</option>
-	<option value="solar">Ηλιακό</option>
+	<option value="any" {{#if filters.any}} selected {{/if}}>Οτιδήποτε</option>
+	<option value="oil" {{#if filters.oil}} selected {{/if}}>Πετρέλαιο</option>
+	<option value="gas" {{#if filters.gas}} selected {{/if}}>Φυσικό αέριο</option>
+	<option value="wood" {{#if filters.wood}} selected {{/if}}>Ξύλο</option>
+	<option value="electricity" {{#if filters.electricity}} selected {{/if}}>Ηλεκτρικό</option>
+	<option value="geothermal" {{#if filters.geothermal}} selected {{/if}}>Γεωθερμικό</option>
+	<option value="solar" {{#if filters.solar}} selected {{/if}}>Ηλιακό</option>
 </select>
 <hr>
