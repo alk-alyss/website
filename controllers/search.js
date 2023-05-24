@@ -1,4 +1,5 @@
 import { getListings } from "../models/listing.js"
+import { getUserByUsername } from "../models/user.js"
 
 export async function search(req, res, next) {
     let type = req.query.type
@@ -16,6 +17,15 @@ export async function search(req, res, next) {
     areaEnd = areaEnd > 0 ? areaEnd : -1
 
     let listings = await getListings(type, location, category, priceStart, priceEnd, areaStart, areaEnd)
+
+    let username = req.session.username
+	if (username) {
+		let user = await getUserByUsername(username)
+        for (let listing of listings) {
+            listing.isFavorite = false
+            if (user.favoriteListings.includes(listing.id)) listing.isFavorite = true
+        }
+	}
 
     res.render("search", {
         topSearchOn: true,

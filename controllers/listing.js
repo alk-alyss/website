@@ -12,18 +12,18 @@ export async function showListing(req, res, next) {
 		return
 	}
 
+	currentListing.isFavorite = false
+
 	let username = req.session.username
-	let isFavorite = false
 	if (username) {
 		let user = await getUserByUsername(username)
-		if (user.favoriteListings.includes(currentListing.id)) isFavorite = true
+		if (user.favoriteListings.includes(currentListing.id)) currentListing.isFavorite = true
 	}
 
 	res.render("listing", {
 		style: "listing",
 		topSearchOn: true,
 		listing: currentListing,
-		isFavorite: isFavorite
 	})
 }
 

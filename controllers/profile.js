@@ -8,6 +8,7 @@ export async function renderProfile(req, res) {
     let favoriteListings = []
     user.favoriteListings.forEach(async listing => {
         let favoriteListing = await getListingById(listing)
+        favoriteListing.isFavorite = true
         favoriteListings.push(favoriteListing)
     });
 
