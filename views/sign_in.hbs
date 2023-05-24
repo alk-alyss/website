@@ -18,3 +18,15 @@
         </div>
     </form>
 </main>
+{{#if message}}
+    <div class="alert">
+        <div id="alert_head">
+            <div class="alert_icon">
+                <img src="/icons/warning.png" alt="alert">
+                <span> Ειδοποίηση </span>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+        <span class="message">{{message}}</span>
+    </div>
+{{/if}}
