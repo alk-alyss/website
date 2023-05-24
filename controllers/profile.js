@@ -1,10 +1,17 @@
+import { getListingById } from "../models/listing.js"
 import { getUserByUsername, updateUser } from "../models/user.js"
 
 export async function renderProfile(req, res) {
     let username = req.session.username
     let user = await getUserByUsername(username)
 
-    res.render("profile", { style: "profile", user:user})
+    let favoriteListings = []
+    user.favoriteListings.forEach(async listing => {
+        let favoriteListing = await getListingById(listing)
+        favoriteListings.push(favoriteListing)
+    });
+
+    res.render("profile", { style: "profile", user:user, favoriteListings:favoriteListings})
 }
 
 export async function updateProfile(req, res) {
