@@ -5,13 +5,11 @@ import { importListings } from "../models/listing.js"
 import { importUsers } from "../models/user.js"
 
 export async function loadData() {
-	let listingsFile = await fs.readFile("./data/listings.json")
-	let listingsJson = JSON.parse(listingsFile)
+	await importListings(JSON.parse(await fs.readFile("./data/residential.json")))
+	await importListings(JSON.parse(await fs.readFile("./data/commercial.json")))
+	await importListings(JSON.parse(await fs.readFile("./data/land.json")))
 
-	await importListings(listingsJson)
-
-	let usersFile = await fs.readFile("./data/users.json")
-	let usersJson = JSON.parse(usersFile)
+	let usersJson = JSON.parse(await fs.readFile("./data/users.json"))
 
 	for (let user of usersJson) {
 		let hash = await bcrypt.hash(user.password, 10)
