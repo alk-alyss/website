@@ -4,8 +4,8 @@ import { getUserByUsername } from "../models/user.js"
 export async function search(req, res, next) {
     let filters = {}
 
-    let type = req.query.type
-    switch (type) {
+    filters.type = req.query.type
+    switch (filters.type) {
         case "sell":
             filters.sell = true
             break
@@ -14,8 +14,8 @@ export async function search(req, res, next) {
             break
     }
 
-    let category = req.query.category
-    switch (category) {
+    filters.category = req.query.category
+    switch (filters.category) {
         case "residential":
             filters.residential = true
             break
@@ -27,8 +27,8 @@ export async function search(req, res, next) {
             break
     }
 
-    let subcategory = req.query.subcategory
-    switch (subcategory) {
+    filters.subcategory = req.query.subcategory
+    switch (filters.subcategory) {
         case "studio":
             filters.studio = true
             break
@@ -82,17 +82,17 @@ export async function search(req, res, next) {
             break
     }
 
-    let location = req.query.location
+    filters.location = req.query.location
 
     let priceStart = Number(req.query.price_start)
     let priceEnd = Number(req.query.price_end)
     let areaStart = Number(req.query.area_start)
     let areaEnd = Number(req.query.area_end)
 
-    filters.priceStart = priceStart > 0 ? priceStart : -1
-    filters.priceEnd = priceEnd > 0 ? priceEnd : -1
-    filters.areaStart = areaStart > 0 ? areaStart : -1
-    filters.areaEnd = areaEnd > 0 ? areaEnd : -1
+    filters.priceStart = priceStart > 0 ? priceStart : 0
+    filters.priceEnd = priceEnd > 0 ? priceEnd : 0
+    filters.areaStart = areaStart > 0 ? areaStart : 0
+    filters.areaEnd = areaEnd > 0 ? areaEnd : 0
 
     filters.stateNew = req.query.new != undefined
     filters.stateRenovated = req.query.renovated != undefined
@@ -106,12 +106,12 @@ export async function search(req, res, next) {
     let yearFrom = Number(req.query.year_from)
     let yearTo = Number(req.query.year_to)
 
-    filters.roomsFrom = roomsFrom > 0 ? roomsFrom : -1
-    filters.roomsTo = roomsTo > 0 ? roomsTo : -1
-    filters.floorFrom = floorFrom > 0 ? floorFrom : -1
-    filters.floorTo = floorTo > 0 ? floorTo : -1
-    filters.yearFrom = yearFrom > 0 ? yearFrom : -1
-    filters.yearTo = yearTo > 0 ? yearTo : -1
+    filters.roomsFrom = roomsFrom > 0 ? roomsFrom : 0
+    filters.roomsTo = roomsTo > 0 ? roomsTo : 0
+    filters.floorFrom = floorFrom > 0 ? floorFrom : 0
+    filters.floorTo = floorTo > 0 ? floorTo : 0
+    filters.yearFrom = yearFrom > 0 ? yearFrom : 0
+    filters.yearTo = yearTo > 0 ? yearTo : 0
 
     filters.home = req.query.home != undefined
     filters.commercial = req.query.commercial != undefined
@@ -120,8 +120,8 @@ export async function search(req, res, next) {
     filters.forest = req.query.forest != undefined
     filters.tourist = req.query.tourist != undefined
 
-    let heating = req.query.heating
-    switch (heating) {
+    filters.heating = req.query.heating
+    switch (filters.heating) {
         case "autonomous":
             filters.autonomous = true
             break
@@ -130,8 +130,8 @@ export async function search(req, res, next) {
             break
     }
 
-    let heating_type = req.query.heating_type
-    switch (heating_type) {
+    filters.heating_type = req.query.heating_type
+    switch (filters.heating_type) {
         case "oil":
             filters.oil = true
             break
@@ -155,7 +155,23 @@ export async function search(req, res, next) {
             break
     }
 
-    let listings = await getListings(type, location, category, priceStart, priceEnd, areaStart, areaEnd)
+    filters.parking = req.query.parking != undefined
+    filters.garden = req.query.garden != undefined
+    filters.balcony = req.query.balcony != undefined
+    filters.storage = req.query.storage != undefined
+    filters.fireplace = req.query.fireplace != undefined
+    filters.elevator = req.query.elevator != undefined
+    filters.furnished = req.query.furnished != undefined
+    filters.air_condition = req.query.air_condition != undefined
+    filters.solar_heating = req.query.solar_heating != undefined
+    filters.boiler = req.query.boiler != undefined
+    filters.alarm = req.query.alarm != undefined
+    filters.security_door = req.query.security_door != undefined
+    filters.pets = req.query.pets != undefined
+    filters.student = req.query.student != undefined
+    filters.loading_dock = req.query.loading_dock != undefined
+
+    let listings = await getListings(filters)
 
     let username = req.session.username
 	if (username) {
@@ -165,7 +181,6 @@ export async function search(req, res, next) {
             if (user.favoriteListings.includes(listing.id)) listing.isFavorite = true
         }
 	}
-
 
     res.render("search", {
         topSearchOn: true,
