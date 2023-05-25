@@ -10,9 +10,18 @@ const listingSchema = new mongoose.Schema(
 		type: { type: String, required: true },
 		location: { type: String, required: true },
 		category: {type: String, required: true},
+		subcategory: {type: String, required: true},
 		price: { type: Number, required: true },
 		area: { type: Number, required: true },
-		images: { type: Array},
+		images: { type: Array },
+		floor: { type: Number },
+		rooms: { type: Number },
+		levels: { type: Number },
+		year: { type: Number },
+		zone: { type: String },
+		heating: { type: String },
+		heating_type: { type: String },
+		condition: { type: String },
 		extra: { type: Object }
 	},
 	{
@@ -23,24 +32,33 @@ const listingSchema = new mongoose.Schema(
 
 export const Listing = mongoose.model("Listing", listingSchema, "Listings");
 
-export async function getListings(type="", location="", category="", priceStart=-1, priceEnd=-1, areaStart=-1, areaEnd=-1) {
-	let query = { }
+export async function getListings(filters={}) {
+	let query = {}
 
-	if (type != "") query.type = type
-	if (location != "") query.location = new RegExp(location, "i")
-	if (category != "") query.category = category
+	if (filters.type) query.type = filters.type
+	if (filters.location) query.location = new RegExp(filters.location, "i")
+	if (filters.category) query.category = filters.category
+	if (filters.subcategory) query.subcategory = filters.subcategory
 
-	let price = {}
-	if (priceEnd != -1) price.$lte = priceEnd
-	if (priceStart != -1) price.$gte = priceStart
+	query.price = { $gte: filters.price.start }
+	if (filters.price.end) query.price.$lte = filters.price.end
 
-	if (Object.keys(price).length != 0) query.price = price
+	query.area = { $gte: filters.area.start }
+	if (filters.area.end) query.area.$lte = filters.area.end
 
-	let area = {}
-	if (areaEnd != -1) area.$lte = areaEnd
-	if (areaStart != -1) area.$gte = areaStart
+	query.rooms = { $gte: filters.rooms.start }
+	if (filters.rooms.end) query.rooms.$lte = filters.rooms.end
 
-	if (Object.keys(area).length != 0) query.area = area
+	query.floor = { $gte: filters.floor.start }
+	if (filters.floor.end) query.floor.$lte = filters.floor.end
+
+	query.year = { $gte: filters.year.start }
+	if (filters.year.end) query.year.$lte = filters.year.end
+
+	if (filters.state) query.state = filters.state
+	if (filters.zone) query.zone = filters.zone
+	if (filters.heating) query.heating = filters.heating
+	if (filters.heating_type) query.heating_type = filters.heating_type
 
 	let listings = await Listing.find(query, "-__v").exec()
 
