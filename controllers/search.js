@@ -7,75 +7,77 @@ export async function search(req, res, next) {
     filters.type = req.query.type
     switch (filters.type) {
         case "sell":
-            filters.sell = true
+            filters.type_sell = true
             break
         case "rent":
-            filters.rent = true
+            filters.type_rent = true
             break
     }
 
     filters.category = req.query.category
     switch (filters.category) {
         case "residential":
-            filters.residential = true
+            filters.category_residential = true
             break
         case "commercial":
-            filters.commercial = true
+            filters.category_commercial = true
             break
         case "land":
-            filters.land = true
+            filters.category_land = true
             break
     }
 
     filters.subcategory = req.query.subcategory
     switch (filters.subcategory) {
+        case "any":
+            filters.subcategory_any = true
         case "studio":
-            filters.studio = true
+            filters.subcategory_studio = true
             break
         case "house":
-            filters.house = true
+            filters.subcategory_house = true
             break
         case "complex":
-            filters.complex = true
+            filters.subcategory_complex = true
             break
         case "maisonette":
-            filters.maisonette = true
+            filters.subcategory_maisonette = true
             break
         case "appartment":
-            filters.appartment = true
+            filters.subcategory_appartment = true
             break
         case "penthouse":
-            filters.penthouse = true
+            filters.subcategory_penthouse = true
             break
         case "office":
-            filters.office = true
+            filters.subcategory_office = true
             break
         case "warehouse":
-            filters.warehouse = true
+            filters.subcategory_warehouse = true
             break
         case "industrial":
-            filters.industrial = true
+            filters.subcategory_industrial = true
             break
         case "hotel":
-            filters.hotel = true
+            filters.subcategory_hotel = true
             break
         case "business":
-            filters.business = true
+            filters.subcategory_business = true
             break
         case "show_room":
-            filters.show_room = true
+            filters.subcategory_show_room = true
             break
         case "shop":
-            filters.shop = true
+            filters.subcategory_shop = true
             break
         case "land":
-            filters.land = true
+            filters.subcategory_land = true
             break
         case "field":
-            filters.field = true
+            filters.subcategory_field = true
             break
         case "island":
-            filters.island = true
+            filters.subcategory_island = true
             break
         case "other":
             filters.subcategory_other = true
@@ -100,11 +102,20 @@ export async function search(req, res, next) {
         end: areaEnd > 0 ? areaEnd : 0
     }
 
-    filters.state = {
-        new: req.query.new != undefined,
-        renovated: req.query.renovated != undefined,
-        good: req.query.good != undefined,
-        old: req.query.old != undefined
+    filters.state = req.query.state
+    switch (filters.state) {
+        case "new":
+            filters.state_new = true
+            break
+        case "renovated":
+            filters.state_renovated = true
+            break
+        case "good":
+            filters.state_good = true
+            break
+        case "old":
+            filters.state_old = true
+            break
     }
 
     let roomsFrom = Number(req.query.rooms_from)
@@ -131,44 +142,57 @@ export async function search(req, res, next) {
         end: yearTo > 0 ? yearTo : 0
     }
 
-    filters.zone = {
-        home: req.query.home != undefined,
-        commercial: req.query.commercial != undefined,
-        industrial: req.query.industrial != undefined,
-        agricultural: req.query.agricultural != undefined,
-        forest: req.query.forest != undefined,
-        tourist: req.query.tourist != undefined
+    filters.zone = req.query.zone
+    switch (filters.zone) {
+        case "residential":
+            filters.zone_residential = true
+            break
+        case "commercial":
+            filters.zone_commercial = true
+            break
+        case "industrial":
+            filters.zone_industrial = true
+            break
+        case "agricultural":
+            filters.zone_agricultural = true
+            break
+        case "forest":
+            filters.zone_forest = true
+            break
+        case "tourist":
+            filters.zone_tourist = true
+            break
     }
 
     filters.heating = req.query.heating
     switch (filters.heating) {
         case "autonomous":
-            filters.autonomous = true
+            filters.heating_autonomous = true
             break
         case "central":
-            filters.central = true
+            filters.heating_central = true
             break
     }
 
     filters.heating_type = req.query.heating_type
     switch (filters.heating_type) {
         case "oil":
-            filters.oil = true
+            filters.heating_type_oil = true
             break
         case "gas":
-            filters.gas = true
+            filters.heating_type_gas = true
             break
         case "wood":
-            filters.wood = true
+            filters.heating_type_wood = true
             break
         case "electricity":
-            filters.electricity = true
+            filters.heating_type_electricity = true
             break
         case "geothermal":
-            filters.geothermal = true
+            filters.heating_type_geothermal = true
             break
         case "solar":
-            filters.solar = true
+            filters.heating_type_solar = true
             break
         case "other":
             filters.heating_type_other = true

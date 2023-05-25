@@ -3,15 +3,15 @@
 {{> filter_category filters=filters}}
 
 <select name="subcategory">
-	<option value="any" {{#if filters.any}} selected {{/if}}>Οτιδήποτε</option>
-	<option value="office" {{#if filters.office}} selected {{/if}}>Γραφείο</option>
-	<option value="warehouse" {{#if filters.warehouse}} selected {{/if}}>Αποθήκη</option>
-	<option value="industrial" {{#if filters.industrial}} selected {{/if}}>Βιομηχανικό</option>
-	<option value="hotel" {{#if filters.hotel}} selected {{/if}}>Ξενοδοχείο</option>
-	<option value="business" {{#if filters.business}} selected {{/if}}>Επιχειρηματικός Χώρος</option>
-	<option value="show_room" {{#if filters.show_room}} selected {{/if}}>Εκθεσιακός Χώρος</option>
-	<option value="shop" {{#if filters.shop}} selected {{/if}}>Κατάστημα</option>
-	<option value="other" {{#if filters.other}} selected {{/if}}>Άλλο</option>
+	<option value="any" {{#if filters.subcategory_any}} selected {{/if}}>Οτιδήποτε</option>
+	<option value="office" {{#if filters.subcategory_office}} selected {{/if}}>Γραφείο</option>
+	<option value="warehouse" {{#if filters.subcategory_warehouse}} selected {{/if}}>Αποθήκη</option>
+	<option value="industrial" {{#if filters.subcategory_industrial}} selected {{/if}}>Βιομηχανικό</option>
+	<option value="hotel" {{#if filters.subcategory_hotel}} selected {{/if}}>Ξενοδοχείο</option>
+	<option value="business" {{#if filters.subcategory_business}} selected {{/if}}>Επιχειρηματικός Χώρος</option>
+	<option value="show_room" {{#if filters.subcategory_show_room}} selected {{/if}}>Εκθεσιακός Χώρος</option>
+	<option value="shop" {{#if filters.subcategory_shop}} selected {{/if}}>Κατάστημα</option>
+	<option value="other" {{#if filters.subcategory_other}} selected {{/if}}>Άλλο</option>
 </select>
 
 <hr>
@@ -23,19 +23,19 @@
 {{> filters_internal filters=filters}}
 
 <h5>Επιπλέον Χαρακτηριστικά</h5>
-<input type="checkbox" id="parking" name="parking" value="parking" {{#if filters.parking}} checked {{/if}}>
+<input type="checkbox" id="parking" name="parking" value="parking" {{#if filters.extra.parking}} checked {{/if}}>
 <label for="parking">Πάρκινγκ</label><br>
-<input type="checkbox" id="elevator" name="elevator" value="elevator" {{#if filters.elevator}} checked {{/if}}>
+<input type="checkbox" id="elevator" name="elevator" value="elevator" {{#if filters.extra.elevator}} checked {{/if}}>
 <label for="elevator">Ανελκυστήρας</label><br>
-<input type="checkbox" id="storage" name="storage" value="storage" {{#if filters.storage}} checked {{/if}}>
+<input type="checkbox" id="storage" name="storage" value="storage" {{#if filters.extra.storage}} checked {{/if}}>
 <label for="storage">Αποθήκη</label><br>
-<input type="checkbox" id="alarm" name="alarm" value="alarm" {{#if filters.alarm}} checked {{/if}}>
+<input type="checkbox" id="alarm" name="alarm" value="alarm" {{#if filters.extra.alarm}} checked {{/if}}>
 <label for="alarm">Συναργεμός</label><br>
-<input type="checkbox" id="loading_dock" name="loading_dock" value="loading_dock" {{#if filters.loading_dock}} checked {{/if}}>
+<input type="checkbox" id="loading_dock" name="loading_dock" value="loading_dock" {{#if filters.extra.loading_dock}} checked {{/if}}>
 <label for="loading_dock">Πλατφόρμα φορτοεκφόρτωσης</label><br>
-<input type="checkbox" id="fireplace" name="fireplace" value="fireplace" {{#if filters.fireplace}} checked {{/if}}>
+<input type="checkbox" id="fireplace" name="fireplace" value="fireplace" {{#if filters.extra.fireplace}} checked {{/if}}>
 <label for="fireplace">Πυροσβεστήρας</label><br>
-<input type="checkbox" id="air_condition" name="air_condition" value="air_condition" {{#if filters.air_condition}} checked {{/if}}>
+<input type="checkbox" id="air_condition" name="air_condition" value="air_condition" {{#if filters.extra.air_condition}} checked {{/if}}>
 <label for="air_condition">Κλιματισμός</label><br>
 
 <hr>
