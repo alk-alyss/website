@@ -46,12 +46,19 @@ const translations = {
 	"field": "Χωράφι",
 	"island": "Νησί",
 }
-export async function translate(object) {
-	for (const [key, value] of Object.entries(object)) {
+export async function translateListing(listing) {
+	for (const [key, value] of Object.entries(listing)) {
 		if (Object.keys(translations).includes(value)) {
-			object[key] = translations[value]
+			listing[key] = translations[value]
 		}
 	}
 
-	return object
+	listing.location = listing.location.charAt(0).toUpperCase() + listing.location.slice(1)
+
+	for (const [key, value] of Object.entries(listing.extras)) {
+		if (listing.extras[key])
+			listing.extras[key] = translations[key]
+	}
+
+	return listing
 }

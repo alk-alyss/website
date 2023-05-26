@@ -1,6 +1,6 @@
 import { getListings } from "../models/listing.js"
 import { getUserByUsername } from "../models/user.js"
-import { translate } from "./translate.js"
+import { translateListing } from "./translate.js"
 
 export async function search(req, res, next) {
     let filters = {}
@@ -97,7 +97,7 @@ export async function search(req, res, next) {
             if (user.favoriteListings.includes(listing.id)) listing.isFavorite = true
         }
 
-        listing = await translate(listing)
+        listing = await translateListing(listing)
     }
 
     res.render("search", {
