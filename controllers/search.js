@@ -86,20 +86,20 @@ export async function search(req, res, next) {
 
     filters.location = req.query.location
 
-    let priceStart = Number(req.query.price_start)
-    let priceEnd = Number(req.query.price_end)
+    let priceStart = Math.abs(Number(req.query.price_start))
+    let priceEnd = Math.abs(Number(req.query.price_end))
 
     filters.price = {
-        start: priceStart > 0 ? priceStart : 0,
-        end: priceEnd > 0 ? priceEnd : 0
+        start: priceStart != NaN ? priceStart : 0,
+        end: priceEnd != NaN ? priceEnd : 0
     }
 
-    let areaStart = Number(req.query.area_start)
-    let areaEnd = Number(req.query.area_end)
+    let areaStart = Math.abs(Number(req.query.area_start))
+    let areaEnd = Math.abs(Number(req.query.area_end))
 
     filters.area = {
-        start: areaStart > 0 ? areaStart : 0,
-        end: areaEnd > 0 ? areaEnd : 0
+        start: areaStart != NaN ? areaStart : 0,
+        end: areaEnd != NaN ? areaEnd : 0
     }
 
     filters.state = req.query.state
@@ -118,28 +118,28 @@ export async function search(req, res, next) {
             break
     }
 
-    let roomsFrom = Number(req.query.rooms_from)
-    let roomsTo = Number(req.query.rooms_to)
+    let roomsFrom = Math.abs(Number(req.query.rooms_from))
+    let roomsTo = Math.abs(Number(req.query.rooms_to))
 
     filters.rooms = {
-        start: roomsFrom > 0 ? roomsFrom : 0,
-        end: roomsTo > 0 ? roomsTo : 0
+        start: roomsFrom != NaN ? roomsFrom : 0 ,
+        end: roomsTo != NaN ? roomsTo : 0
     }
 
-    let floorFrom = Number(req.query.floor_from)
-    let floorTo = Number(req.query.floor_to)
+    let floorFrom = Math.abs(Number(req.query.floor_from))
+    let floorTo = Math.abs(Number(req.query.floor_to))
 
-    filters.floors = {
-        start: floorFrom > 0 ? floorFrom : 0,
-        end: floorTo > 0 ? floorTo : 0
+    filters.floor = {
+        start: floorFrom != NaN ? floorFrom : 0 ,
+        end: floorTo != NaN ? floorTo : 0
     }
 
-    let yearFrom = Number(req.query.year_from)
-    let yearTo = Number(req.query.year_to)
+    let yearFrom = Math.abs(Number(req.query.year_from))
+    let yearTo = Math.abs(Number(req.query.year_to))
 
     filters.year = {
-        start: yearFrom > 0 ? yearFrom : 0,
-        end: yearTo > 0 ? yearTo : 0
+        start: yearFrom != NaN ? yearFrom : 0 ,
+        end: yearTo != NaN ? yearTo : 0
     }
 
     filters.zone = req.query.zone
