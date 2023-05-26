@@ -34,20 +34,22 @@
 		<hr>
 
 		<form class="filters" id="main" method="get">
-			
+
 			<h5>Ακίνητο για:</h5>
-			<input type="radio" name="type" value="sell"{{#if filters.sell}}checked{{/if}}> Πώληση<br>
-			<input type="radio" name="type" value="rent"{{#if filters.rent}}checked{{/if}}> Ενοικίαση<br>
-			
+			<input type="radio" name="type" id="sell" value="sell"{{#if filters.type_sell}}checked{{/if}}>
+			<label for="sell">Πώληση</label><br>
+			<input type="radio" name="type" id="rent" value="rent"{{#if filters.type_rent}}checked{{/if}}>
+			<label for="rent">Ενοικίαση</label><br>
+
 			<hr>
 
-			{{#if filters.residential}}
+			{{#if filters.category_residential}}
 				{{> filter_housing filters=filters}}
 			{{/if}}
-			{{#if filters.commercial}}
+			{{#if filters.category_commercial}}
 				{{> filter_prof filters=filters}}
 			{{/if}}
-			{{#if filters.land}}
+			{{#if filters.category_land}}
 				{{> filter_land filters=filters}}
 			{{/if}}
 
@@ -125,4 +127,3 @@
 	});
 
 </script>
-

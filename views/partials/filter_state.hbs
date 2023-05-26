@@ -1,12 +1,12 @@
 <h5>Κατάσταση ακινήτου</h5>
-<input type="radio" id="new" name="new" value="new" {{#if filters.state_new}} checked {{/if}}>
+<input type="radio" id="new" name="state" value="new" {{#if filters.state_new}} checked {{/if}}>
 <label for="new">Νεόδμητο</label><br>
-<input type="radio" id="renovated" name="renovated" value="renovated" {{#if filters.state_renovated}} checked {{/if}}>
+<input type="radio" id="renovated" name="state" value="renovated" {{#if filters.state_renovated}} checked {{/if}}>
 <label for="renovated">Ανακαινισμένο</label><br>
 {{#if filters.state_commercial}}
-<input type="radio" id="good" name="good" value="good" {{#if filters.state_good}} checked {{/if}}>
+<input type="radio" id="good" name="state" value="good" {{#if filters.state_good}} checked {{/if}}>
 <label for="good">Καλή κατάσταση</label><br>
-<input type="radio" id="old" name="old" value="old" {{#if filters.state_old}} checked {{/if}}>
+<input type="radio" id="old" name="state" value="old" {{#if filters.state_old}} checked {{/if}}>
 <label for="old">Χρήζει ανακαίνισης</label><br>
 {{/if}}
 <hr>
