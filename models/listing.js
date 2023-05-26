@@ -32,7 +32,6 @@ const listingSchema = new mongoose.Schema(
 			furnished: Boolean,
 			air_condition: Boolean,
 			solar_heating: Boolean,
-			boiler: Boolean,
 			alarm: Boolean,
 			security_door: Boolean,
 			pets: Boolean,
