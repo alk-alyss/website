@@ -5,84 +5,25 @@ export async function search(req, res, next) {
     let filters = {}
 
     filters.type = req.query.type
-    switch (filters.type) {
-        case "sell":
-            filters.type_sell = true
-            break
-        case "rent":
-            filters.type_rent = true
-            break
-    }
+    filters["type_"+filters.type] = true
 
     filters.category = req.query.category
-    switch (filters.category) {
-        case "residential":
-            filters.category_residential = true
-            break
-        case "commercial":
-            filters.category_commercial = true
-            break
-        case "land":
-            filters.category_land = true
-            break
-    }
+    filters["category_"+filters.category] = true
 
     filters.subcategory = req.query.subcategory
-    switch (filters.subcategory) {
-        case "any":
-            filters.subcategory_any = true
-        case "studio":
-            filters.subcategory_studio = true
-            break
-        case "house":
-            filters.subcategory_house = true
-            break
-        case "complex":
-            filters.subcategory_complex = true
-            break
-        case "maisonette":
-            filters.subcategory_maisonette = true
-            break
-        case "appartment":
-            filters.subcategory_appartment = true
-            break
-        case "penthouse":
-            filters.subcategory_penthouse = true
-            break
-        case "office":
-            filters.subcategory_office = true
-            break
-        case "warehouse":
-            filters.subcategory_warehouse = true
-            break
-        case "industrial":
-            filters.subcategory_industrial = true
-            break
-        case "hotel":
-            filters.subcategory_hotel = true
-            break
-        case "business":
-            filters.subcategory_business = true
-            break
-        case "show_room":
-            filters.subcategory_show_room = true
-            break
-        case "shop":
-            filters.subcategory_shop = true
-            break
-        case "land":
-            filters.subcategory_land = true
-            break
-        case "field":
-            filters.subcategory_field = true
-            break
-        case "island":
-            filters.subcategory_island = true
-            break
-        case "other":
-            filters.subcategory_other = true
-            break
-    }
+    filters["subcategory_"+filters.subcategory] = true
+
+    filters.state = req.query.state
+    filters["state_"+filters.state] = true
+
+    filters.zone = req.query.zone
+    filters["zone_"+filters.zone] = true
+
+    filters.heating = req.query.heating
+    filters["heating_"+filters.heating] = true
+
+    filters.heating_type = req.query.heating_type
+    filters["heating_type_"+filters.heating_type] = true
 
     filters.location = req.query.location
 
@@ -100,22 +41,6 @@ export async function search(req, res, next) {
     filters.area = {
         start: !Number.isNaN(areaStart) ? areaStart : 0,
         end: !Number.isNaN(areaEnd) ? areaEnd : 0
-    }
-
-    filters.state = req.query.state
-    switch (filters.state) {
-        case "new":
-            filters.state_new = true
-            break
-        case "renovated":
-            filters.state_renovated = true
-            break
-        case "good":
-            filters.state_good = true
-            break
-        case "old":
-            filters.state_old = true
-            break
     }
 
     let roomsFrom = Math.abs(Number(req.query.rooms_from))
@@ -140,63 +65,6 @@ export async function search(req, res, next) {
     filters.year = {
         start: !Number.isNaN(yearFrom) ? yearFrom : 0 ,
         end: !Number.isNaN(yearTo) ? yearTo : 0
-    }
-
-    filters.zone = req.query.zone
-    switch (filters.zone) {
-        case "residential":
-            filters.zone_residential = true
-            break
-        case "commercial":
-            filters.zone_commercial = true
-            break
-        case "industrial":
-            filters.zone_industrial = true
-            break
-        case "agricultural":
-            filters.zone_agricultural = true
-            break
-        case "forest":
-            filters.zone_forest = true
-            break
-        case "tourist":
-            filters.zone_tourist = true
-            break
-    }
-
-    filters.heating = req.query.heating
-    switch (filters.heating) {
-        case "autonomous":
-            filters.heating_autonomous = true
-            break
-        case "central":
-            filters.heating_central = true
-            break
-    }
-
-    filters.heating_type = req.query.heating_type
-    switch (filters.heating_type) {
-        case "oil":
-            filters.heating_type_oil = true
-            break
-        case "gas":
-            filters.heating_type_gas = true
-            break
-        case "wood":
-            filters.heating_type_wood = true
-            break
-        case "electricity":
-            filters.heating_type_electricity = true
-            break
-        case "geothermal":
-            filters.heating_type_geothermal = true
-            break
-        case "solar":
-            filters.heating_type_solar = true
-            break
-        case "other":
-            filters.heating_type_other = true
-            break
     }
 
     filters.extra = {
