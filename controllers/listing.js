@@ -21,7 +21,7 @@ export async function showListing(req, res, next) {
 		if (user.favoriteListings.includes(currentListing.id)) currentListing.isFavorite = true
 	}
 
-	currentListing.price_per_area = Math.floor(currentListing.price / currentListing.area)
+	currentListing.price_per_area = Math.floor(currentListing.price * 100 / currentListing.area)/100
 
 	currentListing = await translateListing(currentListing)
 
