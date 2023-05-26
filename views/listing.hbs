@@ -36,8 +36,8 @@
         <div class="listing">
             <div class="listing_info">
                 <div class="listing_title">
-                    <h2>Τίτλος Αγγελίας</h2>
-                    <p>Υποπεριοχή</p>
+                    <h2>{{listing.subcategory}}</h2>
+                    <p>{{listing.location}}</p>
                 </div>
 
                 <div class="listing_phone">
@@ -57,22 +57,18 @@
                     </div>
 
                     <div class="listing_description">
-                        <p>1ος</p>
-                        <p>1υ/δ</p>
-                        <p>1μπ</p>
+                        <p>Όροφος: {{listing.floor}}ος</p>
+                        <p>Δωμάτια: {{listing.rooms}}</p>
+                        {{!-- <p>μπ</p> --}}
                     </div>
 
                     <label class="extra_characteristics" for="listing_extra_characteristics">Ειδικά χαρακτηριστικά</label>
                     <div class="listing_extra_characteristics">
-                        <p>special 1</p>
-                        <p>special 2</p>
-                        <p>special 3</p>
-                        <p>special 1</p>
-                        <p>special 2</p>
-                        <p>special 3</p>
-                        <p>special 1</p>
-                        <p>special 2</p>
-                        <p>special 3</p>
+                        {{#each listing.extras}}
+                            {{#if this}}
+                                <p>{{@key}}</p>
+                            {{/if}}
+                        {{/each}}
                     </div>
                 </div>
 
@@ -80,12 +76,18 @@
                     <label class="characteristics" for="listing_characteristics">Χαρακτηριστικά</label>
                     <div class="listing_characteristics">
                         <table>
-                            <tr> <td style="background-color: #F0F0F0">Characteristic</td> <td>Value</td> </tr>
-                            <tr> <td style="background-color: #F0F0F0">Characteristic</td> <td>Value</td> </tr>
-                            <tr> <td style="background-color: #F0F0F0">Characteristic</td> <td>Value</td> </tr>
-                            <tr> <td style="background-color: #F0F0F0">Characteristic</td> <td>Value</td> </tr>
-                            <tr> <td style="background-color: #F0F0F0">Characteristic</td> <td>Value</td> </tr>
-                            <tr> <td style="background-color: #F0F0F0">Characteristic</td> <td>Value</td> </tr>
+                            <tr> <td style="background-color: #F0F0F0">Εμβαδόν</td> <td>{{listing.area}}</td> </tr>
+                            <tr> <td style="background-color: #F0F0F0">€/τ.μ.</td> <td>{{listing.price_per_area}}</td> </tr>
+                            {{#if listing.zone}}
+                            <tr> <td style="background-color: #F0F0F0">Πολεοδομική Ζώνη</td> <td>{{listing.zone}}</td> </tr>
+                            {{/if}}
+                            {{#unless listing.category_land}}
+                            <tr> <td style="background-color: #F0F0F0">Κατάσταση</td> <td>{{listing.condition}}</td> </tr>
+                            <tr> <td style="background-color: #F0F0F0">Έτος Κατασκευής</td> <td>{{listing.year}}</td> </tr>
+                            <tr> <td style="background-color: #F0F0F0">Επίπεδα</td> <td>{{listing.levels}}</td> </tr>
+                            <tr> <td style="background-color: #F0F0F0">Θέρμανση</td> <td>{{listing.heating}}</td> </tr>
+                            <tr> <td style="background-color: #F0F0F0">Τύπος Θέρμανσης</td> <td>{{listing.heating_type}}</td> </tr>
+                            {{/unless}}
                         </table>
                     </div>
                 </div>
@@ -100,8 +102,8 @@
                 <label class="provider" for="provider_logo">Πληροφορίες Αγγελιοδότη</label>
                 <img src="/icons/provider.svg" draggable="false">
             </div>
-            
-            
+
+
             <div class="provider_contact">
                 <label for="provider_name">Όνομα</label>
                 <p> (phone number) </p>
@@ -129,7 +131,7 @@
             </a>
         </div>
     </div>
-    
+
 
 <script>
     let carousel = document.querySelector(".myCarousel")
@@ -140,7 +142,7 @@
     let item = document.querySelector(".item")
     let close = document.getElementById("clsbtn")
     let items = document.querySelectorAll(".item")
-    
+
     currentSlide = 0
     items[currentSlide].classList.add("active_image")
 
@@ -150,9 +152,9 @@
         carousel.classList.add("active")
         console.log("opened")
     }
-    
+
     function closeCarousel() {
-        
+
         carousel.classList.remove("active")
     }
 
@@ -161,8 +163,8 @@
             item.classList.remove("active_image")
         })
         //add slidein animation
-        
-        
+
+
         items[currentSlide].classList.add("active_image")
         console.log("got here")
     }
@@ -231,7 +233,7 @@
     goBack.addEventListener("click", () => {
         //if there is no previous page go to home page
         window.history.back()
-        
+
     })
 
 

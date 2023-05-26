@@ -2,15 +2,15 @@
 <div class="searchCard" draggable="false">
 		<img src="{{listing.images.[0]}}" draggable="false">
 		<div class="top-row">
-			<p>{{listing.description}}, {{listing.area}} τ.μ</p>
+			<p>{{listing.subcategory}}, {{listing.area}} τ.μ</p>
 			{{> heart id=listing.id isFavorite=listing.isFavorite}}
 		</div>
 
-		<span>Υποπεριοχή</span>
+		<span>{{listing.location}}</span>
 
 		<div class="listing_description">
-			<p>1ος</p>
-			<p>1υ/δ</p>
+			<p>{{listing.floor}}ος</p>
+			<p>{{listing.rooms}}υ/δ</p>
 			<p>1μπ</p>
 		</div>
 
