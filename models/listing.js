@@ -22,7 +22,23 @@ const listingSchema = new mongoose.Schema(
 		heating: { type: String },
 		heating_type: { type: String },
 		condition: { type: String },
-		extra: { type: Object }
+		extras: {
+			parking: Boolean,
+			garden: Boolean,
+			balcony: Boolean,
+			storage: Boolean,
+			fireplace: Boolean,
+			elevator: Boolean,
+			furnished: Boolean,
+			air_condition: Boolean,
+			solar_heating: Boolean,
+			boiler: Boolean,
+			alarm: Boolean,
+			security_door: Boolean,
+			pets: Boolean,
+			student: Boolean,
+			loading_dock: Boolean
+		}
 	},
 	{
 		toObject: {virtuals: true},
@@ -55,19 +71,18 @@ export async function getListings(filters={}) {
 	query.year = { $gte: filters.year.start }
 	if (filters.year.end) query.year.$lte = filters.year.end
 
-	if (filters.state) query.state = filters.state
+	if (filters.state) query.condition = filters.state
 	if (filters.zone) query.zone = filters.zone
 	if (filters.heating && filters.heating != "any") query.heating = filters.heating
 	if (filters.heating_type && filters.heating_type != "any") query.heating_type = filters.heating_type
 
 	for (const [key, value] of Object.entries(filters.extra)) {
 		if (value == false) continue
-		query["extra." + key] = value
+		query["extras." + key] = value
 	}
 
-	console.log(query)
-
 	let listings = await Listing.find(query, "-__v").exec()
+	console.log(listings)
 
 	let listingsArray = []
 	if (listings.length > 0) {
