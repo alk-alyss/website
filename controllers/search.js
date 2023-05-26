@@ -90,16 +90,16 @@ export async function search(req, res, next) {
     let priceEnd = Math.abs(Number(req.query.price_end))
 
     filters.price = {
-        start: priceStart != NaN ? priceStart : 0,
-        end: priceEnd != NaN ? priceEnd : 0
+        start: !Number.isNaN(priceStart) ? priceStart : 0,
+        end: !Number.isNaN(priceEnd) ? priceEnd : 0
     }
 
     let areaStart = Math.abs(Number(req.query.area_start))
     let areaEnd = Math.abs(Number(req.query.area_end))
 
     filters.area = {
-        start: areaStart != NaN ? areaStart : 0,
-        end: areaEnd != NaN ? areaEnd : 0
+        start: !Number.isNaN(areaStart) ? areaStart : 0,
+        end: !Number.isNaN(areaEnd) ? areaEnd : 0
     }
 
     filters.state = req.query.state
@@ -122,24 +122,24 @@ export async function search(req, res, next) {
     let roomsTo = Math.abs(Number(req.query.rooms_to))
 
     filters.rooms = {
-        start: roomsFrom != NaN ? roomsFrom : 0 ,
-        end: roomsTo != NaN ? roomsTo : 0
+        start: !Number.isNaN(roomsFrom) ? roomsFrom : 0 ,
+        end: !Number.isNaN(roomsTo) ? roomsTo : 0
     }
 
     let floorFrom = Math.abs(Number(req.query.floor_from))
     let floorTo = Math.abs(Number(req.query.floor_to))
 
     filters.floor = {
-        start: floorFrom != NaN ? floorFrom : 0 ,
-        end: floorTo != NaN ? floorTo : 0
+        start: !Number.isNaN(floorFrom) ? floorFrom : 0 ,
+        end: !Number.isNaN(floorTo) ? floorTo : 0
     }
 
     let yearFrom = Math.abs(Number(req.query.year_from))
     let yearTo = Math.abs(Number(req.query.year_to))
 
     filters.year = {
-        start: yearFrom != NaN ? yearFrom : 0 ,
-        end: yearTo != NaN ? yearTo : 0
+        start: !Number.isNaN(yearFrom) ? yearFrom : 0 ,
+        end: !Number.isNaN(yearTo) ? yearTo : 0
     }
 
     filters.zone = req.query.zone
