@@ -342,16 +342,16 @@ a:hover {
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 44px;
 }
 
 .listing_description p {
     margin: 40px;
     margin-left: 0;
     margin-right: 3vw;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
 }
 
 .extra_characteristics {
