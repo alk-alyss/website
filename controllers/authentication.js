@@ -70,3 +70,12 @@ export async function checkAuthentication(req, res, next) {
         res.redirect("/sign_in")
     }
 }
+
+export async function isAuthenticated(req, res) {
+    if (req.session.username) {
+        res.status(200).send("true")
+    }
+    else {
+        res.status(401).send("false")
+    }
+}

@@ -19,16 +19,19 @@ function close_sign() {
     button[1].classList.remove("active");
 }
 
-icon.addEventListener("click", function() {
+icon.addEventListener("click", async function() {
 
     if (button[0].classList.contains("active") || button[1].classList.contains("active")) {
         close_sign();
     }
     else {
-        //if signed in
-        signed_in();
-        //if not signed in
-        // not_signed_in();
+        let result = await fetch("/isAuthenticated")
+        if (result.status == 200) {
+            signed_in();
+        }
+        else {
+            not_signed_in();
+        }
     }
 
 });

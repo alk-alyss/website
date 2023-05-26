@@ -1,7 +1,7 @@
 import { Router } from "express"
 const router = Router();
 
-import { sign_in, sign_out, sign_up } from "../controllers/authentication.js";
+import { isAuthenticated, sign_in, sign_out, sign_up } from "../controllers/authentication.js";
 
 router.get('/sign_in', (req, res) => {
     res.render("sign_in", { style: "sign_in" })
@@ -16,5 +16,7 @@ router.get('/sign_up', (req, res) => {
 router.post('/sign_up', sign_up)
 
 router.get('/sign_out', sign_out)
+
+router.get('/isAuthenticated', isAuthenticated)
 
 export default router
