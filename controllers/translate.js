@@ -48,7 +48,9 @@ const translations = {
 }
 export async function translate(object) {
 	for (const [key, value] of Object.entries(object)) {
-		object[key] = translations[value]
+		if (Object.keys(translations).includes(value)) {
+			object[key] = translations[value]
+		}
 	}
 
 	return object

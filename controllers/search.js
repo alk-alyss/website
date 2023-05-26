@@ -1,5 +1,6 @@
 import { getListings } from "../models/listing.js"
 import { getUserByUsername } from "../models/user.js"
+import { translate } from "./translate.js"
 
 export async function search(req, res, next) {
     let filters = {}
@@ -88,16 +89,16 @@ export async function search(req, res, next) {
     let listings = await getListings(filters)
 
     let username = req.session.username
-	if (username) {
-		let user = await getUserByUsername(username)
-        for (let listing of listings) {
-            listing.price_per_area = listing.price / listing.area
+    let user = await getUserByUsername(username)
+
+    for (let listing of listings) {
+        if (username) {
             listing.isFavorite = false
             if (user.favoriteListings.includes(listing.id)) listing.isFavorite = true
-
-            listing = translate(listing)
         }
-	}
+
+        listing = await translate(listing)
+    }
 
     res.render("search", {
         topSearchOn: true,

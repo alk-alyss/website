@@ -81,7 +81,6 @@ export async function getListings(filters={}) {
 	}
 
 	let listings = await Listing.find(query, "-__v").exec()
-	console.log(listings)
 
 	let listingsArray = []
 	if (listings.length > 0) {

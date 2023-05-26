@@ -1,5 +1,6 @@
 import { getListingById } from "../models/listing.js"
 import { addFavoriteListing, getUserByUsername, removeFavoriteListing } from "../models/user.js"
+import { translate } from "./translate.js"
 
 export async function showListing(req, res, next) {
 	let id = req.params.id.toString()
@@ -19,6 +20,10 @@ export async function showListing(req, res, next) {
 		let user = await getUserByUsername(username)
 		if (user.favoriteListings.includes(currentListing.id)) currentListing.isFavorite = true
 	}
+
+	currentListing.price_per_area = currentListing.price / currentListing.area
+
+	currentListing = await translate(currentListing)
 
 	res.render("listing", {
 		style: "listing",

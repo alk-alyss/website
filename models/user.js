@@ -46,7 +46,10 @@ export async function getUserByEmail(email) {
 export async function getUserByUsername(username) {
     let user = await User.findOne({username:username})
 
-    return user.toObject()
+    if (user)
+        return user.toObject()
+
+    return user
 }
 
 export async function updateUser(username, first_name="", last_name="", email="", phone="") {
