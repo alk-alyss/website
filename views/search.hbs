@@ -1,4 +1,4 @@
-{{> header}}
+{{> header location=filters.location}}
 
 <hr class="line">
 
@@ -40,6 +40,8 @@
 			<label for="sell">Πώληση</label><br>
 			<input type="radio" name="type" id="rent" value="rent"{{#if filters.type_rent}}checked{{/if}}>
 			<label for="rent">Ενοικίαση</label><br>
+
+			<input type="hidden" name="location" id="location_actual">
 
 			<hr>
 
@@ -110,13 +112,26 @@
 		checkboxes.forEach(checkbox => {
 			checkbox.checked = false;
 		});
-		let heating = document.querySelector("#heating");
-		heating.value = "autonomous";
 
-		let minPrice = document.querySelector("#price_from");
-		minPrice.value = "";
-		let maxPrice = document.querySelector("#price_to");
-		maxPrice.value = "";
+		let radios = document.querySelectorAll("#mySidebar input[type=radio]");
+		radios.forEach(radio => {
+			if (!(radio.id == "sell" || radio.id == "rent"))
+				radio.checked = false;
+		});
+
+		document.querySelector("#subcategory").value = "any"
+		document.querySelector("#heating").value = "any"
+		document.querySelector("#heating_type").value = "any"
+		document.querySelector("#price_start").value = ""
+		document.querySelector("#price_end").value = ""
+		document.querySelector("#area_start").value = ""
+		document.querySelector("#area_end").value = ""
+		document.querySelector("#rooms_from").value = ""
+		document.querySelector("#rooms_to").value = ""
+		document.querySelector("#floor_from").value = ""
+		document.querySelector("#floor_to").value = ""
+		document.querySelector("#year_from").value = ""
+		document.querySelector("#year_to").value = ""
 
 	}
 
@@ -124,5 +139,33 @@
 	clearfilter.addEventListener("click", function(){
 		clearFilters();
 	});
+
+	let submitButton = document.querySelector(".search_button")
+	submitButton.addEventListener("click", event => {
+		event.preventDefault()
+		submitForm()
+	})
+
+	let searchBar = document.querySelector(".top_search>input")
+	searchBar.addEventListener("keydown", event => {
+		if (event.key == "Enter") {
+			event.preventDefault()
+			submitForm()
+		}
+	})
+
+	function submitForm() {
+		let location = document.querySelector("#location")
+		let location_actual = document.querySelector("#location_actual")
+
+		if (location.value.length > 0) {
+			location_actual.value = location.value
+		}
+		else {
+			location_actual.value = location.getAttribute("placeholder")
+		}
+
+		document.querySelector("form").submit()
+	}
 
 </script>

@@ -2,7 +2,7 @@
 
 {{> filter_category filters=filters}}
 
-<select name="subcategory">
+<select name="subcategory" id="subcategory">
 	<option value="any" {{#if filters.subcategory_any}} selected {{/if}}>Οτιδήποτε</option>
 	<option value="office" {{#if filters.subcategory_office}} selected {{/if}}>Γραφείο</option>
 	<option value="warehouse" {{#if filters.subcategory_warehouse}} selected {{/if}}>Αποθήκη</option>
@@ -36,7 +36,7 @@
 <input type="checkbox" id="storage" name="storage" value="storage" {{#if filters.extra.storage}} checked {{/if}}>
 <label for="storage">Αποθήκη</label><br>
 </div>
-<div>	
+<div>
 <input type="checkbox" id="alarm" name="alarm" value="alarm" {{#if filters.extra.alarm}} checked {{/if}}>
 <label for="alarm">Συναργεμός</label><br>
 </div>

@@ -2,7 +2,7 @@
 
 {{> filter_category filters=filters}}
 
-<select name="subcategory">
+<select name="subcategory" id="subcategory">
 	<option value="any" {{#if filters.subcategory_any}} selected {{/if}}>Οτιδήποτε</option>
 	<option value="land" {{#if filters.subcategory_land}} selected {{/if}}>Έδαφος</option>
 	<option value="field" {{#if filters.subcategory_field}} selected {{/if}}>Οικόπεδο</option>

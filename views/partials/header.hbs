@@ -16,7 +16,7 @@
     {{#if topSearchOn}}
     <a href="/"><img src="/icons/logo_dark.svg" draggable="false"></a>
     <div class="top_search">
-        <input type="text" placeholder="Περιοχή">
+        <input type="search" id="location" placeholder="{{#if location}}{{location}}{{else}}Περιοχή{{/if}}">
         <img src="/icons/search_icon.svg" draggable="false">
     </div>
     {{/if}}
@@ -25,4 +25,3 @@
         <a ><img src="/icons/user_icon.svg" draggable="false" class="button_login"></a>
     </div>
 </header>
-

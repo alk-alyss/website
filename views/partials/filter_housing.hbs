@@ -2,7 +2,7 @@
 
 {{> filter_category filters=filters}}
 
-<select name="subcategory">
+<select name="subcategory" id="subcategory">
 	<option value="any" {{#if filters.subcategory_any}} selected {{/if}}>Οτιδήποτε</option>
 	<option value="studio" {{#if filters.subcategory_studio}} selected {{/if}}>Στούντιο</option>
 	<option value="house" {{#if filters.subcategory_house}} selected {{/if}}>Μονοκατοικία</option>
