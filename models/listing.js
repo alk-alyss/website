@@ -38,7 +38,7 @@ export async function getListings(filters={}) {
 	if (filters.type) query.type = filters.type
 	if (filters.location) query.location = new RegExp(filters.location, "i")
 	if (filters.category) query.category = filters.category
-	if (filters.subcategory) query.subcategory = filters.subcategory
+	if (filters.subcategory && filters.subcategory != "any") query.subcategory = filters.subcategory
 
 	query.price = { $gte: filters.price.start }
 	if (filters.price.end) query.price.$lte = filters.price.end
@@ -57,8 +57,15 @@ export async function getListings(filters={}) {
 
 	if (filters.state) query.state = filters.state
 	if (filters.zone) query.zone = filters.zone
-	if (filters.heating) query.heating = filters.heating
-	if (filters.heating_type) query.heating_type = filters.heating_type
+	if (filters.heating && filters.heating != "any") query.heating = filters.heating
+	if (filters.heating_type && filters.heating_type != "any") query.heating_type = filters.heating_type
+
+	for (const [key, value] of Object.entries(filters.extra)) {
+		if (value == false) continue
+		query["extra." + key] = value
+	}
+
+	console.log(query)
 
 	let listings = await Listing.find(query, "-__v").exec()
 
