@@ -91,8 +91,11 @@ export async function search(req, res, next) {
 	if (username) {
 		let user = await getUserByUsername(username)
         for (let listing of listings) {
+            listing.price_per_area = listing.price / listing.area
             listing.isFavorite = false
             if (user.favoriteListings.includes(listing.id)) listing.isFavorite = true
+
+            listing = translate(listing)
         }
 	}
 
