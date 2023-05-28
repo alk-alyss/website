@@ -1,5 +1,6 @@
 import { getListingById } from "../models/listing.js"
 import { getUserByUsername, updateUser } from "../models/user.js"
+import { translateListing } from "./translate.js"
 
 export async function renderProfile(req, res) {
     let username = req.session.username
@@ -7,7 +8,7 @@ export async function renderProfile(req, res) {
 
     let favoriteListings = []
     user.favoriteListings.forEach(async listing => {
-        let favoriteListing = await getListingById(listing)
+        let favoriteListing = await translateListing(await getListingById(listing))
         favoriteListing.isFavorite = true
         favoriteListings.push(favoriteListing)
     });
