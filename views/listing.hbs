@@ -150,11 +150,9 @@
     function openCarousel() {
         //set carousel opacity to 1
         carousel.classList.add("active")
-        console.log("opened")
     }
 
     function closeCarousel() {
-
         carousel.classList.remove("active")
     }
 
@@ -164,9 +162,7 @@
         })
         //add slidein animation
 
-
         items[currentSlide].classList.add("active_image")
-        console.log("got here")
     }
 
     function prevSlide(currentSlide) {
@@ -180,9 +176,7 @@
         currentSlide++
         if (currentSlide >= items.length) {
             currentSlide = 0
-            console.log(currentSlide)
         }
-        console.log(currentSlide)
         nextSlide(currentSlide)
     })
 
@@ -211,9 +205,7 @@
             currentSlide++
             if (currentSlide >= items.length) {
                 currentSlide = 0
-                console.log(currentSlide)
             }
-            console.log(currentSlide)
             nextSlide(currentSlide)
         }
     })
