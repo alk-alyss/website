@@ -1,4 +1,5 @@
 const translations = {
+	"store": "Κατάστημα",
 	"new": "Νεόδμητο",
 	"renovated": "Ανακαινισμένο",
 	"good": "Καλή κατάσταση",
