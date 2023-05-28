@@ -78,3 +78,7 @@ export async function removeFavoriteListing(username, listing) {
 export async function importUsers(users) {
 	await User.insertMany(users)
 }
+
+export async function getAllIds() {
+    return await User.find({}, "id").exec()
+}
