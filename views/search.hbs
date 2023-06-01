@@ -154,18 +154,6 @@
 		}
 	})
 
-	let filters = []
-	filters.push(document.querySelector("#price_start"))
-	filters.push(document.querySelector("#price_end"))
-	filters.push(document.querySelector("#area_start"))
-	filters.push(document.querySelector("#area_end"))
-	filters.push(document.querySelector("#rooms_from"))
-	filters.push(document.querySelector("#rooms_to"))
-	filters.push(document.querySelector("#floor_from"))
-	filters.push(document.querySelector("#floor_to"))
-	filters.push(document.querySelector("#year_from"))
-	filters.push(document.querySelector("#year_to"))
-
 	function submitForm() {
 		let location = document.querySelector("#location")
 		let location_actual = document.querySelector("#location_actual")
@@ -176,8 +164,6 @@
 		else {
 			location_actual.value = location.getAttribute("placeholder")
 		}
-
-		console.log(filters)
 
 		document.querySelector("form").submit()
 	}
