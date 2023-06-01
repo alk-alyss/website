@@ -1,11 +1,10 @@
 <h5>{{#if filters.category_residential}}Δωμάτια{{/if}}{{#if filters.category_commercial}}Χώροι{{/if}}</h5>
-<input type="text" inputmode="numeric" name="rooms_from" id="rooms_from" placeholder="{{#if filters.rooms.start}}{{filters.rooms.start}}{{else}}Από{{/if}}">
-<input type="text" inputmode="numeric" name="rooms_to" id="rooms_to" placeholder="{{#if filters.rooms.end}}{{filters.rooms.end}}{{else}}Εώς{{/if}}">
+<input type="text" inputmode="numeric" name="rooms_from" id="rooms_from" value="{{#if filters.rooms.start}}{{filters.rooms.start}}{{/if}}", placeholder="Από">
+<input type="text" inputmode="numeric" name="rooms_to" id="rooms_to" value="{{#if filters.rooms.end}}{{filters.rooms.end}}{{/if}}", placeholder="Εώς">
 <h5>Όροφος</h5>
-<input type="text" inputmode="numeric" name="floor_from" id="floor_to" placeholder="{{#if filters.floor.start}}{{filters.floor.start}}{{else}}Από{{/if}}">
-<input type="text" inputmode="numeric" name="floor_to" id="floor_to" placeholder="{{#if filters.floor.end}}{{filters.floor.end}}{{else}}Εώς{{/if}}">
+<input type="text" inputmode="numeric" name="floor_from" id="floor_from" value="{{#if filters.floor.start}}{{filters.floor.start}}{{/if}}", placeholder="Από">
+<input type="text" inputmode="numeric" name="floor_to" id="floor_to" value="{{#if filters.floor.end}}{{filters.floor.end}}{{/if}}", placeholder="Εώς">
 <h5>Έτος κατασκευής</h5>
-<input type="text" inputmode="numeric" name="year_from" id="year_to" placeholder="{{#if filters.year.start}}{{filters.year.start}}{{else}}Από{{/if}}">
-<input type="text" inputmode="numeric" name="year_to" id="year_to" placeholder="{{#if filters.year.end}}{{filters.year.end}}{{else}}Εώς{{/if}}">
-
+<input type="text" inputmode="numeric" name="year_from" id="year_from" value="{{#if filters.year.start}}{{filters.year.start}}{{/if}}", placeholder="Από">
+<input type="text" inputmode="numeric" name="year_to" id="year_to" value="{{#if filters.year.end}}{{filters.year.end}}{{/if}}", placeholder="Εώς">
 <hr>
