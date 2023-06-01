@@ -22,6 +22,7 @@ const listingSchema = new mongoose.Schema(
 		heating: { type: String },
 		heating_type: { type: String },
 		condition: { type: String },
+		bathrooms: {type: Number},
 		extras: {
 			parking: Boolean,
 			garden: Boolean,

@@ -11,7 +11,9 @@
 		<div class="listing_description">
 			<p>{{listing.floor}}ος</p>
 			<p>{{listing.rooms}}υ/δ</p>
-			<p>1μπ</p>
+			{{#if listing.bathrooms}}
+			<p>{{listing.bathrooms}}μπ</p>
+			{{/if}}
 		</div>
 
 		<p>€ {{listing.price}}</p>

@@ -56,7 +56,9 @@
                     <div class="listing_description">
                         <p>Όροφος: {{listing.floor}}ος</p>
                         <p>Δωμάτια: {{listing.rooms}}</p>
-                        {{!-- <p>μπ</p> --}}
+                        {{#if listing.bathrooms}}
+                        <p>Μπάνια: {{listing.bathrooms}}</p>
+                        {{/if}}
                     </div>
 
                     <label class="extra_characteristics" for="listing_extra_characteristics">Ειδικά χαρακτηριστικά</label>

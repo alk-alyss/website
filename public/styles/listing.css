@@ -64,7 +64,7 @@ header {
     padding-left: 10px;
 }
 
-.path_container a{    
+.path_container a{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -175,7 +175,7 @@ a:hover {
 
 .listing_images {
     width: 100%;
-    
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -192,7 +192,7 @@ a:hover {
 
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    
+
 }
 
 .small_images img{
@@ -217,17 +217,17 @@ a:hover {
 }
 
 .listing {
-    background-color: white; 
+    background-color: white;
 
     width: 100%;
-    
+
     height: 100%;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: baseline;
-    
+
 }
 
 .listing_info {
@@ -347,10 +347,10 @@ a:hover {
 .listing_description p {
     margin: 40px;
     margin-left: 0;
-    margin-right: 3vw;
+    margin-right: 1vw;
 
     font-weight: 700;
-    font-size: 36px;
+    font-size: 28px;
     line-height: 44px;
 }
 
@@ -418,7 +418,7 @@ tr:last-child {
 
 td {
     padding: 10px;
-    
+
     font-weight: 400;
     font-size: 22px;
     line-height: 28px;
@@ -494,7 +494,7 @@ td:nth-child(odd) {
 .myCarousel {
     width: 100%;
     height: 100%;
-    
+
     outline: 1px solid red;
 
     position: fixed;
@@ -559,7 +559,7 @@ td:nth-child(odd) {
 
     justify-items: baseline;
     align-items: center;
-    
+
 }
 
 .carousel_inner .item {
@@ -583,7 +583,7 @@ td:nth-child(odd) {
 
     width: 100%;
     height: 100%;
-} 
+}
 
 .myCarousel.active {
     opacity: 1;
@@ -664,6 +664,10 @@ td:nth-child(odd) {
         font-size: 22px;
         line-height: 32px;
     }
+    .listing_extra_characteristics {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
     .listing_extra_characteristics p{
         font-size: 16px;
         line-height: 20px;
@@ -716,12 +720,12 @@ td:nth-child(odd) {
     *::-webkit-scrollbar {
         display: none;
     }
-    
+
     /* Hide scrollbar for IE, Edge and Firefox */
     * {
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
-    } 
+    }
 }
 
 @media only screen and (max-width:360px){
@@ -729,7 +733,7 @@ td:nth-child(odd) {
         grid-template-columns: 1fr;
         gap: 5px;
     }
-    
+
     .listing_container {
         width: 90%;
     }
